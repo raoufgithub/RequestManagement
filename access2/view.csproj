@@ -1,0 +1,1293 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F8A787C0-3709-4D1F-BAF1-CDDEA109361B}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>view</RootNamespace>
+    <AssemblyName>View</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentValidationNA">
+      <HintPath>..\packages\FluentValidationNA.1.2.16\lib\net40\FluentValidationNA.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.1\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Scaffolding.EntityFramework.12.0, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=x86" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.Linq.Dynamic">
+      <HintPath>..\packages\System.Linq.Dynamic.Library.1.1.14\lib\net40\System.Linq.Dynamic.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.bootstrap">
+      <HintPath>..\packages\AspNet.ScriptManager.bootstrap.3.0.0\lib\net45\AspNet.ScriptManager.bootstrap.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.jQuery">
+      <HintPath>..\packages\AspNet.ScriptManager.jQuery.1.10.2\lib\net45\AspNet.ScriptManager.jQuery.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ScriptManager.MSAjax">
+      <HintPath>..\packages\Microsoft.AspNet.ScriptManager.MSAjax.5.0.0\lib\net45\Microsoft.ScriptManager.MSAjax.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ScriptManager.WebForms">
+      <HintPath>..\packages\Microsoft.AspNet.ScriptManager.WebForms.5.0.0\lib\net45\Microsoft.ScriptManager.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <Private>True</Private>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Web.Optimization.WebForms">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.WebForms.1.1.3\lib\net45\Microsoft.AspNet.Web.Optimization.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.FriendlyUrls">
+      <HintPath>..\packages\Microsoft.AspNet.FriendlyUrls.Core.1.0.2\lib\net45\Microsoft.AspNet.FriendlyUrls.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.2\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.2\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.2\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.1.0\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Providers">
+      <HintPath>..\packages\Microsoft.AspNet.Providers.Core.2.0.0\lib\net40\System.Web.Providers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.3.0.0\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.0\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.0.0\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Facebook">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.3.0.0\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.3.0.0\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.3.0.0\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.3.0.0\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.3.0.0\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.0.0\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="About.aspx" />
+    <Content Include="Account\AddPhoneNumber.aspx" />
+    <Content Include="Account\AgentSetting.aspx" />
+    <Content Include="Account\Confirm.aspx" />
+    <Content Include="Account\CssPassword.css" />
+    <Content Include="Account\Forgot.aspx" />
+    <Content Include="Account\Lockout.aspx" />
+    <Content Include="Account\Login.aspx" />
+    <Content Include="Account\loginPopup.aspx" />
+    <Content Include="Account\Manage.aspx" />
+    <Content Include="Account\ManageLogins.aspx" />
+    <Content Include="Account\ManagePassword.aspx" />
+    <Content Include="Account\AgentSetting.css" />
+    <Content Include="Account\OpenAuthProviders.ascx" />
+    <Content Include="Account\PasswordChange.aspx" />
+    <Content Include="Account\ProfileAgent.aspx" />
+    <Content Include="Account\Register.aspx" />
+    <Content Include="Account\RegisterAgent.css" />
+    <Content Include="Account\RegisterAgents.aspx" />
+    <Content Include="Account\RegisterExternalLogin.aspx" />
+    <Content Include="Account\ResetPassword.aspx" />
+    <Content Include="Account\ResetPasswordConfirmation.aspx" />
+    <Content Include="Account\TestLoginPopup.aspx" />
+    <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
+    <Content Include="Account\VerifyPhoneNumber.aspx" />
+    <Content Include="Authentication\loginn.aspx" />
+    <Content Include="Authentication\Register.aspx" />
+    <Content Include="Authentication\Test.aspx" />
+    <Content Include="bootstrap-3.3.4-dist\css\bootstrap-theme.css" />
+    <Content Include="bootstrap-3.3.4-dist\css\bootstrap-theme.min.css" />
+    <Content Include="bootstrap-3.3.4-dist\css\bootstrap.css" />
+    <Content Include="bootstrap-3.3.4-dist\css\bootstrap.min.css" />
+    <Content Include="bootstrap-3.3.4-dist\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="bootstrap-3.3.4-dist\js\bootstrap.js" />
+    <Content Include="bootstrap-3.3.4-dist\js\bootstrap.min.js" />
+    <Content Include="bootstrap-3.3.4-dist\js\npm.js" />
+    <Content Include="bootstrap-datepicker-1.4.0-dist\css\bootstrap-datepicker.css" />
+    <Content Include="bootstrap-datepicker-1.4.0-dist\css\bootstrap-datepicker.min.css" />
+    <Content Include="bootstrap-datepicker-1.4.0-dist\css\bootstrap-datepicker.standalone.css" />
+    <Content Include="bootstrap-datepicker-1.4.0-dist\css\bootstrap-datepicker.standalone.min.css" />
+    <Content Include="bootstrap-datepicker-1.4.0-dist\css\bootstrap-datepicker3.css" />
+    <Content Include="bootstrap-datepicker-1.4.0-dist\css\bootstrap-datepicker3.min.css" />
+    <Content Include="bootstrap-datepicker-1.4.0-dist\css\bootstrap-datepicker3.standalone.css" />
+    <Content Include="bootstrap-datepicker-1.4.0-dist\css\bootstrap-datepicker3.standalone.min.css" />
+    <Content Include="bootstrap-datepicker-1.4.0-dist\js\bootstrap-datepicker.js" />
+    <Content Include="bootstrap-datepicker-1.4.0-dist\js\bootstrap-datepicker.min.js" />
+    <Content Include="bootstrap-datepicker-1.4.0-dist\locales\bootstrap-datepicker.ar.min.js" />
+    <Content Include="bootstrap-datepicker-1.4.0-dist\locales\bootstrap-datepicker.az.min.js" />
+    <Content Include="bootstrap-datepicker-1.4.0-dist\locales\bootstrap-datepicker.bg.min.js" />
+    <Content Include="bootstrap-datepicker-1.4.0-dist\locales\bootstrap-datepicker.bs.min.js" />
+    <Content Include="bootstrap-datepicker-1.4.0-dist\locales\bootstrap-datepicker.ca.min.js" />
+    <Content Include="bootstrap-datepicker-1.4.0-dist\locales\bootstrap-datepicker.cs.min.js" />
+    <Content Include="bootstrap-datepicker-1.4.0-dist\locales\bootstrap-datepicker.cy.min.js" />
+    <Content Include="bootstrap-datepicker-1.4.0-dist\locales\bootstrap-datepicker.da.min.js" />
+    <Content Include="bootstrap-datepicker-1.4.0-dist\locales\bootstrap-datepicker.de.min.js" />
+    <Content Include="bootstrap-datepicker-1.4.0-dist\locales\bootstrap-datepicker.el.min.js" />
+    <Content Include="bootstrap-datepicker-1.4.0-dist\locales\bootstrap-datepicker.en-GB.min.js" />
+    <Content Include="bootstrap-datepicker-1.4.0-dist\locales\bootstrap-datepicker.es.min.js" />
+    <Content Include="bootstrap-datepicker-1.4.0-dist\locales\bootstrap-datepicker.et.min.js" />
+    <Content Include="bootstrap-datepicker-1.4.0-dist\locales\bootstrap-datepicker.eu.min.js" />
+    <Content Include="bootstrap-datepicker-1.4.0-dist\locales\bootstrap-datepicker.fa.min.js" />
+    <Content Include="bootstrap-datepicker-1.4.0-dist\locales\bootstrap-datepicker.fi.min.js" />
+    <Content Include="bootstrap-datepicker-1.4.0-dist\locales\bootstrap-datepicker.fo.min.js" />
+    <Content Include="bootstrap-datepicker-1.4.0-dist\locales\bootstrap-datepicker.fr-CH.min.js" />
+    <Content Include="bootstrap-datepicker-1.4.0-dist\locales\bootstrap-datepicker.fr.min.js" />
+    <Content Include="bootstrap-datepicker-1.4.0-dist\locales\bootstrap-datepicker.gl.min.js" />
+    <Content Include="bootstrap-datepicker-1.4.0-dist\locales\bootstrap-datepicker.he.min.js" />
+    <Content Include="bootstrap-datepicker-1.4.0-dist\locales\bootstrap-datepicker.hr.min.js" />
+    <Content Include="bootstrap-datepicker-1.4.0-dist\locales\bootstrap-datepicker.hu.min.js" />
+    <Content Include="bootstrap-datepicker-1.4.0-dist\locales\bootstrap-datepicker.hy.min.js" />
+    <Content Include="bootstrap-datepicker-1.4.0-dist\locales\bootstrap-datepicker.id.min.js" />
+    <Content Include="bootstrap-datepicker-1.4.0-dist\locales\bootstrap-datepicker.is.min.js" />
+    <Content Include="bootstrap-datepicker-1.4.0-dist\locales\bootstrap-datepicker.it-CH.min.js" />
+    <Content Include="bootstrap-datepicker-1.4.0-dist\locales\bootstrap-datepicker.it.min.js" />
+    <Content Include="bootstrap-datepicker-1.4.0-dist\locales\bootstrap-datepicker.ja.min.js" />
+    <Content Include="bootstrap-datepicker-1.4.0-dist\locales\bootstrap-datepicker.ka.min.js" />
+    <Content Include="bootstrap-datepicker-1.4.0-dist\locales\bootstrap-datepicker.kh.min.js" />
+    <Content Include="bootstrap-datepicker-1.4.0-dist\locales\bootstrap-datepicker.kk.min.js" />
+    <Content Include="bootstrap-datepicker-1.4.0-dist\locales\bootstrap-datepicker.kr.min.js" />
+    <Content Include="bootstrap-datepicker-1.4.0-dist\locales\bootstrap-datepicker.lt.min.js" />
+    <Content Include="bootstrap-datepicker-1.4.0-dist\locales\bootstrap-datepicker.lv.min.js" />
+    <Content Include="bootstrap-datepicker-1.4.0-dist\locales\bootstrap-datepicker.me.min.js" />
+    <Content Include="bootstrap-datepicker-1.4.0-dist\locales\bootstrap-datepicker.mk.min.js" />
+    <Content Include="bootstrap-datepicker-1.4.0-dist\locales\bootstrap-datepicker.ms.min.js" />
+    <Content Include="bootstrap-datepicker-1.4.0-dist\locales\bootstrap-datepicker.nb.min.js" />
+    <Content Include="bootstrap-datepicker-1.4.0-dist\locales\bootstrap-datepicker.nl-BE.min.js" />
+    <Content Include="bootstrap-datepicker-1.4.0-dist\locales\bootstrap-datepicker.nl.min.js" />
+    <Content Include="bootstrap-datepicker-1.4.0-dist\locales\bootstrap-datepicker.no.min.js" />
+    <Content Include="bootstrap-datepicker-1.4.0-dist\locales\bootstrap-datepicker.pl.min.js" />
+    <Content Include="bootstrap-datepicker-1.4.0-dist\locales\bootstrap-datepicker.pt-BR.min.js" />
+    <Content Include="bootstrap-datepicker-1.4.0-dist\locales\bootstrap-datepicker.pt.min.js" />
+    <Content Include="bootstrap-datepicker-1.4.0-dist\locales\bootstrap-datepicker.ro.min.js" />
+    <Content Include="bootstrap-datepicker-1.4.0-dist\locales\bootstrap-datepicker.rs-latin.min.js" />
+    <Content Include="bootstrap-datepicker-1.4.0-dist\locales\bootstrap-datepicker.rs.min.js" />
+    <Content Include="bootstrap-datepicker-1.4.0-dist\locales\bootstrap-datepicker.ru.min.js" />
+    <Content Include="bootstrap-datepicker-1.4.0-dist\locales\bootstrap-datepicker.sk.min.js" />
+    <Content Include="bootstrap-datepicker-1.4.0-dist\locales\bootstrap-datepicker.sl.min.js" />
+    <Content Include="bootstrap-datepicker-1.4.0-dist\locales\bootstrap-datepicker.sq.min.js" />
+    <Content Include="bootstrap-datepicker-1.4.0-dist\locales\bootstrap-datepicker.sr-latin.min.js" />
+    <Content Include="bootstrap-datepicker-1.4.0-dist\locales\bootstrap-datepicker.sr.min.js" />
+    <Content Include="bootstrap-datepicker-1.4.0-dist\locales\bootstrap-datepicker.sv.min.js" />
+    <Content Include="bootstrap-datepicker-1.4.0-dist\locales\bootstrap-datepicker.sw.min.js" />
+    <Content Include="bootstrap-datepicker-1.4.0-dist\locales\bootstrap-datepicker.th.min.js" />
+    <Content Include="bootstrap-datepicker-1.4.0-dist\locales\bootstrap-datepicker.tr.min.js" />
+    <Content Include="bootstrap-datepicker-1.4.0-dist\locales\bootstrap-datepicker.uk.min.js" />
+    <Content Include="bootstrap-datepicker-1.4.0-dist\locales\bootstrap-datepicker.vi.min.js" />
+    <Content Include="bootstrap-datepicker-1.4.0-dist\locales\bootstrap-datepicker.zh-CN.min.js" />
+    <Content Include="bootstrap-datepicker-1.4.0-dist\locales\bootstrap-datepicker.zh-TW.min.js" />
+    <Content Include="bootstrap-datepicker-1.4.0-dist\Nouveau document texte.txt" />
+    <Content Include="calendar\css\jquery-ui.css" />
+    <Content Include="calendar\js\jquery-1.10.2.js" />
+    <Content Include="calendar\js\jquery-ui.js" />
+    <Content Include="Contact.aspx" />
+    <Content Include="Content\assets\css\bootstrap.css" />
+    <Content Include="Content\assets\css\custom-styles.css" />
+    <Content Include="Content\assets\css\font-awesome.css" />
+    <Content Include="Content\assets\font-awesome\fonts\fontawesome-webfontba72.svg" />
+    <Content Include="Content\assets\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\assets\js\bootstrap.min.js" />
+    <Content Include="Content\assets\js\custom-scripts.js" />
+    <Content Include="Content\assets\js\custom.js" />
+    <Content Include="Content\assets\js\dataTables\dataTables.bootstrap.css" />
+    <Content Include="Content\assets\js\dataTables\dataTables.bootstrap.js" />
+    <Content Include="Content\assets\js\dataTables\jquery.dataTables.js" />
+    <Content Include="Content\assets\js\jquery-1.10.2.js" />
+    <Content Include="Content\assets\js\jquery.metisMenu.js" />
+    <Content Include="Content\assets\js\morris\morris-0.4.3.min.css" />
+    <Content Include="Content\assets\js\morris\morris.js" />
+    <Content Include="Content\assets\js\morris\raphael-2.1.0.min.js" />
+    <Content Include="Content\bootstrap_photos_Request.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\font-awesome.min.css" />
+    <Content Include="Content\jquery-ui.css" />
+    <Content Include="Content\jquery-ui.min.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Free-Bootstrap-Admin-Template-Dream\assets\css\bootstrap.css" />
+    <Content Include="Free-Bootstrap-Admin-Template-Dream\assets\css\custom-styles.css" />
+    <Content Include="Free-Bootstrap-Admin-Template-Dream\assets\css\font-awesome.css" />
+    <Content Include="Free-Bootstrap-Admin-Template-Dream\assets\font-awesome\fonts\fontawesome-webfontba72.svg" />
+    <Content Include="Free-Bootstrap-Admin-Template-Dream\assets\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Free-Bootstrap-Admin-Template-Dream\assets\js\bootstrap.min.js" />
+    <Content Include="Free-Bootstrap-Admin-Template-Dream\assets\js\custom-scripts.js" />
+    <Content Include="Free-Bootstrap-Admin-Template-Dream\assets\js\custom.js" />
+    <Content Include="Free-Bootstrap-Admin-Template-Dream\assets\js\dataTables\dataTables.bootstrap.css" />
+    <Content Include="Free-Bootstrap-Admin-Template-Dream\assets\js\dataTables\dataTables.bootstrap.js" />
+    <Content Include="Free-Bootstrap-Admin-Template-Dream\assets\js\dataTables\jquery.dataTables.js" />
+    <Content Include="Free-Bootstrap-Admin-Template-Dream\assets\js\jquery-1.10.2.js" />
+    <Content Include="Free-Bootstrap-Admin-Template-Dream\assets\js\jquery.metisMenu.js" />
+    <Content Include="Free-Bootstrap-Admin-Template-Dream\assets\js\morris\morris-0.4.3.min.css" />
+    <Content Include="Free-Bootstrap-Admin-Template-Dream\assets\js\morris\morris.js" />
+    <Content Include="Free-Bootstrap-Admin-Template-Dream\assets\js\morris\raphael-2.1.0.min.js" />
+    <Content Include="Free-Bootstrap-Admin-Template-Dream\chart.html" />
+    <Content Include="Free-Bootstrap-Admin-Template-Dream\empty.html" />
+    <Content Include="Free-Bootstrap-Admin-Template-Dream\form.html" />
+    <Content Include="Free-Bootstrap-Admin-Template-Dream\index.html" />
+    <Content Include="Free-Bootstrap-Admin-Template-Dream\README.txt" />
+    <Content Include="Free-Bootstrap-Admin-Template-Dream\tab-panel.html" />
+    <Content Include="Free-Bootstrap-Admin-Template-Dream\table.html" />
+    <Content Include="Free-Bootstrap-Admin-Template-Dream\ui-elements.html" />
+    <Content Include="Free-Bootstrap-Admin-Template-Dream\WebForm1.aspx" />
+    <Content Include="Messaging\MessageRequest.aspx" />
+    <Content Include="Referentielles\DispositionPrise.aspx" />
+    <Content Include="Referentielles\GridViewModal.aspx" />
+    <Content Include="index.aspx" />
+    <Content Include="jquery-ui-1.11.4\external\jquery\jquery.js" />
+    <Content Include="jquery-ui-1.11.4\images\ui-bg_diagonals-thick_18_b81900_40x40.png" />
+    <Content Include="jquery-ui-1.11.4\images\ui-bg_diagonals-thick_20_666666_40x40.png" />
+    <Content Include="jquery-ui-1.11.4\images\ui-bg_flat_10_000000_40x100.png" />
+    <Content Include="jquery-ui-1.11.4\images\ui-bg_glass_100_f6f6f6_1x400.png" />
+    <Content Include="jquery-ui-1.11.4\images\ui-bg_glass_100_fdf5ce_1x400.png" />
+    <Content Include="jquery-ui-1.11.4\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="jquery-ui-1.11.4\images\ui-bg_gloss-wave_35_f6a828_500x100.png" />
+    <Content Include="jquery-ui-1.11.4\images\ui-bg_highlight-soft_100_eeeeee_1x100.png" />
+    <Content Include="jquery-ui-1.11.4\images\ui-bg_highlight-soft_75_ffe45c_1x100.png" />
+    <Content Include="jquery-ui-1.11.4\images\ui-icons_222222_256x240.png" />
+    <Content Include="jquery-ui-1.11.4\images\ui-icons_228ef1_256x240.png" />
+    <Content Include="jquery-ui-1.11.4\images\ui-icons_ef8c08_256x240.png" />
+    <Content Include="jquery-ui-1.11.4\images\ui-icons_ffd27a_256x240.png" />
+    <Content Include="jquery-ui-1.11.4\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="jquery-ui-1.11.4\index.html" />
+    <Content Include="jquery-ui-1.11.4\jquery-ui.css" />
+    <Content Include="jquery-ui-1.11.4\jquery-ui.js" />
+    <Content Include="jquery-ui-1.11.4\jquery-ui.min.css" />
+    <Content Include="jquery-ui-1.11.4\jquery-ui.min.js" />
+    <Content Include="jquery-ui-1.11.4\jquery-ui.structure.css" />
+    <Content Include="jquery-ui-1.11.4\jquery-ui.structure.min.css" />
+    <Content Include="jquery-ui-1.11.4\jquery-ui.theme.css" />
+    <Content Include="jquery-ui-1.11.4\jquery-ui.theme.min.css" />
+    <Content Include="MasterPages\bootstrap-3.3.4-dist\css\bootstrap-theme.css" />
+    <Content Include="MasterPages\bootstrap-3.3.4-dist\css\bootstrap-theme.min.css" />
+    <Content Include="MasterPages\bootstrap-3.3.4-dist\css\bootstrap.css" />
+    <Content Include="MasterPages\bootstrap-3.3.4-dist\css\bootstrap.min.css" />
+    <Content Include="MasterPages\bootstrap-3.3.4-dist\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="MasterPages\bootstrap-3.3.4-dist\js\bootstrap.js" />
+    <Content Include="MasterPages\bootstrap-3.3.4-dist\js\bootstrap.min.js" />
+    <Content Include="MasterPages\bootstrap-3.3.4-dist\js\npm.js" />
+    <Content Include="MasterPages\Common.css" />
+    <Content Include="MasterPages\Common_ar.css" />
+    <Content Include="MasterPages\Edit.css" />
+    <Content Include="MasterPages\Edit_ar.css" />
+    <Content Include="MasterPages\grids.css" />
+    <Content Include="MasterPages\grids_ar.css" />
+    <Content Include="MasterPages\images\ARN2.png" />
+    <Content Include="MasterPages\images\asc.png" />
+    <Content Include="MasterPages\images\desc.png" />
+    <Content Include="MasterPages\images\dropdown\Requests_Icon.ico" />
+    <Content Include="MasterPages\images\form_back.gif" />
+    <Content Include="MasterPages\images\form_toolbar_back.gif" />
+    <Content Include="MasterPages\images\FRN2.png" />
+    <Content Include="MasterPages\images\header_bg.jpg" />
+    <Content Include="MasterPages\images\header_bg.png" />
+    <Content Include="MasterPages\images\img-cont-pan\124.png" />
+    <Content Include="MasterPages\images\img-cont-pan\127.png" />
+    <Content Include="MasterPages\images\img-cont-pan\15.png" />
+    <Content Include="MasterPages\images\img-cont-pan\24.png" />
+    <Content Include="MasterPages\images\img-cont-pan\62.png" />
+    <Content Include="MasterPages\images\img-cont-pan\96.png" />
+    <Content Include="MasterPages\images\img-cont-pan\addedit.png" />
+    <Content Include="MasterPages\images\img-cont-pan\categories.png" />
+    <Content Include="MasterPages\images\img-cont-pan\config.png" />
+    <Content Include="MasterPages\images\img-cont-pan\cpanel.png" />
+    <Content Include="MasterPages\images\img-cont-pan\frontpage.png" />
+    <Content Include="MasterPages\images\img-cont-pan\langmanager.png" />
+    <Content Include="MasterPages\images\img-cont-pan\mediamanager.png" />
+    <Content Include="MasterPages\images\img-cont-pan\menu.png" />
+    <Content Include="MasterPages\images\img-cont-pan\module.png" />
+    <Content Include="MasterPages\images\img-cont-pan\sections.png" />
+    <Content Include="MasterPages\images\img-cont-pan\trash.png" />
+    <Content Include="MasterPages\images\img-cont-pan\user.png" />
+    <Content Include="MasterPages\images\img-cpanel\env_plet_bg.gif" />
+    <Content Include="MasterPages\images\img-cpanel\header_bg.jpg" />
+    <Content Include="MasterPages\images\img-cpanel\icon-16-default.png" />
+    <Content Include="MasterPages\images\img-cpanel\icon-16-logout.png" />
+    <Content Include="MasterPages\images\img-cpanel\icon-48-article-add.png" />
+    <Content Include="MasterPages\images\img-cpanel\icon-48-article.png" />
+    <Content Include="MasterPages\images\img-cpanel\icon-48-category.png" />
+    <Content Include="MasterPages\images\img-cpanel\icon-48-config.png" />
+    <Content Include="MasterPages\images\img-cpanel\icon-48-extension.png" />
+    <Content Include="MasterPages\images\img-cpanel\icon-48-language.png" />
+    <Content Include="MasterPages\images\img-cpanel\icon-48-media.png" />
+    <Content Include="MasterPages\images\img-cpanel\icon-48-menumgr.png" />
+    <Content Include="MasterPages\images\img-cpanel\icon-48-module.png" />
+    <Content Include="MasterPages\images\img-cpanel\icon-48-themes.png" />
+    <Content Include="MasterPages\images\img-cpanel\icon-48-user-profile.png" />
+    <Content Include="MasterPages\images\img-cpanel\icon-48-user.png" />
+    <Content Include="MasterPages\images\img-cpanel\j_arrow.png" />
+    <Content Include="MasterPages\images\img-cpanel\j_arrow_down.png" />
+    <Content Include="MasterPages\images\img-cpanel\j_arrow_r.png" />
+    <Content Include="MasterPages\images\img-cpanel\j_arrow_red.png" />
+    <Content Include="MasterPages\images\img-cpanel\j_arrow_r_red.png" />
+    <Content Include="MasterPages\images\img-cpanel\selector-arrow.png" />
+    <Content Include="MasterPages\images\N2.png" />
+    <Content Include="MasterPages\images\nav_link.png" />
+    <Content Include="MasterPages\images\nav_link_blan.png" />
+    <Content Include="MasterPages\images\nav_link_bleu.png" />
+    <Content Include="MasterPages\images\nav_link_hover.png" />
+    <Content Include="MasterPages\images\nav_separator.png" />
+    <Content Include="MasterPages\images\notification_bg.png" />
+    <Content Include="MasterPages\images\sort-regular.png" />
+    <Content Include="MasterPages\images\sort-regular1.jpg" />
+    <Content Include="MasterPages\images\statusbar_back.gif" />
+    <Content Include="MasterPages\images\subheader_bg.png" />
+    <Content Include="MasterPages\images\toolbar_bg.png" />
+    <Content Include="MasterPages\images\toolbar_left.png" />
+    <Content Include="MasterPages\images\toolbar_right.png" />
+    <Content Include="MasterPages\images\top_banner.png" />
+    <Content Include="MasterPages\MasterSite.css" />
+    <Content Include="MasterPages\Message-48.png" />
+    <Content Include="MasterPages\Message-52.png" />
+    <Content Include="MasterPages\Scripts\bootstrap.min.js.map">
+      <DependentUpon>bootstrap.min.js</DependentUpon>
+    </Content>
+    <Content Include="MasterPages\Scripts\jquery-1.10.2.min.js.map">
+      <DependentUpon>jquery-1.10.2.min.js</DependentUpon>
+    </Content>
+    <Content Include="MasterPages\Scripts\jquery-1.10.2.min.map" />
+    <Content Include="MasterPages\Scripts\respond.min.js.map">
+      <DependentUpon>respond.min.js</DependentUpon>
+    </Content>
+    <Content Include="MasterPages\TestRequerantPopup.aspx" />
+    <Content Include="Messaging\FindAgent.aspx" />
+    <Content Include="MasterPages\Message Filled-50.png" />
+    <Content Include="Messaging\Message Filled-50.png" />
+    <Content Include="Messaging\Message-48.png" />
+    <Content Include="Messaging\Messaging.css" />
+    <Content Include="Messaging\SendMessage.aspx" />
+    <Content Include="Messaging\SendMessagePopup.aspx" />
+    <Content Include="Referentielles\Dispositif.aspx" />
+    <Content Include="Referentielles\ModeTransmission.aspx" />
+    <Content Include="Referentielles\MotifDispositif.aspx" />
+    <Content Include="Referentielles\MotifOfObject.aspx" />
+    <Content Include="Referentielles\Referentials.css" />
+    <Content Include="Referentielles\RequestTypes.aspx" />
+    <Content Include="Referentielles\Role.aspx" />
+    <Content Include="Referentielles\VoieTransmission.aspx" />
+    <Content Include="Referentielles\Wilayas.aspx" />
+    <Content Include="Reporting\BalanceSheet.aspx" />
+    <Content Include="Reporting\Bilan_Mode_Trans.aspx" />
+    <Content Include="Reporting\ByObject.aspx" />
+    <Content Include="Reporting\Request_Types.aspx" />
+    <Content Include="Scripts\jquery-ui.js" />
+    <Content Include="Scripts\jquery-ui.min.js" />
+    <Content Include="Trace\ListViewTrace.aspx" />
+    <Content Include="Trace\RequestTrace.aspx" />
+    <Content Include="UnauthorizedPage.aspx" />
+    <Content Include="User\Profile.aspx" />
+    <Content Include="WebForm1.aspx" />
+    <Content Include="WebForm2.aspx" />
+    <Content Include="WebForm3.aspx" />
+    <Content Include="WebForm4.aspx" />
+    <Content Include="webforms\AddRequest.css" />
+    <Content Include="webforms\AddRquest.aspx" />
+    <Content Include="webforms\assets\css\bootstrap.css" />
+    <Content Include="webforms\assets\css\custom-styles.css" />
+    <Content Include="webforms\assets\css\font-awesome.css" />
+    <Content Include="webforms\assets\font-awesome\fonts\fontawesome-webfontba72.svg" />
+    <Content Include="webforms\assets\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="webforms\assets\js\bootstrap.min.js" />
+    <Content Include="webforms\assets\js\custom-scripts.js" />
+    <Content Include="webforms\assets\js\custom.js" />
+    <Content Include="webforms\assets\js\dataTables\dataTables.bootstrap.css" />
+    <Content Include="webforms\assets\js\dataTables\dataTables.bootstrap.js" />
+    <Content Include="webforms\assets\js\dataTables\jquery.dataTables.js" />
+    <Content Include="webforms\assets\js\jquery-1.10.2.js" />
+    <Content Include="webforms\assets\js\jquery.metisMenu.js" />
+    <Content Include="webforms\assets\js\morris\morris-0.4.3.min.css" />
+    <Content Include="webforms\assets\js\morris\morris.js" />
+    <Content Include="webforms\assets\js\morris\raphael-2.1.0.min.js" />
+    <Content Include="webforms\CustomFormView.aspx" />
+    <Content Include="webforms\DashBoard.aspx" />
+    <Content Include="webforms\newRequest.aspx" />
+    <Content Include="webforms\ReceivedRequestTest.aspx" />
+    <Content Include="webforms\Relance.aspx" />
+    <Content Include="webforms\Report.aspx" />
+    <Content Include="webforms\request-512.png" />
+    <Content Include="webforms\request.css" />
+    <Content Include="webforms\Research.css" />
+    <Content Include="webforms\tableauBord.aspx" />
+    <Content Include="webforms\test.aspx" />
+    <Content Include="webforms\Test.css" />
+    <Content Include="webforms\test1.aspx" />
+    <Content Include="webforms\test2.aspx" />
+    <Content Include="webforms\TestAlbumPhotos.aspx" />
+    <Content Include="webforms\TestPopup.aspx" />
+    <Content Include="webforms\testwithoutmasterpage.aspx" />
+    <Content Include="bootstrap-3.3.4-dist\css\bootstrap-theme.css.map" />
+    <Content Include="bootstrap-3.3.4-dist\css\bootstrap.css.map" />
+    <Content Include="bootstrap-3.3.4-dist\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="bootstrap-3.3.4-dist\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="bootstrap-3.3.4-dist\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="bootstrap-3.3.4-dist\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="bootstrap-3.3.4-dist\js\bootstrap.min.js.map">
+      <DependentUpon>bootstrap.min.js</DependentUpon>
+    </Content>
+    <Content Include="webforms\ValidateRequest.aspx" />
+    <Content Include="Free-Bootstrap-Admin-Template-Dream\assets\font-awesome\fonts\fontawesome-webfontba72.eot" />
+    <Content Include="Free-Bootstrap-Admin-Template-Dream\assets\font-awesome\fonts\fontawesome-webfontba72.ttf" />
+    <Content Include="Free-Bootstrap-Admin-Template-Dream\assets\font-awesome\fonts\fontawesome-webfontba72.woff" />
+    <Content Include="Free-Bootstrap-Admin-Template-Dream\assets\font-awesome\fonts\fontawesome-webfontd41d.eot" />
+    <Content Include="Free-Bootstrap-Admin-Template-Dream\assets\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Free-Bootstrap-Admin-Template-Dream\assets\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Free-Bootstrap-Admin-Template-Dream\assets\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Free-Bootstrap-Admin-Template-Dream\assets\fonts\glyphicons-halflings-regulard41d.eot" />
+    <Content Include="Free-Bootstrap-Admin-Template-Dream\Site1.Master" />
+    <Content Include="Content\assets\font-awesome\fonts\fontawesome-webfontba72.eot" />
+    <Content Include="Content\assets\font-awesome\fonts\fontawesome-webfontba72.ttf" />
+    <Content Include="Content\assets\font-awesome\fonts\fontawesome-webfontba72.woff" />
+    <Content Include="Content\assets\font-awesome\fonts\fontawesome-webfontd41d.eot" />
+    <Content Include="Content\assets\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\assets\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\assets\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\assets\fonts\glyphicons-halflings-regulard41d.eot" />
+    <None Include="MasterPages\Scripts\_references.js" />
+    <Content Include="MasterPages\Scripts\bootstrap.js" />
+    <Content Include="MasterPages\Scripts\bootstrap.min.js" />
+    <None Include="MasterPages\Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="MasterPages\Scripts\jquery-1.10.2.js" />
+    <Content Include="MasterPages\Scripts\jquery-1.10.2.min.js" />
+    <Content Include="MasterPages\Scripts\modernizr-2.6.2.js" />
+    <Content Include="MasterPages\Scripts\respond.js" />
+    <Content Include="MasterPages\Scripts\respond.min.js" />
+    <Content Include="MasterPages\Scripts\WebForms\DetailsView.js" />
+    <Content Include="MasterPages\Scripts\WebForms\Focus.js" />
+    <Content Include="MasterPages\Scripts\WebForms\GridView.js" />
+    <Content Include="MasterPages\Scripts\WebForms\Menu.js" />
+    <Content Include="MasterPages\Scripts\WebForms\MenuStandards.js" />
+    <Content Include="MasterPages\Scripts\WebForms\MSAjax\MicrosoftAjax.js" />
+    <Content Include="MasterPages\Scripts\WebForms\MSAjax\MicrosoftAjaxApplicationServices.js" />
+    <Content Include="MasterPages\Scripts\WebForms\MSAjax\MicrosoftAjaxComponentModel.js" />
+    <Content Include="MasterPages\Scripts\WebForms\MSAjax\MicrosoftAjaxCore.js" />
+    <Content Include="MasterPages\Scripts\WebForms\MSAjax\MicrosoftAjaxGlobalization.js" />
+    <Content Include="MasterPages\Scripts\WebForms\MSAjax\MicrosoftAjaxHistory.js" />
+    <Content Include="MasterPages\Scripts\WebForms\MSAjax\MicrosoftAjaxNetwork.js" />
+    <Content Include="MasterPages\Scripts\WebForms\MSAjax\MicrosoftAjaxSerialization.js" />
+    <Content Include="MasterPages\Scripts\WebForms\MSAjax\MicrosoftAjaxTimer.js" />
+    <Content Include="MasterPages\Scripts\WebForms\MSAjax\MicrosoftAjaxWebForms.js" />
+    <Content Include="MasterPages\Scripts\WebForms\MSAjax\MicrosoftAjaxWebServices.js" />
+    <Content Include="MasterPages\Scripts\WebForms\SmartNav.js" />
+    <Content Include="MasterPages\Scripts\WebForms\TreeView.js" />
+    <Content Include="MasterPages\Scripts\WebForms\WebForms.js" />
+    <Content Include="MasterPages\Scripts\WebForms\WebParts.js" />
+    <Content Include="MasterPages\Scripts\WebForms\WebUIValidation.js" />
+    <Content Include="MasterPages\Site.css" />
+    <Content Include="MasterPages\Site_ar.css" />
+    <Content Include="MasterPages\WebForm1.aspx" />
+    <Content Include="packages.config" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Account\Web.config" />
+    <Content Include="MasterPages\bootstrap-3.3.4-dist\css\bootstrap-theme.css.map" />
+    <Content Include="MasterPages\bootstrap-3.3.4-dist\css\bootstrap.css.map" />
+    <Content Include="MasterPages\bootstrap-3.3.4-dist\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="MasterPages\bootstrap-3.3.4-dist\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="MasterPages\bootstrap-3.3.4-dist\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="MasterPages\bootstrap-3.3.4-dist\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="MasterPages\bootstrap-3.3.4-dist\js\bootstrap.min.js.map">
+      <DependentUpon>bootstrap.min.js</DependentUpon>
+    </Content>
+    <Content Include="MasterPages\GRHhApp.Master" />
+    <Content Include="reports\DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Content>
+    <Content Include="MasterPages\Site.Master" />
+    <None Include="reports\DataSet1.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="reports\DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Content>
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\WebForms\DetailsView.js" />
+    <Content Include="Scripts\WebForms\Focus.js" />
+    <Content Include="Scripts\WebForms\GridView.js" />
+    <Content Include="Scripts\WebForms\Menu.js" />
+    <Content Include="Scripts\WebForms\MenuStandards.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjax.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxApplicationServices.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxComponentModel.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxCore.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxGlobalization.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxHistory.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxNetwork.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxSerialization.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxTimer.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxWebForms.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxWebServices.js" />
+    <Content Include="Scripts\WebForms\SmartNav.js" />
+    <Content Include="Scripts\WebForms\TreeView.js" />
+    <Content Include="Scripts\WebForms\WebForms.js" />
+    <Content Include="Scripts\WebForms\WebParts.js" />
+    <Content Include="Scripts\WebForms\WebUIValidation.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Default.aspx" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Site.Master" />
+    <Content Include="ViewSwitcher.ascx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Bundle.config" />
+    <None Include="Project_Readme.html" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Site.Mobile.Master" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <Content Include="webforms\assets\font-awesome\fonts\fontawesome-webfontba72.eot" />
+    <Content Include="webforms\assets\font-awesome\fonts\fontawesome-webfontba72.ttf" />
+    <Content Include="webforms\assets\font-awesome\fonts\fontawesome-webfontba72.woff" />
+    <Content Include="webforms\assets\font-awesome\fonts\fontawesome-webfontd41d.eot" />
+    <Content Include="webforms\assets\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="webforms\assets\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="webforms\assets\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="webforms\assets\fonts\glyphicons-halflings-regulard41d.eot" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Account\AddPhoneNumber.aspx.cs">
+      <DependentUpon>AddPhoneNumber.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\AddPhoneNumber.aspx.designer.cs">
+      <DependentUpon>AddPhoneNumber.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\AgentSetting.aspx.cs">
+      <DependentUpon>AgentSetting.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\AgentSetting.aspx.designer.cs">
+      <DependentUpon>AgentSetting.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Confirm.aspx.cs">
+      <DependentUpon>Confirm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Confirm.aspx.designer.cs">
+      <DependentUpon>Confirm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Forgot.aspx.cs">
+      <DependentUpon>Forgot.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Forgot.aspx.designer.cs">
+      <DependentUpon>Forgot.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Lockout.aspx.cs">
+      <DependentUpon>Lockout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Lockout.aspx.designer.cs">
+      <DependentUpon>Lockout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\loginPopup.aspx.cs">
+      <DependentUpon>loginPopup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\loginPopup.aspx.designer.cs">
+      <DependentUpon>loginPopup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Manage.aspx.cs">
+      <DependentUpon>Manage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Manage.aspx.designer.cs">
+      <DependentUpon>Manage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\ManageLogins.aspx.cs">
+      <DependentUpon>ManageLogins.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\ManageLogins.aspx.designer.cs">
+      <DependentUpon>ManageLogins.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\ManagePassword.aspx.cs">
+      <DependentUpon>ManagePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\ManagePassword.aspx.designer.cs">
+      <DependentUpon>ManagePassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\OpenAuthProviders.ascx.cs">
+      <DependentUpon>OpenAuthProviders.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\OpenAuthProviders.ascx.designer.cs">
+      <DependentUpon>OpenAuthProviders.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\PasswordChange.aspx.cs">
+      <DependentUpon>PasswordChange.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\PasswordChange.aspx.designer.cs">
+      <DependentUpon>PasswordChange.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\ProfileAgent.aspx.cs">
+      <DependentUpon>ProfileAgent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\ProfileAgent.aspx.designer.cs">
+      <DependentUpon>ProfileAgent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\RegisterAgents.aspx.cs">
+      <DependentUpon>RegisterAgents.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\RegisterAgents.aspx.designer.cs">
+      <DependentUpon>RegisterAgents.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\RegisterExternalLogin.aspx.cs">
+      <DependentUpon>RegisterExternalLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\RegisterExternalLogin.aspx.designer.cs">
+      <DependentUpon>RegisterExternalLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\ResetPassword.aspx.cs">
+      <DependentUpon>ResetPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\ResetPassword.aspx.designer.cs">
+      <DependentUpon>ResetPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\ResetPasswordConfirmation.aspx.cs">
+      <DependentUpon>ResetPasswordConfirmation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\ResetPasswordConfirmation.aspx.designer.cs">
+      <DependentUpon>ResetPasswordConfirmation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\TestLoginPopup.aspx.cs">
+      <DependentUpon>TestLoginPopup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\TestLoginPopup.aspx.designer.cs">
+      <DependentUpon>TestLoginPopup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\TwoFactorAuthenticationSignIn.aspx.cs">
+      <DependentUpon>TwoFactorAuthenticationSignIn.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\TwoFactorAuthenticationSignIn.aspx.designer.cs">
+      <DependentUpon>TwoFactorAuthenticationSignIn.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\VerifyPhoneNumber.aspx.cs">
+      <DependentUpon>VerifyPhoneNumber.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\VerifyPhoneNumber.aspx.designer.cs">
+      <DependentUpon>VerifyPhoneNumber.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="About.aspx.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="About.aspx.designer.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Authentication\loginn.aspx.cs">
+      <DependentUpon>loginn.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Authentication\loginn.aspx.designer.cs">
+      <DependentUpon>loginn.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Authentication\Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Authentication\Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Authentication\Test.aspx.cs">
+      <DependentUpon>Test.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Authentication\Test.aspx.designer.cs">
+      <DependentUpon>Test.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Contact.aspx.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contact.aspx.designer.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Free-Bootstrap-Admin-Template-Dream\Site1.Master.cs">
+      <DependentUpon>Site1.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Free-Bootstrap-Admin-Template-Dream\Site1.Master.designer.cs">
+      <DependentUpon>Site1.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Free-Bootstrap-Admin-Template-Dream\WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Free-Bootstrap-Admin-Template-Dream\WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Messaging\MessageRequest.aspx.cs">
+      <DependentUpon>MessageRequest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Messaging\MessageRequest.aspx.designer.cs">
+      <DependentUpon>MessageRequest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Referentielles\DispositionPrise.aspx.cs">
+      <DependentUpon>DispositionPrise.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Referentielles\DispositionPrise.aspx.designer.cs">
+      <DependentUpon>DispositionPrise.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Referentielles\GridViewModal.aspx.cs">
+      <DependentUpon>GridViewModal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Referentielles\GridViewModal.aspx.designer.cs">
+      <DependentUpon>GridViewModal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MasterPages\GRHhApp.Master.cs">
+      <DependentUpon>GRHhApp.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterPages\Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterPages\Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="MasterPages\TestRequerantPopup.aspx.cs">
+      <DependentUpon>TestRequerantPopup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterPages\TestRequerantPopup.aspx.designer.cs">
+      <DependentUpon>TestRequerantPopup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MasterPages\WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Messaging\FindAgent.aspx.cs">
+      <DependentUpon>FindAgent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Messaging\FindAgent.aspx.designer.cs">
+      <DependentUpon>FindAgent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Messaging\SendMessage.aspx.cs">
+      <DependentUpon>SendMessage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Messaging\SendMessage.aspx.designer.cs">
+      <DependentUpon>SendMessage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Messaging\SendMessagePopup.aspx.cs">
+      <DependentUpon>SendMessagePopup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Messaging\SendMessagePopup.aspx.designer.cs">
+      <DependentUpon>SendMessagePopup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Referentielles\Dispositif.aspx.cs">
+      <DependentUpon>Dispositif.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Referentielles\Dispositif.aspx.designer.cs">
+      <DependentUpon>Dispositif.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Referentielles\ModeTransmission.aspx.cs">
+      <DependentUpon>ModeTransmission.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Referentielles\ModeTransmission.aspx.designer.cs">
+      <DependentUpon>ModeTransmission.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Referentielles\MotifDispositif.aspx.cs">
+      <DependentUpon>MotifDispositif.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Referentielles\MotifDispositif.aspx.designer.cs">
+      <DependentUpon>MotifDispositif.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Referentielles\MotifOfObject.aspx.cs">
+      <DependentUpon>MotifOfObject.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Referentielles\MotifOfObject.aspx.designer.cs">
+      <DependentUpon>MotifOfObject.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Referentielles\RequestTypes.aspx.cs">
+      <DependentUpon>RequestTypes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Referentielles\RequestTypes.aspx.designer.cs">
+      <DependentUpon>RequestTypes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Referentielles\Role.aspx.cs">
+      <DependentUpon>Role.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Referentielles\Role.aspx.designer.cs">
+      <DependentUpon>Role.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Referentielles\VoieTransmission.aspx.cs">
+      <DependentUpon>VoieTransmission.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Referentielles\VoieTransmission.aspx.designer.cs">
+      <DependentUpon>VoieTransmission.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Referentielles\Wilayas.aspx.cs">
+      <DependentUpon>Wilayas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Referentielles\Wilayas.aspx.designer.cs">
+      <DependentUpon>Wilayas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reporting\BalanceSheet.aspx.cs">
+      <DependentUpon>BalanceSheet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reporting\BalanceSheet.aspx.designer.cs">
+      <DependentUpon>BalanceSheet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reporting\Bilan_Mode_Trans.aspx.cs">
+      <DependentUpon>Bilan_Mode_Trans.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reporting\Bilan_Mode_Trans.aspx.designer.cs">
+      <DependentUpon>Bilan_Mode_Trans.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reporting\ByObject.aspx.cs">
+      <DependentUpon>ByObject.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reporting\ByObject.aspx.designer.cs">
+      <DependentUpon>ByObject.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reporting\Request_Types.aspx.cs">
+      <DependentUpon>Request_Types.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reporting\Request_Types.aspx.designer.cs">
+      <DependentUpon>Request_Types.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="reports\DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Mobile.Master.cs">
+      <DependentUpon>Site.Mobile.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Mobile.Master.designer.cs">
+      <DependentUpon>Site.Mobile.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Startup.cs" />
+    <Compile Include="Trace\ListViewTrace.aspx.cs">
+      <DependentUpon>ListViewTrace.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Trace\ListViewTrace.aspx.designer.cs">
+      <DependentUpon>ListViewTrace.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Trace\RequestTrace.aspx.cs">
+      <DependentUpon>RequestTrace.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Trace\RequestTrace.aspx.designer.cs">
+      <DependentUpon>RequestTrace.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UnauthorizedPage.aspx.cs">
+      <DependentUpon>UnauthorizedPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UnauthorizedPage.aspx.designer.cs">
+      <DependentUpon>UnauthorizedPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\Profile.aspx.cs">
+      <DependentUpon>Profile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\Profile.aspx.designer.cs">
+      <DependentUpon>Profile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewSwitcher.ascx.cs">
+      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewSwitcher.ascx.designer.cs">
+      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm2.aspx.cs">
+      <DependentUpon>WebForm2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm2.aspx.designer.cs">
+      <DependentUpon>WebForm2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm3.aspx.cs">
+      <DependentUpon>WebForm3.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm3.aspx.designer.cs">
+      <DependentUpon>WebForm3.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm4.aspx.cs">
+      <DependentUpon>WebForm4.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm4.aspx.designer.cs">
+      <DependentUpon>WebForm4.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="webforms\AddRquest.aspx.cs">
+      <DependentUpon>AddRquest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webforms\AddRquest.aspx.designer.cs">
+      <DependentUpon>AddRquest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="webforms\CustomFormView.aspx.cs">
+      <DependentUpon>CustomFormView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webforms\CustomFormView.aspx.designer.cs">
+      <DependentUpon>CustomFormView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="webforms\DashBoard.aspx.cs">
+      <DependentUpon>DashBoard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webforms\DashBoard.aspx.designer.cs">
+      <DependentUpon>DashBoard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="webforms\newRequest.aspx.cs">
+      <DependentUpon>newRequest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webforms\newRequest.aspx.designer.cs">
+      <DependentUpon>newRequest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="webforms\ReceivedRequestTest.aspx.cs">
+      <DependentUpon>ReceivedRequestTest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webforms\ReceivedRequestTest.aspx.designer.cs">
+      <DependentUpon>ReceivedRequestTest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="webforms\Relance.aspx.cs">
+      <DependentUpon>Relance.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webforms\Relance.aspx.designer.cs">
+      <DependentUpon>Relance.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="webforms\Report.aspx.cs">
+      <DependentUpon>Report.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webforms\Report.aspx.designer.cs">
+      <DependentUpon>Report.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="webforms\tableauBord.aspx.cs">
+      <DependentUpon>tableauBord.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webforms\tableauBord.aspx.designer.cs">
+      <DependentUpon>tableauBord.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="webforms\test.aspx.cs">
+      <DependentUpon>test.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webforms\test.aspx.designer.cs">
+      <DependentUpon>test.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="webforms\test1.aspx.cs">
+      <DependentUpon>test1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webforms\test1.aspx.designer.cs">
+      <DependentUpon>test1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="webforms\test2.aspx.cs">
+      <DependentUpon>test2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webforms\test2.aspx.designer.cs">
+      <DependentUpon>test2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="webforms\TestAlbumPhotos.aspx.cs">
+      <DependentUpon>TestAlbumPhotos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webforms\TestAlbumPhotos.aspx.designer.cs">
+      <DependentUpon>TestAlbumPhotos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="webforms\TestPopup.aspx.cs">
+      <DependentUpon>TestPopup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webforms\TestPopup.aspx.designer.cs">
+      <DependentUpon>TestPopup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="webforms\testwithoutmasterpage.aspx.cs">
+      <DependentUpon>testwithoutmasterpage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webforms\testwithoutmasterpage.aspx.designer.cs">
+      <DependentUpon>testwithoutmasterpage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="webforms\ValidateRequest.aspx.cs">
+      <DependentUpon>ValidateRequest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webforms\ValidateRequest.aspx.designer.cs">
+      <DependentUpon>ValidateRequest.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Content\assets\img\" />
+    <Folder Include="Content\jquery\" />
+    <Folder Include="Controllers\" />
+    <Folder Include="Files\" />
+    <Folder Include="Free-Bootstrap-Admin-Template-Dream\assets\img\" />
+    <Folder Include="RequestsFiles\" />
+    <Folder Include="temp\" />
+    <Folder Include="webforms\assets\img\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="MasterPages\App_LocalResources\Edit.Master.ar.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="MasterPages\App_LocalResources\Edit.Master.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="MasterPages\App_LocalResources\Site.Master.ar.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="MasterPages\App_LocalResources\Site.Master.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\controller\controller.csproj">
+      <Project>{49221e5a-4722-4f1d-9c4f-1ef75b54b2b2}</Project>
+      <Name>controller</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Model\Model.csproj">
+      <Project>{97b8437e-4c48-4fe4-91f2-dc3519ace964}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>51457</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:51458/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

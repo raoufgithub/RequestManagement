@@ -1,0 +1,375 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="requeteModelStoreContainer" CdmEntityContainer="requeteEntities">
+    <FunctionImportMapping FunctionImportName="spproc_filter_Reclamation" FunctionName="requeteModel.Store.spproc_filter_Reclamation" />
+    <FunctionImportMapping FunctionImportName="spproc_filter_requete" FunctionName="requeteModel.Store.spproc_filter_requete" />
+    <FunctionImportMapping FunctionImportName="spproc_filter_requete1" FunctionName="requeteModel.Store.spproc_filter_requete1" />
+    <FunctionImportMapping FunctionImportName="spproc_filter_users" FunctionName="requeteModel.Store.spproc_filter_requete" />
+    <FunctionImportMapping FunctionImportName="spproc_filter_requerant" FunctionName="requeteModel.Store.spproc_filter_requete" />
+    <FunctionImportMapping FunctionImportName="GetUsersStoredProcedure" FunctionName="requeteModel.Store.GetUsersStoredProcedure">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="requeteModel.GetUsersStoredProcedure_Result">
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="HomeTown" ColumnName="HomeTown" />
+          <ScalarProperty Name="Nom" ColumnName="Nom" />
+          <ScalarProperty Name="NombreReceivedMessages" ColumnName="NombreReceivedMessages" />
+          <ScalarProperty Name="NombreSentMessages" ColumnName="NombreSentMessages" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="Prenom" ColumnName="Prenom" />
+          <ScalarProperty Name="Structure" ColumnName="Structure" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="username" ColumnName="username" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="C__MigrationHistory">
+      <EntityTypeMapping TypeName="requeteModel.C__MigrationHistory">
+        <MappingFragment StoreEntitySet="__MigrationHistory">
+          <ScalarProperty Name="ProductVersion" ColumnName="ProductVersion" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="ContextKey" ColumnName="ContextKey" />
+          <ScalarProperty Name="MigrationId" ColumnName="MigrationId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="action_User_Request">
+      <EntityTypeMapping TypeName="requeteModel.action_User_Request">
+        <MappingFragment StoreEntitySet="action_User_Request">
+          <ScalarProperty Name="action" ColumnName="action" />
+          <ScalarProperty Name="date_action" ColumnName="date_action" />
+          <ScalarProperty Name="id_user" ColumnName="id_user" />
+          <ScalarProperty Name="NumWilaya_Request" ColumnName="NumWilaya_Request" />
+          <ScalarProperty Name="Year_Request" ColumnName="Year_Request" />
+          <ScalarProperty Name="id_request" ColumnName="id_request" />
+          <ScalarProperty Name="id_action" ColumnName="id_action" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetRoles">
+      <EntityTypeMapping TypeName="requeteModel.AspNetRoles">
+        <MappingFragment StoreEntitySet="AspNetRoles">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUserClaims">
+      <EntityTypeMapping TypeName="requeteModel.AspNetUserClaim">
+        <MappingFragment StoreEntitySet="AspNetUserClaims">
+          <ScalarProperty Name="ClaimValue" ColumnName="ClaimValue" />
+          <ScalarProperty Name="ClaimType" ColumnName="ClaimType" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUserLogins">
+      <EntityTypeMapping TypeName="requeteModel.AspNetUserLogins">
+        <MappingFragment StoreEntitySet="AspNetUserLogins">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="ProviderKey" ColumnName="ProviderKey" />
+          <ScalarProperty Name="LoginProvider" ColumnName="LoginProvider" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUsers">
+      <EntityTypeMapping TypeName="requeteModel.AspNetUsers">
+        <MappingFragment StoreEntitySet="AspNetUsers">
+          <ScalarProperty Name="Diplome" ColumnName="Diplome" />
+          <ScalarProperty Name="Date_Recrutement" ColumnName="Date_Recrutement" />
+          <ScalarProperty Name="Prenom" ColumnName="Prenom" />
+          <ScalarProperty Name="Nom" ColumnName="Nom" />
+          <ScalarProperty Name="Matricule" ColumnName="Matricule" />
+          <ScalarProperty Name="AccessFailedCount" ColumnName="AccessFailedCount" />
+          <ScalarProperty Name="LockoutEnabled" ColumnName="LockoutEnabled" />
+          <ScalarProperty Name="LockoutEndDateUtc" ColumnName="LockoutEndDateUtc" />
+          <ScalarProperty Name="TwoFactorEnabled" ColumnName="TwoFactorEnabled" />
+          <ScalarProperty Name="PhoneNumberConfirmed" ColumnName="PhoneNumberConfirmed" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="SecurityStamp" ColumnName="SecurityStamp" />
+          <ScalarProperty Name="PasswordHash" ColumnName="PasswordHash" />
+          <ScalarProperty Name="EmailConfirmed" ColumnName="EmailConfirmed" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Hometown" ColumnName="Hometown" />
+          <ScalarProperty Name="CodeWilaya" ColumnName="CodeWilaya" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BAL_User">
+      <EntityTypeMapping TypeName="requeteModel.BAL_User">
+        <MappingFragment StoreEntitySet="BAL_User">
+          <ScalarProperty Name="Date_Message" ColumnName="Date_Message" />
+          <ScalarProperty Name="Id_User_Destination" ColumnName="Id_User_Destination" />
+          <ScalarProperty Name="link" ColumnName="link" />
+          <ScalarProperty Name="State_Message" ColumnName="State_Message" />
+          <ScalarProperty Name="id_user" ColumnName="id_user" />
+          <ScalarProperty Name="Message" ColumnName="Message" />
+          <ScalarProperty Name="Id_Message" ColumnName="Id_Message" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Communes">
+      <EntityTypeMapping TypeName="requeteModel.Communes">
+        <MappingFragment StoreEntitySet="Commune">
+          <ScalarProperty Name="Code_Wilaya" ColumnName="Code_Wilaya" />
+          <ScalarProperty Name="CodePostal" ColumnName="CodePostal" />
+          <ScalarProperty Name="NomCommune" ColumnName="NomCommune" />
+          <ScalarProperty Name="CommuneId" ColumnName="CommuneId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LevelOfStrucure">
+      <EntityTypeMapping TypeName="requeteModel.LevelOfStrucure">
+        <MappingFragment StoreEntitySet="LevelOfStrucure">
+          <ScalarProperty Name="LevelParentId" ColumnName="LevelParentId" />
+          <ScalarProperty Name="IntituleAr" ColumnName="IntituleAr" />
+          <ScalarProperty Name="IntituleFr" ColumnName="IntituleFr" />
+          <ScalarProperty Name="LevelStructureId" ColumnName="LevelStructureId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Links">
+      <EntityTypeMapping TypeName="requeteModel.Link">
+        <MappingFragment StoreEntitySet="Links">
+          <ScalarProperty Name="extension" ColumnName="extension" />
+          <ScalarProperty Name="Year_Request" ColumnName="Year_Request" />
+          <ScalarProperty Name="NumWilaya_Request" ColumnName="NumWilaya_Request" />
+          <ScalarProperty Name="Id_Request" ColumnName="Id_Request" />
+          <ScalarProperty Name="Link1" ColumnName="Link" />
+          <ScalarProperty Name="Guid" ColumnName="Guid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Message_Request">
+      <EntityTypeMapping TypeName="requeteModel.Message_Request">
+        <MappingFragment StoreEntitySet="Message_Request">
+          <ScalarProperty Name="num_wilayaRequest" ColumnName="num_wilayaRequest" />
+          <ScalarProperty Name="YearRequest" ColumnName="YearRequest" />
+          <ScalarProperty Name="NumRequest" ColumnName="NumRequest" />
+          <ScalarProperty Name="Date_Message" ColumnName="Date_Message" />
+          <ScalarProperty Name="Id_User_Destination" ColumnName="Id_User_Destination" />
+          <ScalarProperty Name="link" ColumnName="link" />
+          <ScalarProperty Name="State_Message" ColumnName="State_Message" />
+          <ScalarProperty Name="id_user" ColumnName="id_user" />
+          <ScalarProperty Name="Message" ColumnName="Message" />
+          <ScalarProperty Name="MessageId" ColumnName="MessageId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Missions">
+      <EntityTypeMapping TypeName="requeteModel.Mission">
+        <MappingFragment StoreEntitySet="Missions">
+          <ScalarProperty Name="mission1" ColumnName="mission" />
+          <ScalarProperty Name="num" ColumnName="num" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Objet_Disp">
+      <EntityTypeMapping TypeName="requeteModel.Objet_Disp">
+        <MappingFragment StoreEntitySet="Objet_Disp">
+          <ScalarProperty Name="PhaseId" ColumnName="PhaseId" />
+          <ScalarProperty Name="ObjectNum" ColumnName="ObjectNum" />
+          <ScalarProperty Name="objet" ColumnName="objet" />
+          <ScalarProperty Name="id_objet" ColumnName="id_objet" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Permissions_Role">
+      <EntityTypeMapping TypeName="requeteModel.Permissions_Role">
+        <MappingFragment StoreEntitySet="Permissions_Role">
+          <ScalarProperty Name="Permission_Value" ColumnName="Permission_Value" />
+          <ScalarProperty Name="Permission_Type" ColumnName="Permission_Type" />
+          <ScalarProperty Name="Id_Role" ColumnName="Id_Role" />
+          <ScalarProperty Name="Id_Permission" ColumnName="Id_Permission" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PhaseObject">
+      <EntityTypeMapping TypeName="requeteModel.PhaseObject">
+        <MappingFragment StoreEntitySet="PhaseObject">
+          <ScalarProperty Name="MissionId" ColumnName="MissionId" />
+          <ScalarProperty Name="PhaseName" ColumnName="PhaseName" />
+          <ScalarProperty Name="PhaseId" ColumnName="PhaseId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="relances">
+      <EntityTypeMapping TypeName="requeteModel.relance">
+        <MappingFragment StoreEntitySet="relances">
+          <ScalarProperty Name="Description_relance" ColumnName="Description_relance" />
+          <ScalarProperty Name="date_relance" ColumnName="date_relance" />
+          <ScalarProperty Name="id_transmission" ColumnName="id_transmission" />
+          <ScalarProperty Name="NumWilaya_Request" ColumnName="NumWilaya_Request" />
+          <ScalarProperty Name="Year_Request" ColumnName="Year_Request" />
+          <ScalarProperty Name="id_requete" ColumnName="id_requete" />
+          <ScalarProperty Name="id_relances" ColumnName="id_relances" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="requerant">
+      <EntityTypeMapping TypeName="requeteModel.requerant">
+        <MappingFragment StoreEntitySet="requerant">
+          <ScalarProperty Name="Num_Dossier" ColumnName="Num_Dossier" />
+          <ScalarProperty Name="Prenom_CAnimateur" ColumnName="Prenom_CAnimateur" />
+          <ScalarProperty Name="Nom_CAnimateur" ColumnName="Nom_CAnimateur" />
+          <ScalarProperty Name="id_wilaya" ColumnName="id_wilaya" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Tel" ColumnName="Tel" />
+          <ScalarProperty Name="Adresse" ColumnName="Adresse" />
+          <ScalarProperty Name="Date_Naissance" ColumnName="Date_Naissance" />
+          <ScalarProperty Name="SEXE" ColumnName="SEXE" />
+          <ScalarProperty Name="prenom_requerant" ColumnName="prenom_requerant" />
+          <ScalarProperty Name="nom_requerant" ColumnName="nom_requerant" />
+          <ScalarProperty Name="num" ColumnName="num" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="State_Request">
+      <EntityTypeMapping TypeName="requeteModel.State_Request">
+        <MappingFragment StoreEntitySet="State_Request">
+          <ScalarProperty Name="nom_state" ColumnName="nom_state" />
+          <ScalarProperty Name="id_state" ColumnName="id_state" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Structures">
+      <EntityTypeMapping TypeName="requeteModel.Structure">
+        <MappingFragment StoreEntitySet="Structure">
+          <ScalarProperty Name="StructureParentId" ColumnName="StructureParentId" />
+          <ScalarProperty Name="LevelId" ColumnName="LevelId" />
+          <ScalarProperty Name="IntituleAr" ColumnName="IntituleAr" />
+          <ScalarProperty Name="IntituleFr" ColumnName="IntituleFr" />
+          <ScalarProperty Name="StructureId" ColumnName="StructureId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StructureUser">
+      <EntityTypeMapping TypeName="requeteModel.StructureUser">
+        <MappingFragment StoreEntitySet="StructureUser">
+          <ScalarProperty Name="DateEnd" ColumnName="DateEnd" />
+          <ScalarProperty Name="DateBegin" ColumnName="DateBegin" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="StructureId" ColumnName="StructureId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StructureWilayas">
+      <EntityTypeMapping TypeName="requeteModel.StructureWilaya">
+        <MappingFragment StoreEntitySet="StructureWilaya">
+          <ScalarProperty Name="DateEnd" ColumnName="DateEnd" />
+          <ScalarProperty Name="DateBegin" ColumnName="DateBegin" />
+          <ScalarProperty Name="StructureId" ColumnName="StructureId" />
+          <ScalarProperty Name="WilayaNum" ColumnName="WilayaNum" />
+          <ScalarProperty Name="WilayaStructureId" ColumnName="WilayaStructureId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="requeteModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="definition" ColumnName="definition" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Transmission">
+      <EntityTypeMapping TypeName="requeteModel.Transmission">
+        <MappingFragment StoreEntitySet="Transmission">
+          <ScalarProperty Name="mode_trans" ColumnName="mode_trans" />
+          <ScalarProperty Name="id_trans" ColumnName="id_trans" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="types">
+      <EntityTypeMapping TypeName="requeteModel.types">
+        <MappingFragment StoreEntitySet="types">
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="id_types" ColumnName="id_types" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserManageStructures">
+      <EntityTypeMapping TypeName="requeteModel.UserManageStructure">
+        <MappingFragment StoreEntitySet="UserManageStructure">
+          <ScalarProperty Name="PosteOccupe" ColumnName="PosteOccupe" />
+          <ScalarProperty Name="DateEnd" ColumnName="DateEnd" />
+          <ScalarProperty Name="DateBegin" ColumnName="DateBegin" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="StructureId" ColumnName="StructureId" />
+          <ScalarProperty Name="userManagerStructureId" ColumnName="userManagerStructureId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Voie_Transmission">
+      <EntityTypeMapping TypeName="requeteModel.Voie_Transmission">
+        <MappingFragment StoreEntitySet="Voie_Transmission">
+          <ScalarProperty Name="voie_trans" ColumnName="voie_trans" />
+          <ScalarProperty Name="id_voie" ColumnName="id_voie" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="wilaya">
+      <EntityTypeMapping TypeName="requeteModel.wilayas">
+        <MappingFragment StoreEntitySet="wilayas">
+          <ScalarProperty Name="wilaya" ColumnName="wilaya" />
+          <ScalarProperty Name="num" ColumnName="num" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="AspNetUserRoles" TypeName="requeteModel.AspNetUserRoles" StoreEntitySet="AspNetUserRoles">
+      <EndProperty Name="AspNetUsers">
+        <ScalarProperty Name="Id" ColumnName="UserId" />
+      </EndProperty>
+      <EndProperty Name="AspNetRoles">
+        <ScalarProperty Name="Id" ColumnName="RoleId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <EntitySetMapping Name="Requests">
+      <EntityTypeMapping TypeName="requeteModel.Request">
+        <MappingFragment StoreEntitySet="Request">
+          <ScalarProperty Name="DispositionPriseId" ColumnName="DispositionPriseId" />
+          <ScalarProperty Name="MotifId" ColumnName="MotifId" />
+          <ScalarProperty Name="User_Inserted" ColumnName="User_Inserted" />
+          <ScalarProperty Name="id_Voie_Trans" ColumnName="id_Voie_Trans" />
+          <ScalarProperty Name="Ref_Validation" ColumnName="Ref_Validation" />
+          <ScalarProperty Name="Date_Envoi" ColumnName="Date_Envoi" />
+          <ScalarProperty Name="result_traitement" ColumnName="result_traitement" />
+          <ScalarProperty Name="id_trans" ColumnName="id_trans" />
+          <ScalarProperty Name="corp_requete" ColumnName="corp_requete" />
+          <ScalarProperty Name="num_requerant" ColumnName="num_requerant" />
+          <ScalarProperty Name="id_type" ColumnName="id_type" />
+          <ScalarProperty Name="Date_Insertion" ColumnName="Date_Insertion" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="id_state" ColumnName="id_state" />
+          <ScalarProperty Name="CommuneId" ColumnName="CommuneId" />
+          <ScalarProperty Name="num_wilaya" ColumnName="num_wilaya" />
+          <ScalarProperty Name="Year" ColumnName="Year" />
+          <ScalarProperty Name="num" ColumnName="num" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DispositionPrise">
+      <EntityTypeMapping TypeName="requeteModel.DispositionPrise">
+        <MappingFragment StoreEntitySet="DispositionPrise">
+          <ScalarProperty Name="ObjectId" ColumnName="ObjectId" />
+          <ScalarProperty Name="DispositionName" ColumnName="DispositionName" />
+          <ScalarProperty Name="DispositionPriseId" ColumnName="DispositionPriseId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Motif">
+      <EntityTypeMapping TypeName="requeteModel.Motif">
+        <MappingFragment StoreEntitySet="Motif">
+          <ScalarProperty Name="ObjectId" ColumnName="ObjectId" />
+          <ScalarProperty Name="MotifName" ColumnName="MotifName" />
+          <ScalarProperty Name="MotifId" ColumnName="MotifId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

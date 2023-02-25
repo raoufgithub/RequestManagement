@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ribModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="ribEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="ACCESAgentList_" EntityType="ribModel.ACCESAgentList_" />
+  </EntityContainer>
+  <EntityType Name="ACCESAgentList_">
+    <Key>
+      <PropertyRef Name="MATRICULE" />
+    </Key>
+    <Property Name="Agences_de__Wilaya" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="username" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="NOMS" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PRENOMS" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="MATRICULE" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="DATE_RECRUTEMENT" Type="DateTime" Precision="3" />
+    <Property Name="POSTE_OCCUPE" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="DIPLOME_" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+</Schema>

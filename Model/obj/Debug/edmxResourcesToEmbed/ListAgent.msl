@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ribModelStoreContainer" CdmEntityContainer="ribEntities">
+    <EntitySetMapping Name="ACCESAgentList_">
+      <EntityTypeMapping TypeName="ribModel.ACCESAgentList_">
+        <MappingFragment StoreEntitySet="ACCESAgentList$">
+          <ScalarProperty Name="DIPLOME_" ColumnName="DIPLOME " />
+          <ScalarProperty Name="POSTE_OCCUPE" ColumnName="POSTE OCCUPE" />
+          <ScalarProperty Name="DATE_RECRUTEMENT" ColumnName="DATE RECRUTEMENT" />
+          <ScalarProperty Name="MATRICULE" ColumnName="MATRICULE" />
+          <ScalarProperty Name="PRENOMS" ColumnName="PRENOMS" />
+          <ScalarProperty Name="NOMS" ColumnName="NOMS" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="Agences_de__Wilaya" ColumnName="Agences de  Wilaya" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

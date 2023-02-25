@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="2eb9449b9a024f199cf1f8905ffb043f" Name="Diagram1">
+        <EntityTypeShape EntityType="requeteModel.C__MigrationHistory" Width="1.5" PointX="3.75" PointY="3.75" />
+        <EntityTypeShape EntityType="requeteModel.action_User_Request" Width="1.5" PointX="7.5" PointY="14.25" />
+        <EntityTypeShape EntityType="requeteModel.AspNetRoles" Width="1.5" PointX="3" PointY="35.75" />
+        <EntityTypeShape EntityType="requeteModel.AspNetUserClaim" Width="1.5" PointX="7.5" PointY="44.875" />
+        <EntityTypeShape EntityType="requeteModel.AspNetUserLogins" Width="1.5" PointX="7.5" PointY="38.875" />
+        <EntityTypeShape EntityType="requeteModel.AspNetUsers" Width="1.5" PointX="5.25" PointY="33.375" />
+        <EntityTypeShape EntityType="requeteModel.BAL_User" Width="1.5" PointX="7.5" PointY="41.375" />
+        <EntityTypeShape EntityType="requeteModel.Communes" Width="1.5" PointX="3" PointY="12.25" />
+        <EntityTypeShape EntityType="requeteModel.LevelOfStrucure" Width="1.5" PointX="1.5" PointY="3.375" />
+        <EntityTypeShape EntityType="requeteModel.Link" Width="1.5" PointX="7.5" PointY="25.75" />
+        <EntityTypeShape EntityType="requeteModel.Message_Request" Width="1.5" PointX="7.5" PointY="9.875" />
+        <EntityTypeShape EntityType="requeteModel.Mission" Width="1.5" PointX="1.5" PointY="28.25" />
+        <EntityTypeShape EntityType="requeteModel.Objet_Disp" Width="1.5" PointX="3" PointY="25" />
+        <EntityTypeShape EntityType="requeteModel.Permissions_Role" Width="1.5" PointX="5.25" PointY="30.25" />
+        <EntityTypeShape EntityType="requeteModel.PhaseObject" Width="1.5" PointX="0.75" PointY="25.125" />
+        <EntityTypeShape EntityType="requeteModel.relance" Width="1.5" PointX="10.5" PointY="14.25" />
+        <EntityTypeShape EntityType="requeteModel.requerant" Width="1.5" PointX="3" PointY="15.25" />
+        <EntityTypeShape EntityType="requeteModel.State_Request" Width="1.5" PointX="3" PointY="30.875" />
+        <EntityTypeShape EntityType="requeteModel.Structure" Width="1.5" PointX="0.75" PointY="7" />
+        <EntityTypeShape EntityType="requeteModel.StructureUser" Width="1.5" PointX="10.5" PointY="22.375" />
+        <EntityTypeShape EntityType="requeteModel.StructureWilaya" Width="1.5" PointX="3" PointY="8.375" />
+        <EntityTypeShape EntityType="requeteModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="0.75" />
+        <EntityTypeShape EntityType="requeteModel.Transmission" Width="1.5" PointX="3" PointY="0.75" />
+        <EntityTypeShape EntityType="requeteModel.types" Width="1.5" PointX="3" PointY="22.625" />
+        <EntityTypeShape EntityType="requeteModel.UserManageStructure" Width="1.5" PointX="7.5" PointY="22.125" />
+        <EntityTypeShape EntityType="requeteModel.Voie_Transmission" Width="1.5" PointX="3" PointY="20.25" />
+        <EntityTypeShape EntityType="requeteModel.wilayas" Width="1.5" PointX="0.75" PointY="11.5" />
+        <AssociationConnector Association="requeteModel.FK_action_User_Request_User" />
+        <AssociationConnector Association="requeteModel.FK_Permissions_Role" />
+        <AssociationConnector Association="requeteModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" />
+        <AssociationConnector Association="requeteModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" />
+        <AssociationConnector Association="requeteModel.FK_BAL_User_UserDestin" />
+        <AssociationConnector Association="requeteModel.FK_BAL_User_UserExped" />
+        <AssociationConnector Association="requeteModel.FK_Message_Request_AspNetUser" />
+        <AssociationConnector Association="requeteModel.FK_Message_Request_AspNetUserDestination" />
+        <AssociationConnector Association="requeteModel.FK_StructureUser_User" />
+        <AssociationConnector Association="requeteModel.FK_UserManageStructure_User" />
+        <AssociationConnector Association="requeteModel.FK_Commune_Wilaya" />
+        <AssociationConnector Association="requeteModel.FK_LevelOfStrucure_LevelOfStrucure" />
+        <AssociationConnector Association="requeteModel.FK_Structure_Level" />
+        <AssociationConnector Association="requeteModel.FK_PhaseObject_Mission" />
+        <AssociationConnector Association="requeteModel.FK_Objet_Disp_Phase" />
+        <AssociationConnector Association="requeteModel.FK_relances_transmission" />
+        <AssociationConnector Association="requeteModel.FK_requerant_wilaya" />
+        <AssociationConnector Association="requeteModel.FK_Structure_Structure" />
+        <AssociationConnector Association="requeteModel.FK_StructureUser_Structure" />
+        <AssociationConnector Association="requeteModel.FK_StructureWilaya_Structure" />
+        <AssociationConnector Association="requeteModel.FK_UserManageStructure_Structure" />
+        <AssociationConnector Association="requeteModel.FK_StructureWilaya_Wilaya" />
+        <AssociationConnector Association="requeteModel.AspNetUserRoles" />
+        <EntityTypeShape EntityType="requeteModel.Request" Width="1.5" PointX="12.75" PointY="22.125" />
+        <AssociationConnector Association="requeteModel.FK_action_User_Request_Request" />
+        <AssociationConnector Association="requeteModel.FK_reclamation_Commune" />
+        <AssociationConnector Association="requeteModel.FK_Links_Request" />
+        <AssociationConnector Association="requeteModel.FK_Message_Request_Request" />
+        <AssociationConnector Association="requeteModel.FK_relances_Request" />
+        <AssociationConnector Association="requeteModel.FK_reclamation_rquerant" />
+        <AssociationConnector Association="requeteModel.FK_reclamation_state" />
+        <AssociationConnector Association="requeteModel.FK_reclamation_transmission" />
+        <AssociationConnector Association="requeteModel.FK_reclamation_type" />
+        <AssociationConnector Association="requeteModel.FK_reclamation_Voie_Trans" />
+        <EntityTypeShape EntityType="requeteModel.DispositionPrise" Width="1.5" PointX="5.25" PointY="23.875" />
+        <EntityTypeShape EntityType="requeteModel.Motif" Width="1.5" PointX="5.25" PointY="26.5" />
+        <AssociationConnector Association="requeteModel.FK_DispositionPrise_Object" />
+        <AssociationConnector Association="requeteModel.FK_Request_Disposition" />
+        <AssociationConnector Association="requeteModel.FK_Motif_Object" />
+        <AssociationConnector Association="requeteModel.FK_Request_Motif" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

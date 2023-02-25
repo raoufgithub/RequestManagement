@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ribModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="ACCESAgentList$">
+    <Key>
+      <PropertyRef Name="MATRICULE" />
+    </Key>
+    <Property Name="Agences de  Wilaya" Type="nvarchar(max)" />
+    <Property Name="username" Type="nvarchar(max)" />
+    <Property Name="NOMS" Type="nvarchar(max)" />
+    <Property Name="PRENOMS" Type="nvarchar(max)" />
+    <Property Name="MATRICULE" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="DATE RECRUTEMENT" Type="datetime" />
+    <Property Name="POSTE OCCUPE" Type="nvarchar(max)" />
+    <Property Name="DIPLOME " Type="nvarchar(max)" />
+  </EntityType>
+  <EntityContainer Name="ribModelStoreContainer">
+    <EntitySet Name="ACCESAgentList$" EntityType="Self.ACCESAgentList$" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

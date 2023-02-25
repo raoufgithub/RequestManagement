@@ -1,0 +1,62 @@
+﻿.ComponentCss{
+    /*width: 25%;*/
+    /*padding: 12px 20px;*/
+    padding: 4px 5px;
+    margin: 8px 0;
+    box-sizing: border-box;
+
+
+    border-radius: 4px;
+  direction: ltr;
+  
+  border: 1px solid #6C60DA;
+    background: #E8E8E8;
+
+    height : 30px
+}
+.FileUpload1{
+        padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+
+
+    border-radius: 4px;
+  direction: ltr;
+  
+  
+    
+}
+
+.textarea{
+    position : center;
+    margin-left : 5px;
+    margin-right : 5px;
+    width : 90%;
+    height: 300px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #E8E8E8;
+    border: 1px solid #6C60DA;
+    /*background: #E8E8E8;*/
+    resize: none;
+}
+.Button_SendRequest{
+    height : 35px;
+    width : 50%;
+
+    padding: 4px 5px;
+    margin: 40px 0;
+    box-sizing: border-box;
+
+
+    border-radius: 4px;
+    direction: ltr;
+  
+    border: 1px solid #6C60DA;
+    background: #E8E8E8;
+}
+.divAddRequest{
+    position : center;
+}

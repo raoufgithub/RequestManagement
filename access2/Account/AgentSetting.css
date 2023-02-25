@@ -1,0 +1,100 @@
+﻿
+
+#container {
+    width: 970px;
+    background-color: #FFF;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 100px;
+    position : center;
+}
+.ComponentLeft {
+  border-radius: 4px;
+  direction: ltr;
+  position :relative;
+  
+  border: 1px solid #6C60DA;
+    background: #E8E8E8;
+    left: 2px;
+    top: 0px;
+    height: 45px;
+}
+
+.Picture-Message{
+    background:url('Message-48.png')
+}
+
+
+.LabelCss {
+  border-radius: 4px;
+  direction: ltr;
+  
+  width : 200px;
+    background: #E8E8E8;
+}
+
+
+.ComponentValidation {
+  border-radius: 4px;
+  direction: ltr;
+  
+  border: 1px solid #6C60DA;
+    background: #B4B0F6;
+    width : 200px;
+    height : 25px;
+}
+.DivCssValidation {
+  border-radius: 4px;
+  direction: ltr;
+  background: #B4B0F6;
+  width: 1025px;
+  position : relative;
+  left : 10px;
+}
+.DivCssRelance {
+  border-radius: 4px;
+  direction: ltr;
+  
+  width: 1025px;
+  position : relative;
+  left : 25px;
+    top: 0px;
+    height: 384px;
+}
+.ComponentDescription {
+  border-radius: 4px;
+  direction: ltr;
+
+  border: 1px solid #6C60DA;
+  background: #E8E8E8;
+}
+.ButtonCss {
+  border-radius: 10px;
+  direction: ltr;
+
+  /*position: relative;
+  
+  left: 350px;*/
+  border: 1px solid #6C60DA;
+  
+}
+
+body
+{
+    /*used for the body of the loginPopup Page*/
+  background-color: #746BA1;
+}
+.center-div
+{
+  /*used for the logform's div of the loginPopup Page*/
+  position: relative;
+  margin: auto;
+  
+  
+  background-color: #F8F8F8;
+  border-radius: 3px;
+    top: 0px;
+    left: 20px;
+    height: 624px;
+    width: 849px;
+}

@@ -1,0 +1,938 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="view.MasterPages.Site" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title>REQUETE Page d'Acceuil</title>
+    <link id="site" href="Site.css" rel="stylesheet" type="text/css" runat="server"    />
+    <link id="common" href="Common.css" rel="stylesheet" type="text/css" runat="server"/>
+    <link id="grid" href="grids.css" rel="stylesheet" type="text/css" runat="server"   />
+    
+    <link href="../Content/bootstrap.css" rel="stylesheet" />
+    <script src="../Scripts/jquery-1.10.2.min.js"></script>
+    <script src="../Scripts/bootstrap.min.js"></script>
+    <%--    <link href="bootstrap-3.3.4-dist/css/bootstrap-theme.css" rel="stylesheet" />
+    <link href="bootstrap-3.3.4-dist/css/bootstrap.min.css" rel="stylesheet" />--%>
+    
+    <script type="text/javascript" src="bootstrap-3.3.4-dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="Scripts/jquery-1.10.2.min.js"></script>
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+
+
+
+    <link href="MasterSite.css" rel="stylesheet" />
+
+
+
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+        
+    </asp:ContentPlaceHolder>
+
+
+
+
+        <%--<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">--%>
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="http://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="http://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script type="text/javascript">
+        function ShowPopup() {
+            $("#btnShowPopup").click();
+        }
+    </script>
+
+
+    
+            <script type="text/javascript">
+                    function openModal() {
+                        $('#myModal').modal('show');
+                    }
+            </script>
+
+
+</head>
+<body onresize="resizeWindow()" onload="resizeWindow()">
+    
+
+    <form id="Form1" runat="server" class="row">
+    <!-- Loading -->
+        <script type="text/javascript">
+            var baseUrl = "<%= ResolveUrl("~/") %>";
+
+            function ResolveUrl(url) {
+                if (url.indexOf("~/") == 0) {
+                    url = baseUrl + url.substring(2);
+                }
+                return url;
+            }
+
+            function getQuerystring(key, default_) {
+                if (default_ == null) default_ = "";
+                key = key.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
+                var regex = new RegExp("[\\?&]" + key + "=([^&#]*)");
+                var qs = regex.exec(window.location.href);
+                if (qs == null)
+                    return default_;
+                else
+                    return qs[1];
+            }
+
+            $(function firstMenu() {
+
+                var element, current;
+                // verify if a previous menu was selected.
+                element = $('#' + getQuerystring('parent', '0')).get(0);
+                current = $('#' + getQuerystring('current', '0')).get(0);
+
+                if (current != null) {
+                    $('#' + current.id).css('background-color', "#FFE88C");
+                    $('#' + current.id).css('border-width', "1px");
+                    $('#' + current.id).css('border-color', "#D69C00");
+                }
+
+                if (element == null)
+                    element = $('.navSelect a').filter(function () { return $(this).css("display") != "none" }).first().get(0);
+
+                if (element != null) {
+                    $('#selectedMenuContent').children().remove();
+                    $('#selectedMenuContent').append($('#' + element.id).next().children('a').clone(true, true));
+
+                    // Set the header text and background image according to the first menu.           
+                    document.getElementById("selectedMenuHeader").innerHTML = element.innerHTML;
+                    $('#' + element.id).css('background-image', "url(" + ResolveUrl('~/MasterPages/images/nav_link_hover.png') + ")");
+                    $('#' + element.id).css('background-repeat', "repeat-x");
+                    // Save the id of the selected element.
+                    document.getElementById("prevSelectedMenu").value = element.id;
+                }
+            });
+
+            function SelectMenu(id) {
+                // get the previous selected element id.
+                var prevSelectedMenu = document.getElementById("prevSelectedMenu").value;
+
+                if (prevSelectedMenu != null && prevSelectedMenu != id && prevSelectedMenu.toString().length > 0) {
+                    // Set the header text and background image according to the selected menu.
+                    document.getElementById("selectedMenuHeader").innerHTML = document.getElementById(id).innerHTML;
+                    $('#' + id).css('background-image', "url(" + ResolveUrl('~/MasterPages/images/nav_link_hover.png') + ")");
+                    $('#' + id).css('background-repeat', "repeat-x");
+
+                    // Remove the background image of the previous selected element.
+                    $('#' + prevSelectedMenu).removeAttr('style');//, "url("+ResolveUrl('~/MasterPages/images/nav_link.png')+")");
+
+                    // Save the id of the selected element.
+                    document.getElementById("prevSelectedMenu").value = id;
+
+                    // Set the children elements "a" in the selectedMenuContent div.           
+                    $('#selectedMenuContent').children().remove();
+                    $('#selectedMenuContent').append($('#' + id).next().find('a').clone(true, true));
+                }
+            }
+
+            function SelectAll(frmId, id) {
+                var frm = document.getElementById(frmId);
+                for (i = 1; i < frm.rows.length; i++) {
+                    var checkbox = frm.rows[i].cells[0].childNodes[1];
+                    if (checkbox != null)
+                        checkbox.checked = document.getElementById(id).checked;
+                }
+            };
+
+            function resizeWindow() {
+                var windowHeight = getWindowHeight();
+
+                document.getElementById("content").style.height = (windowHeight - 110) + "px";
+                document.getElementById("navigation").style.height = (windowHeight - 110) + "px";
+                document.getElementById("contentPanel").style.height = (windowHeight - 160) + "px";
+                $('#selectedMenuContent').css('height', $('#navigation').height() - $('#navSelect').height() - 47);
+
+            }
+
+            function getWindowHeight() {
+                var windowHeight = 0;
+                if (typeof (window.innerHeight) == 'number') {
+                    windowHeight = window.innerHeight;
+                }
+                else {
+                    if (document.documentElement && document.documentElement.clientHeight) {
+                        windowHeight = document.documentElement.clientHeight;
+                    }
+                    else {
+                        if (document.body && document.body.clientHeight) {
+                            windowHeight = document.body.clientHeight;
+                        }
+                    }
+                }
+                return windowHeight;
+            }
+
+    </script>
+    <div class="header">
+        <div>
+            <asp:LoginView ID="LoginView1" runat="server" ViewStateMode="Disabled">
+                        <AnonymousTemplate>
+
+                            <ul class="nav navbar-nav navbar-right">
+                                
+                                <li>
+                                    <a runat="server" href="~/Account/Login">Log in</a></li>
+                            </ul>
+                        </AnonymousTemplate>
+                        <LoggedInTemplate>
+                            
+                            <ul id="Topicality" class="nav navbar-nav navbar-right">
+                                
+                                                       
+                                <div>
+                                    <%--<asp:ImageButton ID="Image_Profile"  Width="70" Height="60" class="btn btn-default btn-sm dropdown-toggle" runat="server"   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" />--%>
+                                    <asp:Image ID="Image_Profile"  Width="55" Height="45" class="btn btn-default btn-sm dropdown-toggle" runat="server"   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" />
+                                </div>
+                                <div class="btn-group">
+
+                                    <asp:LinkButton ID="LinkButton19" runat="server" OnClick="LinkButton8_Click" class="btn btn-default btn-sm dropdown-toggle"   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"  > <%: GetStructure()  %> </asp:LinkButton>
+                                    <asp:LinkButton ID="LinkButton8" runat="server" OnClick="LinkButton8_Click" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <%: Context.User.Identity.GetUserName()+" (M:"+controller.Users_Controller.getUserByUserName(Context.User.Identity.GetUserName()).Matricule+")" %> </asp:LinkButton>
+                                    <ul id="Profile" class="dropdown-menu"  style="overflow-x:auto;width:auto;max-width:960px;overflow-y:auto;height:auto;max-height:350px" runat="server">
+                                      <%--<li><a href="#">Action</a></li>
+                                      <li><a href="#">Another action</a></li>--%>
+                                      <li><asp:LinkButton ID="LinkButton_Password" runat="server" OnClick="LinkButtonPassword_Click" > Modifier le Mot de Passe </asp:LinkButton></li>
+                                      <li role="separator" class="divider"></li>
+                                      <li><asp:LinkButton ID="LinkButton_Profile" runat="server" OnClick="LinkButtonProfile_Click" > Modifier le Profile </asp:LinkButton></li>
+                                      <li><asp:LinkButton ID="LinkButton_Deconnexion" runat="server" OnClick="Décon_Click"> Déconnexion </asp:LinkButton></li>
+                                      
+                                  </ul>
+                                    
+                                </div>
+                                
+                               
+
+                                 <!-- Small button group -->
+                                <div class="btn-group" >
+                                  <asp:Button ID="Button_NewRequest"  class="btn btn-default btn-sm dropdown-toggle" runat="server" Text="New Message"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" />
+                                  <ul id="Ul_NewRequest" class="dropdown-menu"  style="overflow-x:auto;width:auto;max-width:960px;overflow-y:auto;height:auto;max-height:350px" runat="server">
+                                      <%--<li><a href="#">Action</a></li>
+                                      <li><a href="#">Another action</a></li>
+                                      <li><a href="#">Something else here</a></li>
+                                      <li role="separator" class="divider"></li>
+                                      <li><a href="#">Separated link</a></li>--%>
+                                      
+                                  </ul>
+                                </div>
+                                
+                                <div class="btn-group" >
+                                  <asp:Button ID="Button_RequestMessage"  class="btn btn-default btn-sm dropdown-toggle" runat="server" Text="New Message"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" />
+                                  <ul id="Ul_RequestMessage" class="dropdown-menu"  style="overflow-x:auto;width:auto;max-width:960px;overflow-y:auto;height:auto;max-height:350px" runat="server">
+                                      <%--<li><a href="#">Action</a></li>
+                                      <li><a href="#">Another action</a></li>
+                                      <li><a href="#">Something else here</a></li>
+                                      <li role="separator" class="divider"></li>
+                                      <li><a href="#">Separated link</a></li>--%>
+                                      
+                                  </ul>
+                                </div>
+
+                                
+                                
+                                <li>
+                                    <%--<asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Log off" LogoutPageUrl="~/" OnLoggingOut="Unnamed_LoggingOut" />--%>
+                                </li>
+
+
+                                <!-- Small button group -->
+                                <div id="DIV_NewMessages" class="btn-group" >
+                                  <asp:Button ID="Button_NewMessage" visible="false"  CssClass="btn btn-default btn-sm dropdown-toggle"  runat="server" Text="New Message"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" />
+                                    <%--<asp:ImageButton ID="ImageButton1" ImageUrl="~/MasterPages/images/dropdown/Requests_Icon.ico" AlternateText="ddddddd" CssClass="btn btn-default btn-sm dropdown-toggle" Text="New Request"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"  runat="server" />--%>
+                                  <ul id="Ul_NewMessage" class="dropdown-menu"  style="overflow-x:auto;width:auto;max-width:960px;overflow-y:auto;height:auto;max-height:350px" runat="server">
+                                      <%--<li><a href="#">Action</a></li>
+                                      <li><a href="#">Another action</a></li>
+                                      <li><a href="#">Something else here</a></li>
+                                      <li role="separator" class="divider"></li>
+                                      <li><a href="#">Separated link</a></li>--%>
+                                      
+                                  </ul>
+                                </div>
+                               
+                            </ul>
+                        </LoggedInTemplate>
+                    </asp:LoginView>
+        </div>
+        <asp:ScriptManager ID="ScriptManager1" runat="server">
+        </asp:ScriptManager>
+        
+        
+        <table>
+            <tr>
+                <td>
+                    <asp:Image ID="Image1" ImageUrl="~/logo/logo2.gif" Width="50px" Height="50px" runat="server" />
+                </td>
+                <td>
+                   <span class="title">
+                        <asp:HyperLink ID="hlPHome" Text="Gestion des Requêtes" 
+                        runat="server" meta:resourcekey="hlHomeResource"></asp:HyperLink>&nbsp;
+                        <asp:HyperLink ID="hlPHome0" Text="ACCES CNAC" runat="server" 
+                        meta:resourcekey="hlHomeResource" ForeColor="#000066"></asp:HyperLink></span>
+                
+                </td>
+                
+            </tr>
+            
+        </table>
+        <br />
+    </div>
+    <div class="clear">
+    </div>
+    <div class="navigation col-lg-3 col-md-3 col-sm-3 col-xs-3 center" id="navigation">
+        <div class="subHeader">
+        </div>
+        <div>
+
+            
+
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModal-label" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModal-label">Modal title</h4>
+                </div>
+                <div class="modal-body">
+
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                   
+                    
+                    </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+                    <asp:LinkButton OnClick="LinkButton25_Click11" CssClass="btn btn-success" ID="LinkButton12" runat="server">Selectionner un requerant</asp:LinkButton>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<%--<asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Log off" LogoutPageUrl="~/" OnLoggingOut="Unnamed_LoggingOut" />--%>          
+            
+           <%--<asp:UpdatePanel runat="server">
+            <ContentTemplate>
+                <asp:Timer ID="Timer1" OnTick="Timer1_Tick" Enabled="true" Interval="5000" runat="server"></asp:Timer>
+            </ContentTemplate>
+        </asp:UpdatePanel>--%>
+
+               
+               
+        <div class="container">
+        <div class="row">
+            <button type="button" style="display: none;" id="btnShowPopup" class="btn btn-primary btn-lg"
+                data-toggle="modal" data-target="#Relance">
+                Launch demo modal</button>          
+            <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+            
+            
+            <div class="modal fade" id="Relance" tabindex="-1" role="dialog" aria-labelledby="myModal-label" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModal-Relance">Chercher un Requerant</h4>
+                </div>
+                <div class="modal-body">
+                    
+                    <%--<li><a runat="server" href="~/Account/Manage" title="Manage your account">Hello, <%: Context.User.Identity.GetUserName()  %> !</a></li>--%>
+                    
+                    
+                   <p>
+                       </p>
+                       
+
+
+
+
+    <asp:UpdatePanel ID="UpdatePanel4" runat="server" UpdateMode="Conditional">
+                    <ContentTemplate>
+                    <div id="Div3" runat="server" style="overflow-x:auto;width:960px;overflow-y:auto; height:350px" visible="true">
+                        
+                    <asp:UpdatePanel ID="UpdatePanel6" runat="server" UpdateMode="Conditional">
+                    <ContentTemplate>
+                        
+                            <asp:GridView ID="grid1" runat="server" AllowPaging="True" AutoGenerateColumns="False" BackColor="White" BorderColor="#DEDFDE" BorderStyle="None" BorderWidth="1px" CellPadding="4" DataKeyNames="num" DataSourceID="OdsRequerant" GridLines="Vertical" OnPageIndexChanging="GridView1_PageIndexChanging" ShowFooter="True" ShowHeaderWhenEmpty="True" PageSize="6" ForeColor="Black">
+
+                                                        <AlternatingRowStyle BackColor="White" />
+                                                        <Columns>
+                                                            <asp:CommandField ShowSelectButton="True" />
+                                                            <%--<asp:TemplateField HeaderText="num" SortExpression="num">--%>
+                                                            <asp:TemplateField SortExpression="num">
+                                                                <EditItemTemplate>
+                                                                    <asp:Label ID="Label30" runat="server" Text='<%# Bind("num") %>'></asp:Label>
+                                                                </EditItemTemplate>
+                                                                <FooterTemplate>
+                                                                    <asp:LinkButton ID="LinkButton25" runat="server" OnClick="LinkButton225_Click11">ajouter</asp:LinkButton>
+                                                                </FooterTemplate>
+                                                                <ItemTemplate>
+                                                                    <asp:Label ID="Label1" runat="server" Text='<%# Bind("num") %>' Visible="false"></asp:Label>
+                                                                </ItemTemplate>
+                                                            </asp:TemplateField>
+                                                            <asp:TemplateField HeaderText="Nom Requerant" SortExpression="nom_requerant">
+                                                                <EditItemTemplate>
+                                                                    <asp:TextBox ID="TextBox2" runat="server" Text='<%# Bind("nom_requerant") %>'></asp:TextBox>
+                                                                </EditItemTemplate>
+                                                                <FooterTemplate>
+                                                                    <asp:TextBox ID="TextBox30" runat="server" CssClass="FooterGrid" Height="25px" OnTextChanged="NomRequerant_Click" AutoPostBack="True" Width="100px"></asp:TextBox>
+                                                                </FooterTemplate>
+                                                                <ItemTemplate>
+                                                                    <asp:Label ID="Label2" runat="server" Text='<%# Bind("nom_requerant") %>'></asp:Label>
+                                                                </ItemTemplate>
+                                                                <HeaderStyle HorizontalAlign="Center" />
+                                                            </asp:TemplateField>
+                                                            <asp:TemplateField HeaderText="Prenom Requerant" SortExpression="prenom_requerant">
+                                                                <EditItemTemplate>
+                                                                    <asp:TextBox ID="TextBox3" runat="server" Text='<%# Bind("prenom_requerant") %>'></asp:TextBox>
+                                                                </EditItemTemplate>
+                                                                <FooterTemplate>
+                                                                    <asp:TextBox ID="TextBox31" runat="server" CssClass="FooterGrid" Height="25px" OnTextChanged="PrenomRequerant_Click" AutoPostBack="True" Width="100px"></asp:TextBox>
+                                                                </FooterTemplate>
+                                                                <ItemTemplate>
+                                                                    <asp:Label ID="Label3" runat="server" Text='<%# Bind("prenom_requerant") %>'></asp:Label>
+                                                                </ItemTemplate>
+                                                            </asp:TemplateField>
+                                                            <asp:TemplateField HeaderText="WILAYA" SortExpression="WILAYA">
+                                                                <EditItemTemplate>
+                                                                    <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="OdsWilaya" DataTextField="num" DataValueField="wilaya">
+                                                                    </asp:DropDownList>
+                                                                </EditItemTemplate>
+                                                                <FooterTemplate>
+                                                                    <asp:DropDownList ID="DropDownList3" runat="server" DataSourceID="OdsWilaya" DataTextField="wilaya" DataValueField="num" CssClass="FooterGrid" Height="25px" OnSelectedIndexChanged="Wilaya_Click" Visible='<%# isDGCell() %>' AutoPostBack="True" Width="100px">
+                                                                    </asp:DropDownList>
+                                                                    <asp:Label ID="LabelWilayaPro" runat="server" Height="25px"  Visible='<%# !isDGCell() %>' Text='<%# getAgentWilaya() %>' Width="113px" CssClass="ComponentLeft"></asp:Label>
+                                                                </FooterTemplate>
+                                                                <ItemTemplate>
+                                                                    <asp:Label ID="Label8" runat="server" Text='<%# Bind("WilayaRequerantC") %>'></asp:Label>
+                                                                </ItemTemplate>
+                                                            </asp:TemplateField>
+                                                            <asp:TemplateField HeaderText="SEXE" SortExpression="SEXE">
+                                                                <EditItemTemplate>
+                                                                    <asp:DropDownList ID="DropDownList2" runat="server">
+                                                                        <asp:ListItem></asp:ListItem>
+                                                                        <asp:ListItem>Homme</asp:ListItem>
+                                                                        <asp:ListItem>Femme</asp:ListItem>
+                                                                    </asp:DropDownList>
+                                                                </EditItemTemplate>
+                                                                <FooterTemplate>
+                                                                    
+                                                                    <asp:DropDownList ID="DropDownList4" runat="server" CssClass="FooterGrid" Height="25px" OnSelectedIndexChanged="Sexe_Click" AutoPostBack="True">
+                                                                        <asp:ListItem Value="0" Text=" "></asp:ListItem>
+                                                                        <asp:ListItem>Homme</asp:ListItem>
+                                                                        <asp:ListItem>Femme</asp:ListItem>
+                                                                    </asp:DropDownList>
+                                                                         
+                                                                </FooterTemplate>
+                                                                <ItemTemplate>
+                                                                    <asp:Label ID="Label13" runat="server" Text='<%# Bind("SEXE") %>'></asp:Label>
+                                                                </ItemTemplate>
+                                                            </asp:TemplateField>
+                                                            <asp:TemplateField HeaderText="Date Naissance" SortExpression="Date_Naissance">
+                                                                <EditItemTemplate>
+                                                                    <asp:TextBox ID="TextBox15" CssClass="datepicker" runat="server" Text='<%# Bind("Date_Naissance") %>'></asp:TextBox>
+                                                                </EditItemTemplate>
+                                                                <FooterTemplate>
+                                                                    <asp:TextBox ID="TextBox43" CssClass="datepicker" runat="server" Height="25px" OnTextChanged="Birthday_Click" AutoPostBack="True" Width="100px"></asp:TextBox>
+                                                                </FooterTemplate>
+                                                                <ItemTemplate>
+                                                                    <asp:Label ID="Label15" runat="server" Text='<%# Bind("Date_Naissance", "{0:dd/MM/yyyy}") %>'></asp:Label>
+                                                                </ItemTemplate>
+                                                            </asp:TemplateField>
+                                                            <asp:TemplateField HeaderText="Nom C.Animateur">
+                                                                <FooterTemplate>
+                                                                    <asp:TextBox ID="TextBox52" runat="server" Height="25px" Width="100px" AutoPostBack="True" CssClass="FooterGrid" OnTextChanged="TextBox_NomCAnim_TextChanged"></asp:TextBox>
+                                                                </FooterTemplate>
+                                                                <ItemTemplate>
+                                                                    <asp:Label ID="Label33" runat="server" Text='<%# Bind("Nom_CAnimateur") %>'></asp:Label>
+                                                                </ItemTemplate>
+                                                            </asp:TemplateField>
+                                                            <asp:TemplateField HeaderText="Prenom C.Animateur">
+                                                                <FooterTemplate>
+                                                                    <asp:TextBox ID="TextBox53" runat="server" Height="25px" Width="100px" AutoPostBack="True" CssClass="FooterGrid" OnTextChanged="TextBox_PrenomCAnim_TextChanged"></asp:TextBox>
+                                                                </FooterTemplate>
+                                                                <ItemTemplate>
+                                                                    <asp:Label ID="Label34" runat="server" Text='<%# Bind("Prenom_CAnimateur") %>'></asp:Label>
+                                                                </ItemTemplate>
+                                                            </asp:TemplateField>
+                                                            <asp:TemplateField HeaderText="Num Dossier" SortExpression="Num_Dossier">
+                                                                <EditItemTemplate>
+                                                                    <asp:TextBox ID="TextBoxNum_Dossier" runat="server" Text='<%# Bind("Num_Dossier") %>'></asp:TextBox>
+                                                                </EditItemTemplate>
+                                                                <FooterTemplate>
+                                                                    <asp:TextBox ID="TextBoxNum_Dossier" runat="server" CssClass="FooterGrid" Height="25px" Width="100px"></asp:TextBox>
+                                                                </FooterTemplate>
+                                                                <ItemTemplate>
+                                                                    <asp:Label ID="LabelNum_Dossier" runat="server" Text='<%# Bind("Num_Dossier") %>'></asp:Label>
+                                                                </ItemTemplate>
+                                                                <HeaderStyle HorizontalAlign="Center" />
+                                                            </asp:TemplateField>
+                                                            <asp:TemplateField HeaderText="Adresse" SortExpression="Adresse">
+                                                                <EditItemTemplate>
+                                                                    <asp:TextBox ID="TextBox4" runat="server"></asp:TextBox>
+                                                                </EditItemTemplate>
+                                                                <FooterTemplate>
+                                                                    <asp:TextBox ID="TextBox49" runat="server" CssClass="FooterGrid" Height="25px" Width="100px"></asp:TextBox>
+                                                                </FooterTemplate>
+                                                                <ItemTemplate>
+                                                                    <asp:Label ID="Label4" runat="server" Text='<%# Bind("Adresse") %>'></asp:Label>
+                                                                </ItemTemplate>
+                                                            </asp:TemplateField>
+                                                            <asp:TemplateField HeaderText="E-mail">
+                                                                <FooterTemplate>
+                                                                    <asp:TextBox ID="TextBox50" runat="server" CssClass="FooterGrid" Height="25px" Width="100px"></asp:TextBox>
+                                                                </FooterTemplate>
+                                                                <ItemTemplate>
+                                                                    <asp:Label ID="Label31" runat="server" Text='<%# Bind("Email") %>'></asp:Label>
+                                                                </ItemTemplate>
+                                                            </asp:TemplateField>
+                                                            <asp:TemplateField HeaderText="Tel">
+                                                                <FooterTemplate>
+                                                                    <asp:TextBox ID="TextBox51" runat="server" CssClass="FooterGrid" Height="25px" Width="100px"></asp:TextBox>
+                                                                </FooterTemplate>
+                                                                <ItemTemplate>
+                                                                    <asp:Label ID="Label32" runat="server" Text='<%# Bind("Tel") %>'></asp:Label>
+                                                                </ItemTemplate>
+                                                            </asp:TemplateField>
+                                                        </Columns>
+                                                        <FooterStyle BackColor="#CCCC99" />
+                                                        <HeaderStyle BackColor="#6B696B" Font-Bold="True" ForeColor="White" />
+                                                        <PagerStyle BackColor="#F7F7DE" ForeColor="Black" HorizontalAlign="Left" />
+                                                        <RowStyle BackColor="#F7F7DE" />
+                                                        <SelectedRowStyle BackColor="#CE5D5A" Font-Bold="True" ForeColor="White" />
+                                                        <SortedAscendingCellStyle BackColor="#FBFBF2" />
+                                                        <SortedAscendingHeaderStyle BackColor="#848384" />
+                                                        <SortedDescendingCellStyle BackColor="#EAEAD3" />
+                                                        <SortedDescendingHeaderStyle BackColor="#575357" />
+                                                    </asp:GridView>
+                    </ContentTemplate>
+                    </asp:UpdatePanel>
+
+                        
+                    </div>
+                    </ContentTemplate>
+                    </asp:UpdatePanel>
+
+                            
+                           
+                    
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>                   <asp:LinkButton OnClick="LinkButton25_Click11" CssClass="btn btn-success" ID="LinkButton17" runat="server">OK</asp:LinkButton>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+               </div>
+             </div>
+
+ 
+         
+        <%--<asp:GridView ID="grid11" runat="server" AllowPaging="True" AutoGenerateColumns="False" BackColor="White" BorderColor="#E7E7FF" BorderStyle="None" BorderWidth="1px" CellPadding="3" DataKeyNames="num" DataSourceID="OdsRequerant" GridLines="Horizontal" OnPageIndexChanging="GridView1_PageIndexChanging" ShowFooter="True" ShowHeaderWhenEmpty="True" PageSize="6">
+
+                                                        <AlternatingRowStyle BackColor="#F7F7F7" />
+                                                        <Columns>
+                                                            <asp:CommandField ShowSelectButton="True" />
+                                                            <asp:TemplateField HeaderText="num" SortExpression="num">
+                                                                <EditItemTemplate>
+                                                                    <asp:Label ID="Label30" runat="server" Text='<%# Bind("num") %>'></asp:Label>
+                                                                </EditItemTemplate>
+                                                                <FooterTemplate>
+                                                                    <asp:LinkButton ID="LinkButton25" runat="server" OnClick="LinkButton225_Click11">ajouter</asp:LinkButton>
+                                                                </FooterTemplate>
+                                                                <ItemTemplate>
+                                                                    <asp:Label ID="Label1" runat="server" Text='<%# Bind("num") %>'></asp:Label>
+                                                                </ItemTemplate>
+                                                            </asp:TemplateField>
+                                                            <asp:TemplateField HeaderText="Nom Requerant" SortExpression="nom_requerant">
+                                                                <EditItemTemplate>
+                                                                    <asp:TextBox ID="TextBox2" runat="server" Text='<%# Bind("nom_requerant") %>'></asp:TextBox>
+                                                                </EditItemTemplate>
+                                                                <FooterTemplate>
+                                                                    <asp:TextBox ID="TextBox30" runat="server" CssClass="LabelCss" Height="25px"></asp:TextBox>
+                                                                </FooterTemplate>
+                                                                <ItemTemplate>
+                                                                    <asp:Label ID="Label2" runat="server" Text='<%# Bind("nom_requerant") %>'></asp:Label>
+                                                                </ItemTemplate>
+                                                            </asp:TemplateField>
+                                                            <asp:TemplateField HeaderText="Prenom Requerant" SortExpression="prenom_requerant">
+                                                                <EditItemTemplate>
+                                                                    <asp:TextBox ID="TextBox3" runat="server" Text='<%# Bind("prenom_requerant") %>'></asp:TextBox>
+                                                                </EditItemTemplate>
+                                                                <FooterTemplate>
+                                                                    <asp:TextBox ID="TextBox31" runat="server" CssClass="LabelCss" Height="25px"></asp:TextBox>
+                                                                </FooterTemplate>
+                                                                <ItemTemplate>
+                                                                    <asp:Label ID="Label3" runat="server" Text='<%# Bind("prenom_requerant") %>'></asp:Label>
+                                                                </ItemTemplate>
+                                                            </asp:TemplateField>
+                                                            <asp:TemplateField HeaderText="WILAYA" SortExpression="WILAYA">
+                                                                <EditItemTemplate>
+                                                                    <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="OdsWilaya" DataTextField="num" DataValueField="wilaya">
+                                                                    </asp:DropDownList>
+                                                                </EditItemTemplate>
+                                                                <FooterTemplate>
+                                                                    <asp:DropDownList ID="DropDownList3" runat="server" DataSourceID="OdsWilaya" DataTextField="wilaya" DataValueField="num" CssClass="LabelCss" Height="25px">
+                                                                    </asp:DropDownList>
+                                                                </FooterTemplate>
+                                                                <ItemTemplate>
+                                                                    <asp:Label ID="Label8" runat="server" Text='<%# Bind("WilayaRequerantC") %>'></asp:Label>
+                                                                </ItemTemplate>
+                                                            </asp:TemplateField>
+                                                            <asp:TemplateField HeaderText="SEXE" SortExpression="SEXE">
+                                                                <EditItemTemplate>
+                                                                    <asp:DropDownList ID="DropDownList2" runat="server">
+                                                                        <asp:ListItem></asp:ListItem>
+                                                                        <asp:ListItem>Homme</asp:ListItem>
+                                                                        <asp:ListItem>Femme</asp:ListItem>
+                                                                    </asp:DropDownList>
+                                                                </EditItemTemplate>
+                                                                <FooterTemplate>
+                                                                    <asp:DropDownList ID="DropDownList4" runat="server" CssClass="LabelCss" Height="25px">
+                                                                        <asp:ListItem></asp:ListItem>
+                                                                        <asp:ListItem>Homme</asp:ListItem>
+                                                                        <asp:ListItem>Femme</asp:ListItem>
+                                                                    </asp:DropDownList>
+                                                                </FooterTemplate>
+                                                                <ItemTemplate>
+                                                                    <asp:Label ID="Label13" runat="server" Text='<%# Bind("SEXE") %>'></asp:Label>
+                                                                </ItemTemplate>
+                                                            </asp:TemplateField>
+                                                            <asp:TemplateField HeaderText="Date Naissance" SortExpression="Date_Naissance">
+                                                                <EditItemTemplate>
+                                                                    <asp:TextBox ID="TextBox15" CssClass="datepicker" runat="server" Text='<%# Bind("Date_Naissance") %>'></asp:TextBox>
+                                                                </EditItemTemplate>
+                                                                <FooterTemplate>
+                                                                    <asp:TextBox ID="TextBox43" CssClass="datepicker" runat="server" Height="25px"></asp:TextBox>
+                                                                </FooterTemplate>
+                                                                <ItemTemplate>
+                                                                    <asp:Label ID="Label15" runat="server" Text='<%# Bind("Date_Naissance") %>'></asp:Label>
+                                                                </ItemTemplate>
+                                                            </asp:TemplateField>
+                                                            <asp:TemplateField HeaderText="Adresse" SortExpression="Adresse">
+                                                                <EditItemTemplate>
+                                                                    <asp:TextBox ID="TextBox4" runat="server"></asp:TextBox>
+                                                                </EditItemTemplate>
+                                                                <FooterTemplate>
+                                                                    <asp:TextBox ID="TextBox49" runat="server" CssClass="LabelCss" Height="25px"></asp:TextBox>
+                                                                </FooterTemplate>
+                                                                <ItemTemplate>
+                                                                    <asp:Label ID="Label4" runat="server" Text='<%# Bind("Adresse") %>'></asp:Label>
+                                                                </ItemTemplate>
+                                                            </asp:TemplateField>
+                                                            <asp:TemplateField HeaderText="E-mail">
+                                                                <FooterTemplate>
+                                                                    <asp:TextBox ID="TextBox50" runat="server" CssClass="LabelCss" Height="25px"></asp:TextBox>
+                                                                </FooterTemplate>
+                                                                <ItemTemplate>
+                                                                    <asp:Label ID="Label31" runat="server" Text='<%# Bind("Email") %>'></asp:Label>
+                                                                </ItemTemplate>
+                                                            </asp:TemplateField>
+                                                            <asp:TemplateField HeaderText="Tel">
+                                                                <FooterTemplate>
+                                                                    <asp:TextBox ID="TextBox51" runat="server" CssClass="LabelCss" Height="25px"></asp:TextBox>
+                                                                </FooterTemplate>
+                                                                <ItemTemplate>
+                                                                    <asp:Label ID="Label32" runat="server" Text='<%# Bind("Tel") %>'></asp:Label>
+                                                                </ItemTemplate>
+                                                            </asp:TemplateField>
+                                                        </Columns>
+                                                        <FooterStyle BackColor="#B5C7DE" ForeColor="#4A3C8C" />
+                                                        <HeaderStyle BackColor="#4A3C8C" Font-Bold="True" ForeColor="#F7F7F7" />
+                                                        <PagerStyle BackColor="#E7E7FF" ForeColor="#4A3C8C" HorizontalAlign="Right" />
+                                                        <RowStyle BackColor="#E7E7FF" ForeColor="#4A3C8C" />
+                                                        <SelectedRowStyle BackColor="#738A9C" Font-Bold="True" ForeColor="#F7F7F7" />
+                                                        <SortedAscendingCellStyle BackColor="#F4F4FD" />
+                                                        <SortedAscendingHeaderStyle BackColor="#5A4C9D" />
+                                                        <SortedDescendingCellStyle BackColor="#D8D8F0" />
+                                                        <SortedDescendingHeaderStyle BackColor="#3E3277" />
+                                                    </asp:GridView>--%><%--<asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Log off" LogoutPageUrl="~/" OnLoggingOut="Unnamed_LoggingOut" />--%>
+            <div class="modal fade" id="Authentication" tabindex="-1" role="dialog" aria-labelledby="myModal-label" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModal-Authentication">Modal title</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <asp:Login ID="Login1" runat="server">
+            <LayoutTemplate>
+                <table cellpadding="1" cellspacing="0" style="border-collapse:collapse;">
+                    <tr>
+                        <td>
+                            <table cellpadding="0">
+                                <tr>
+                                    <td align="center" colspan="2">Log In</td>
+                                </tr>
+                                <tr>
+                                    <td align="right">
+                                        <asp:Label ID="UserNameLabel" runat="server" AssociatedControlID="UserName">User Name:</asp:Label>
+                                    </td>
+                                    <td>
+                                        <asp:TextBox ID="UserName" runat="server"></asp:TextBox>
+                                        <asp:RequiredFieldValidator ID="UserNameRequired" runat="server" ControlToValidate="UserName" ErrorMessage="User Name is required." ToolTip="User Name is required." ValidationGroup="Login1">*</asp:RequiredFieldValidator>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="right">
+                                        <asp:Label ID="PasswordLabel" runat="server" AssociatedControlID="Password">Password:</asp:Label>
+                                    </td>
+                                    <td>
+                                        <asp:TextBox ID="Password" runat="server" TextMode="Password"></asp:TextBox>
+                                        <asp:RequiredFieldValidator ID="PasswordRequired" runat="server" ControlToValidate="Password" ErrorMessage="Password is required." ToolTip="Password is required." ValidationGroup="Login1">*</asp:RequiredFieldValidator>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">
+                                        <asp:CheckBox ID="RememberMe" runat="server" Text="Remember me next time." />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="center" colspan="2" style="color:Red;">
+                                        <asp:Literal ID="FailureText" runat="server" EnableViewState="False"></asp:Literal>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="right" colspan="2">
+                                        <asp:Button ID="LoginButton" runat="server" CommandName="Login" OnClick="LoginButton_Click" Text="Log In" ValidationGroup="Login1" />
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </LayoutTemplate>
+        </asp:Login>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <asp:LinkButton OnClick="LinkButton1_Click" CssClass="btn btn-success" ID="LinkButton16" runat="server">LinkButton</asp:LinkButton>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <%--<li><a runat="server" href="~/Account/Manage" title="Manage your account">Hello, <%: Context.User.Identity.GetUserName()  %> !</a></li>--%>
+
+    
+
+    </div>
+
+        <asp:UpdatePanel ID="UpdatePanel2"  runat="server">
+            <ContentTemplate>
+                <ul >
+                    <div id="Dashboard" runat="server">
+                      <li class="active">
+                        <asp:LinkButton ID="LinkButtonTableauBordGestionnaire" runat="server" OnClick="LinkButton2_Click" 
+                            PostBackUrl="~/webforms/DashBoard.aspx" CssClass="btn btn-info" Width="180px">Tableau de bord</asp:LinkButton>
+                        </li>
+                    </div>
+                    <div id="referentials" runat="server">
+                        <li class="active">
+                            <asp:LinkButton ID="LinkButtonRéférentiel" runat="server" 
+                                class="btn btn-info" OnClick="LinkButton1_Click" Width="180px">Référentiels</asp:LinkButton>
+                            </li>
+                            <div id="Panel_Base" runat="server">
+                                <ul  style="height:100px; overflow:auto;">
+                                    <li class="default"><asp:LinkButton ID="LinkButton23" runat="server" 
+                                    PostBackUrl="~/Referentielles/Dispositif.aspx" CssClass="default">Missions CNAC</asp:LinkButton></li>
+                                    <li class="default"><asp:LinkButton ID="LinkButton1" runat="server" 
+                                    PostBackUrl="~/Referentielles/MotifDispositif.aspx">Objet de Dispositif</asp:LinkButton></li>
+                                    <li class="default"><asp:LinkButton ID="LinkButton7" runat="server" 
+                                    PostBackUrl="~/Referentielles/ModeTransmission.aspx">Modes de Transmission des Requêtes</asp:LinkButton></li>
+                                    <li class="default"><asp:LinkButton ID="LinkButton20" runat="server" 
+                                    PostBackUrl="~/Referentielles/VoieTransmission.aspx">Voies de Transmission des Requêtes</asp:LinkButton></li>
+                                    <li class="default"><asp:LinkButton ID="LinkButton24" runat="server" 
+                                    PostBackUrl="~/Referentielles/Wilayas.aspx">Wilayas</asp:LinkButton></li>
+                                    <li class="default"><asp:LinkButton ID="LinkButton4" runat="server" 
+                                    PostBackUrl="~/Referentielles/RequestTypes.aspx">Types</asp:LinkButton></li>
+                                    <li class="default"><asp:LinkButton ID="LinkButton11" runat="server" 
+                                    PostBackUrl="~/Referentielles/GridViewModal.aspx">Requerants</asp:LinkButton></li>
+                                </ul>
+                            </div>
+                    </div>
+                    <div id="Statistics" runat="server">
+                         <li class="active">
+                                <asp:LinkButton ID="LinkButtonBilans" runat="server" 
+                                OnClick="LinkButton35_Click" CssClass="btn btn-info" Width="180px">Bilans et Statistiques</asp:LinkButton>
+                            </li>
+                            <div id="Panel_TableauBord" runat="server">
+                                <ul >
+                                  <li class="default">
+                                <asp:LinkButton ID="LinkButton21" runat="server" 
+                                    PostBackUrl="../Reporting/ByObject.aspx">Les Requêtes par objets</asp:LinkButton>
+                                    </li>
+                                <li class="default">
+                                <asp:LinkButton ID="LinkButton9" runat="server" 
+                                    PostBackUrl="../Reporting/BalanceSheet.aspx">Nombre de Requêtes par wilaya</asp:LinkButton>
+                                    </li>
+                                <li class="default">
+                                <asp:LinkButton ID="LinkButton10" runat="server"
+                                    PostBackUrl="../Reporting/Bilan_Mode_Trans.aspx">Nombre de Requêtes par Mode Transmission</asp:LinkButton>
+                                    </li>
+                                    <li class="default">
+                                <asp:LinkButton ID="LinkButton18" runat="server"
+                                    PostBackUrl="../Reporting/Request_Types.aspx">Nombre de Requêtes par Type</asp:LinkButton>
+                                    </li>
+                                 </ul>
+                            </div>
+                     </div>
+
+                    <div id="Messaging" runat="server">
+                         <li class="active">
+                                <asp:LinkButton ID="LinkButton22" runat="server" 
+                                OnClick="LinkButtonMessaging_Click" CssClass="btn btn-info" Width="180px">Message</asp:LinkButton>
+                            </li>
+                            <div id="Panel_Messaging" runat="server">
+                                <ul >
+                                  <li class="default">
+                                <asp:LinkButton ID="LinkButton26" runat="server" 
+                                    PostBackUrl="../Messaging/FindAgent.aspx">Envoyer des Messages</asp:LinkButton>
+                                    </li>
+                                
+                                 </ul>
+                            </div>
+                     </div>
+                    <div id="Role_Management" runat="server"> 
+                        <li class="active">
+                            <asp:LinkButton ID="LinkButtonSecurite" runat="server" 
+                                OnClick="LinkButton4_Click" CssClass="btn btn-info" Width="180px">Gestion des privileges</asp:LinkButton>
+                            </li>
+                            <div id="Panel_Gestion" runat="server">
+                                <ul>
+                                    <li class="default">
+                                <asp:LinkButton ID="LinkButton5" runat="server" 
+                                    PostBackUrl="~/Referentielles/Role.aspx">Roles</asp:LinkButton>
+                                        </li>
+                                    <li class="default">
+                                <asp:LinkButton ID="LinkButton6" runat="server" 
+                                    PostBackUrl="~/Account/RegisterAgents.aspx">Utilisateur</asp:LinkButton>
+                                        </li>
+                                    <li class="default">
+                                <asp:LinkButton ID="LinkButton27" runat="server" 
+                                    PostBackUrl="~/Account/AgentSetting.aspx">Modification des Utilisateurs</asp:LinkButton>
+                                        </li>
+                                    <li class="default">
+                                <asp:LinkButton ID="LinkButton14" runat="server" 
+                                    PostBackUrl="~/Trace/RequestTrace.aspx">Suivi des Requêtes</asp:LinkButton>
+                                    </li>
+                                </ul>
+                            </div>
+                    </div>    
+                    <div id="Request_Management" runat="server">
+                        <li class="active">
+                            <asp:LinkButton ID="LinkButton2" runat="server" 
+                                OnClick="LinkButton2_Click" CssClass="btn btn-info" Width="180px">Gestion des Requêtes</asp:LinkButton>
+                            </li>
+                            <div id="Div1" runat="server" >
+                                <ul >
+                                    <li class="default">
+                                <asp:LinkButton ID="LinkButton3" runat="server"
+                                    PostBackUrl="~/webforms/AddRquest.aspx" OnClick="LinkButton3_Click1">Nouvelle Requête</asp:LinkButton>
+                                        </li>
+                           
+                                    <li class="default">
+                                <asp:LinkButton ID="LinkButton15" runat="server" 
+                                    PostBackUrl="~/webforms/ReceivedRequestTest.aspx">Requêtes introduites</asp:LinkButton>
+                                        </li>
+                                    <%--<li class="default">
+                                <asp:LinkButton ID="LinkButton4" runat="server" 
+                                    PostBackUrl="~/webforms/T CssClass="col-lg-2 col-md-2"reatingRequest.aspx">Requêtes en cour de traitement</asp:LinkButton>
+                                    </li>
+                                    <li class="default">
+                                <asp:LinkButton ID="LinkButton11" runat="server" 
+                                    PostBackUrl="~/webforms/TreatedRequest.aspx">Requêtes Réglées</asp:LinkButton>
+                                    </li>
+                                    <li class="default">
+                                <asp:LinkButton ID="LinkButton13" runat="server" 
+                                    PostBackUrl="~/webforms/Rejected.aspx">Requêtes non Fondées</asp:LinkButton>
+                                    </li>--%>
+                                </ul>
+                            </div>
+                        
+                    </div>
+                </ul>
+                
+            </ContentTemplate>
+        </asp:UpdatePanel>
+    </div>
+    <div class="content col-lg-9 col-md-9 col-sm-9 col-xs-9" id="content" dir="ltr">
+         <div class="subHeader">
+            <div>
+            </div>
+        </div>
+        <div class="contentPanel" id="contentPanel">
+            <asp:UpdatePanel ID="UpdatePanel1" UpdateMode="Conditional" runat="server">
+                <ContentTemplate>
+            
+            
+                    <asp:ContentPlaceHolder runat="server" ID="MainContent">
+                           
+                    </asp:ContentPlaceHolder>
+            
+                </ContentTemplate>
+                
+            </asp:UpdatePanel>
+               
+                                
+
+
+
+                                
+                                      
+        </div>
+        
+    </div>
+
+
+    </form>
+                                 
+            
+            
+    <asp:ObjectDataSource ID="OdsMessageNotRead" runat="server" InsertMethod="InsertMessages" OldValuesParameterFormatString="original_{0}" SelectMethod="getMessages_NotYetRead" TypeName="controller.Messaging_Controller">
+        <InsertParameters>
+            <asp:Parameter Name="IdUser_Sending" Type="String" />
+            <asp:Parameter Name="IdUser_Receiving" Type="String" />
+            <asp:Parameter Name="link" Type="String" />
+            <asp:Parameter Name="message" Type="String" />
+        </InsertParameters>
+        <SelectParameters>
+            <asp:Parameter Name="IdUser_Receiving" Type="String" DefaultValue="Context.GetOwinContext().GetUserManager&lt;ApplicationUserManager&gt;().FindByName(Context.User.Identity.Name).Id" />
+        </SelectParameters>
+    </asp:ObjectDataSource>
+            
+               <asp:ObjectDataSource ID="OdsRelance" runat="server" DeleteMethod="deleteRelance" OldValuesParameterFormatString="original_{0}" SelectMethod="getAllRelances" TypeName="controller.Relance_Controller" UpdateMethod="updateRelance" DataObjectTypeName="Model.relances" InsertMethod="insertRelance">
+                                    <DeleteParameters>
+                                        <asp:Parameter Name="guid" Type="Int32" />
+                                    </DeleteParameters>
+                                    <SelectParameters>
+                                        <asp:Parameter Name="id_reclamation" Type="Int32" DefaultValue="" />
+                                    </SelectParameters>
+                                    <UpdateParameters>
+                                        <asp:Parameter Name="guid" Type="Int32" />
+                                    </UpdateParameters>
+                                </asp:ObjectDataSource>
+    <asp:ObjectDataSource ID="OdsRequerant" runat="server" DataObjectTypeName="Model.requerant" DeleteMethod="deleteRequerant" InsertMethod="insertRequerant" OldValuesParameterFormatString="original_{0}" SelectMethod="getFilteredRequerantByWilaya" TypeName="controller.requerant_controller" UpdateMethod="updateRequerant">
+        <DeleteParameters>
+            <asp:Parameter Name="num" Type="String" />
+        </DeleteParameters>
+        <SelectParameters>
+            <asp:SessionParameter SessionField="Wilaya_Agent" DefaultValue="" Name="num_wilaya" Type="Int32"></asp:SessionParameter>
+
+        </SelectParameters>
+    </asp:ObjectDataSource>
+
+    <asp:ObjectDataSource ID="OdsWilaya" runat="server" DataObjectTypeName="Model.wilayas" DeleteMethod="deleteWilaya" InsertMethod="insertWilaya" OldValuesParameterFormatString="original_{0}" SelectMethod="getAllWilaya" TypeName="controller.wilaya_controller" UpdateMethod="updateWilaya">
+        <DeleteParameters>
+            <asp:Parameter Name="guid" Type="Int32" />
+        </DeleteParameters>
+</asp:ObjectDataSource>
+</body>
+</html>

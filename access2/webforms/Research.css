@@ -1,0 +1,394 @@
+﻿
+
+
+    .txtapplicantfname{
+        width: 70px;
+        border-bottom: 1px solid #0954A5;
+        border-left-style: none;
+        border-left-color: inherit;
+        border-left-width: 0;
+        border-right-style: none;
+        border-right-color: inherit;
+        border-right-width: 0;
+        border-top-style: none;
+        border-top-color: inherit;
+        border-top-width: 0;
+        font-size: 10px;
+        }
+    .labelClass
+{
+	display:block;
+	float:left;
+	width:175px;
+}
+#container {
+    width: 970px;
+    background-color: #FFF;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 100px;
+    position : center;
+}
+.ComponentLeft {
+  border-radius: 4px;
+  direction: ltr;
+  height : 25px;
+  width : 246px;
+  position: relative;
+  bottom : 22px;
+  left: 200px;
+  /*border: 1px solid #6C60DA;*/
+
+  background: #E8E8E8;
+
+
+
+
+ 
+    border: 2px inset #3300FF; 
+    outline:0; 
+    
+ 
+    
+}
+.ComponentRight {
+  border-radius: 4px;
+  direction: ltr;
+  height : 25px;
+  width : 246px;
+  position: relative;
+  bottom : 70px;
+  left: 700px;
+  /*border: 1px solid #6C60DA;*/
+  border: 2px inset #3300FF; 
+    outline:0; 
+
+  background: #E8E8E8;
+}
+.ComponentWilayaDropDown {
+  border-radius: 4px;
+  direction: ltr;
+  height : 25px;
+  width : 246px;
+  position: relative;
+  bottom : 87px;
+  left: 200px;
+  /*border: 1px solid #6C60DA;*/
+  border: 2px inset #3300FF; 
+    outline:0; 
+  background: #E8E8E8;
+}
+.LabelLeft {
+  border-radius: 4px;
+  direction: ltr;
+  height : 25px;
+  width : 246px;
+  position: relative;
+  
+  left: 5px;
+  /*border: 1px solid #6C60DA;*/
+  /*border: 2px inset #3300FF;*/ 
+    outline:0; 
+  background: #E8E8E8;
+}
+.LabelRight {
+  border-radius: 4px;
+  direction: ltr;
+  height : 25px;
+  width : 246px;
+  position: relative;
+  bottom : 45px;
+  left: 500px;
+  /*border: 1px solid #6C60DA;*/
+  /*border: 2px inset #3300FF;*/ 
+    outline:0; 
+  background: #E8E8E8;
+}
+
+
+.ComponentLeft2 {
+  border-radius: 4px;
+  direction: ltr;
+  height : 25px;
+  width : 246px;
+  position: relative;
+  bottom : 187px;
+  left: 0px;
+  /*border: 1px solid #6C60DA;*/
+  border: 2px inset #3300FF; 
+    outline:0; 
+  background: #E8E8E8;
+}
+.ComponentRight2 {
+  border-radius: 4px;
+  direction: ltr;
+  height : 25px;
+  width : 246px;
+  position: relative;
+  bottom : 135px;
+  left: 700px;
+  /*border: 1px solid #6C60DA;*/
+  border: 2px inset #3300FF; 
+    outline:0; 
+  background: #E8E8E8;
+}
+
+.LabelLeft2 {
+  border-radius: 4px;
+  direction: ltr;
+  height : 25px;
+  width : 246px;
+  position: relative;
+  bottom : 65px;
+  left: 5px;
+  
+  /*border: 1px solid #6C60DA;*/
+  /*border: 2px inset #3300FF;*/ 
+    outline:0; 
+  background: #E8E8E8;
+}
+.LabelRight2 {
+  border-radius: 4px;
+  direction: ltr;
+  height : 25px;
+  width : 246px;
+  position: relative;
+  bottom : 110px;
+  left: 500px;
+  /*border: 1px solid #6C60DA;*/
+  /*border: 2px inset #3300FF;*/ 
+    outline:0; 
+  background: #E8E8E8;
+}
+.ComponentLeft3 {
+  border-radius: 4px;
+  direction: ltr;
+  height : 25px;
+  width : 246px;
+  position: relative;
+  bottom : 152px;
+  left: 200px;
+  /*border: 1px solid #6C60DA;*/
+  border: 2px inset #3300FF; 
+    outline:0; 
+    background: #E8E8E8;
+}
+.ComponentRight3 {
+  border-radius: 4px;
+  direction: ltr;
+  height : 25px;
+  width : 246px;
+  position: relative;
+  bottom : 200px;
+  left: 700px;
+  /*border: 1px solid #6C60DA;*/
+  border: 2px inset #3300FF; 
+    outline:0; 
+    background: #E8E8E8;
+}
+
+.LabelLeft3 {
+  border-radius: 4px;
+  direction: ltr;
+  height : 25px;
+  width : 246px;
+  position: relative;
+  bottom : 130px;
+  left: 5px;
+  
+  /*border: 1px solid #6C60DA;*/
+  /*border: 2px inset #3300FF;*/ 
+    outline:0; 
+  background: #E8E8E8;
+}
+.LabelRight3 {
+  border-radius: 4px;
+  direction: ltr;
+  height : 25px;
+  width : 246px;
+  position: relative;
+  bottom : 175px;
+  left: 500px;
+  /*border: 1px solid #6C60DA;*/
+  /*border: 2px inset #3300FF;*/ 
+    outline:0; 
+  background: #E8E8E8;
+}
+.ComponentLeft4 {
+  border-radius: 4px;
+  direction: ltr;
+  height : 25px;
+  width : 246px;
+  position: relative;
+  bottom : 217px;
+  left: 200px;
+  /*border: 1px solid #6C60DA;*/
+  border: 2px inset #3300FF; 
+    outline:0; 
+    background: #E8E8E8;
+}
+.ComponentRight4 {
+  border-radius: 4px;
+  direction: ltr;
+  height : 25px;
+  width : 246px;
+  position: relative;
+  bottom : 265px;
+  left: 700px;
+  /*border: 1px solid #6C60DA;*/
+  border: 2px inset #3300FF; 
+    outline:0; 
+    background: #E8E8E8;
+}
+
+.LabelLeft4 {
+  border-radius: 4px;
+  direction: ltr;
+  height : 25px;
+  width : 246px;
+  position: relative;
+  bottom : 195px;
+  left: 5px;
+  
+  /*border: 1px solid #6C60DA;*/
+  /*border: 2px inset #3300FF;*/ 
+    outline:0; 
+  background: #E8E8E8;
+}
+.LabelRight4 {
+  border-radius: 4px;
+  direction: ltr;
+  height : 25px;
+  width : 246px;
+  position: relative;
+  bottom : 240px;
+  left: 500px;
+  /*border: 1px solid #6C60DA;*/
+  /*border: 2px inset #3300FF;*/ 
+    outline:0; 
+  background: #E8E8E8;
+}
+.ComponentLeft5 {
+  border-radius: 4px;
+  direction: ltr;
+  height : 25px;
+  width : 246px;
+  position: relative;
+  bottom : 282px;
+  left: 200px;
+  /*border: 1px solid #6C60DA;*/
+  border: 2px inset #3300FF; 
+    outline:0; 
+    background: #E8E8E8;
+}
+.ComponentRight5 {
+  border-radius: 4px;
+  direction: ltr;
+  height : 25px;
+  width : 246px;
+  position: relative;
+  bottom : 330px;
+  left: 700px;
+  /*border: 1px solid #6C60DA;*/
+  border: 2px inset #3300FF; 
+    outline:0; 
+    background: #E8E8E8;
+}
+
+.LabelLeft5 {
+  border-radius: 4px;
+  direction: ltr;
+  height : 25px;
+  width : 240px;
+  position: relative;
+  bottom : 260px;
+  left: 5px;
+  
+  /*border: 1px solid #6C60DA;*/
+  /*border: 2px inset #3300FF;*/ 
+    outline:0; 
+  background: #E8E8E8;
+}
+.LabelRight5 {
+  border-radius: 4px;
+  direction: ltr;
+  height : 25px;
+  width : 246px;
+  position: relative;
+  bottom : 305px;
+  left: 500px;
+  /*border: 1px solid #6C60DA;*/
+  /*border: 2px inset #3300FF;*/ 
+    outline:0; 
+  background: #E8E8E8;
+  
+}
+
+.ComponentDescription {
+  border-radius: 4px;
+  direction: ltr;
+
+  position: relative;
+  bottom : 345px;
+  
+  left: 200px;
+  /*border: 1px solid #6C60DA;*/
+  border: 2px inset #3300FF; 
+    outline:0; 
+  background: #E8E8E8;
+  
+}
+.LabelLeft6 {
+  border-radius: 4px;
+  direction: ltr;
+  height : 25px;
+  width : 240px;
+  position: relative;
+  bottom : 325px;
+  left: 5px;
+  
+  /*border: 1px solid #6C60DA;*/
+  /*border: 2px inset #3300FF;*/ 
+    outline:0; 
+  background: #E8E8E8;
+  
+}
+.GridView1 {
+  border-radius: 4px;
+  direction: ltr;
+  height : 25px;
+  width : 240px;
+  position: relative;
+  bottom : 345px;
+  left: 0px;
+  
+  /*border: 1px solid #6C60DA;*/
+  border: 2px inset #3300FF; 
+    outline:0;
+  background: #E8E8E8;
+  
+}
+body
+{
+    /*used for the body of the loginPopup Page*/
+  background-color: #746BA1;
+}
+.center-div
+{
+  /*used for the logform's div of the loginPopup Page*/
+  position: absolute;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100px;
+  height: 100px;
+  background-color: #ccc;
+  border-radius: 3px;
+}
+
+.title-form
+{
+    font-size : large;
+}

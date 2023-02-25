@@ -1,0 +1,146 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="GRHhApp.master.cs" Inherits="GRHWeb.MasterPages.GRHhApp" %>
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <link href="Site.css" rel="stylesheet" />
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+    <%--<webopt:bundlereference runat="server" path="~/Content/css" />--%>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+</head>
+<body>
+    <form runat="server">
+        <asp:ScriptManager runat="server">
+            <Scripts>
+                <%--To learn more about bundling scripts in ScriptManager see http://go.microsoft.com/fwlink/?LinkID=301884 --%>
+                <%--Framework Scripts--%>
+                <asp:ScriptReference Name="MsAjaxBundle" />
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="bootstrap" />
+                <asp:ScriptReference Name="respond" />
+                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                <asp:ScriptReference Name="WebFormsBundle" />
+                <%--Site Scripts--%>
+            </Scripts>
+        </asp:ScriptManager>
+
+            <div class="header">
+        <div>
+        </div>
+        <table>
+            <tr>
+                <td >
+                    <span class="title">
+                        <asp:HyperLink ID="hlPHome" Text="Gestion des ressources humaines" 
+                        runat="server" meta:resourcekey="hlHomeResource"></asp:HyperLink>&nbsp;
+                        <asp:HyperLink ID="hlPHome0" Text="FCMG CNAC" runat="server" 
+                        meta:resourcekey="hlHomeResource" ForeColor="#000066"></asp:HyperLink></span>
+                </td>
+                <td>
+                   <asp:HyperLink ID="utilisateur" Text="" runat="server" meta:resourcekey="hlHomeResource"></asp:HyperLink>
+                
+                </td>
+                <td>
+                    <asp:LinkButton ID="Décon" runat="server" CssClass="decon" style="color:#d6e8ff">Déconnexion </asp:LinkButton>
+                </td>
+            </tr>
+        </table>
+        <br />
+    </div>
+    <div class="clear">
+    </div>
+    <div class="navigation" id="navigation">
+        <div class="subHeader">
+        </div>
+        <div class="panel-group" id="collapse">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#collapse" href="#collapse-one">Accordion heading 1
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapse-one" class="panel-collapse collapse in">
+                    <div class="panel-body">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#collapse" href="#collapse-two">Accordion heading 2
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapse-two" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        Morbi eget libero quis metus consectetur semper.
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#collapse" href="#collapse-three">Accordion heading 3
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapse-three" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        Suspendisse ullamcorper massa eget eleifend iaculis.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="content" id="content" dir="ltr">
+        <div class="subHeader">
+            <div>
+            </div>
+        </div>
+        <div class="contentPanel" id="contentPanel">
+            <asp:updatepanel runat="server">
+                <contenttemplate>
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+
+                    </asp:ContentPlaceHolder>
+                </contenttemplate>
+
+            </asp:updatepanel>
+        
+        </div>
+        </div>
+    </form>
+</body>
+</html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+</body>
+</html>

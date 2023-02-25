@@ -1,0 +1,2508 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="requeteModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="__MigrationHistory">
+          <Key>
+            <PropertyRef Name="MigrationId" />
+            <PropertyRef Name="ContextKey" />
+          </Key>
+          <Property Name="MigrationId" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="ContextKey" Type="nvarchar" MaxLength="300" Nullable="false" />
+          <Property Name="Model" Type="varbinary(max)" Nullable="false" />
+          <Property Name="ProductVersion" Type="nvarchar" MaxLength="32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="action_User_Request">
+          <Key>
+            <PropertyRef Name="id_action" />
+          </Key>
+          <Property Name="id_action" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="id_request" Type="int" />
+          <Property Name="Year_Request" Type="int" />
+          <Property Name="NumWilaya_Request" Type="int" />
+          <Property Name="id_user" Type="nvarchar" MaxLength="128" />
+          <Property Name="date_action" Type="datetime" />
+          <Property Name="action" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="AspNetRoles">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="256" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AspNetUserClaims">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="ClaimType" Type="nvarchar(max)" />
+          <Property Name="ClaimValue" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="AspNetUserLogins">
+          <Key>
+            <PropertyRef Name="LoginProvider" />
+            <PropertyRef Name="ProviderKey" />
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="LoginProvider" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="ProviderKey" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AspNetUserRoles">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="RoleId" Type="nvarchar" MaxLength="128" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AspNetUsers">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="256" Nullable="false" />
+          <Property Name="CodeWilaya" Type="int" />
+          <Property Name="Hometown" Type="nvarchar(max)" />
+          <Property Name="Email" Type="nvarchar" MaxLength="256" />
+          <Property Name="EmailConfirmed" Type="bit" Nullable="false" />
+          <Property Name="PasswordHash" Type="nvarchar(max)" />
+          <Property Name="SecurityStamp" Type="nvarchar(max)" />
+          <Property Name="PhoneNumber" Type="nvarchar(max)" />
+          <Property Name="PhoneNumberConfirmed" Type="bit" Nullable="false" />
+          <Property Name="TwoFactorEnabled" Type="bit" Nullable="false" />
+          <Property Name="LockoutEndDateUtc" Type="datetime" />
+          <Property Name="LockoutEnabled" Type="bit" Nullable="false" />
+          <Property Name="AccessFailedCount" Type="int" Nullable="false" />
+          <Property Name="Matricule" Type="nvarchar" MaxLength="10" />
+          <Property Name="Nom" Type="nvarchar(max)" />
+          <Property Name="Prenom" Type="nvarchar(max)" />
+          <Property Name="Date_Recrutement" Type="date" />
+          <Property Name="Diplome" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="BAL_User">
+          <Key>
+            <PropertyRef Name="Id_Message" />
+          </Key>
+          <Property Name="Id_Message" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="Message" Type="text" />
+          <Property Name="id_user" Type="nvarchar" MaxLength="128" />
+          <Property Name="State_Message" Type="nvarchar" MaxLength="20" />
+          <Property Name="link" Type="nvarchar(max)" />
+          <Property Name="Id_User_Destination" Type="nvarchar" MaxLength="128" />
+          <Property Name="Date_Message" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Commune">
+          <Key>
+            <PropertyRef Name="CommuneId" />
+          </Key>
+          <Property Name="CommuneId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="NomCommune" Type="nvarchar(max)" />
+          <Property Name="CodePostal" Type="int" />
+          <Property Name="Code_Wilaya" Type="int" />
+        </EntityType>
+        <EntityType Name="DispositionPrise">
+          <Key>
+            <PropertyRef Name="DispositionPriseId" />
+          </Key>
+          <Property Name="DispositionPriseId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="DispositionName" Type="nvarchar(max)" />
+          <Property Name="ObjectId" Type="nvarchar" MaxLength="128" />
+        </EntityType>
+        <EntityType Name="LevelOfStrucure">
+          <Key>
+            <PropertyRef Name="LevelStructureId" />
+          </Key>
+          <Property Name="LevelStructureId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="IntituleFr" Type="nvarchar(max)" />
+          <Property Name="IntituleAr" Type="nvarchar(max)" />
+          <Property Name="LevelParentId" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="Links">
+          <Key>
+            <PropertyRef Name="Guid" />
+          </Key>
+          <Property Name="Guid" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="Link" Type="nvarchar(max)" />
+          <Property Name="Id_Request" Type="int" />
+          <Property Name="NumWilaya_Request" Type="int" />
+          <Property Name="Year_Request" Type="int" />
+          <Property Name="extension" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Message_Request">
+          <Key>
+            <PropertyRef Name="MessageId" />
+          </Key>
+          <Property Name="MessageId" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="Message" Type="text" Nullable="false" />
+          <Property Name="id_user" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="State_Message" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="link" Type="nvarchar(max)" />
+          <Property Name="Id_User_Destination" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="Date_Message" Type="datetime" Nullable="false" />
+          <Property Name="NumRequest" Type="int" Nullable="false" />
+          <Property Name="YearRequest" Type="int" Nullable="false" />
+          <Property Name="num_wilayaRequest" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Missions">
+          <Key>
+            <PropertyRef Name="num" />
+          </Key>
+          <Property Name="num" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="mission" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Motif">
+          <Key>
+            <PropertyRef Name="MotifId" />
+          </Key>
+          <Property Name="MotifId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="MotifName" Type="nvarchar(max)" />
+          <Property Name="ObjectId" Type="nvarchar" MaxLength="128" />
+        </EntityType>
+        <EntityType Name="Objet_Disp">
+          <Key>
+            <PropertyRef Name="id_objet" />
+          </Key>
+          <Property Name="id_objet" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="objet" Type="nvarchar(max)" />
+          <Property Name="ObjectNum" Type="int" />
+          <Property Name="PhaseId" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="Permissions_Role">
+          <Key>
+            <PropertyRef Name="Id_Permission" />
+          </Key>
+          <Property Name="Id_Permission" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="Id_Role" Type="nvarchar" MaxLength="128" />
+          <Property Name="Permission_Type" Type="nvarchar(max)" />
+          <Property Name="Permission_Value" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="PhaseObject">
+          <Key>
+            <PropertyRef Name="PhaseId" />
+          </Key>
+          <Property Name="PhaseId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="PhaseName" Type="nvarchar(max)" />
+          <Property Name="MissionId" Type="nvarchar" MaxLength="128" />
+        </EntityType>
+        <EntityType Name="relances">
+          <Key>
+            <PropertyRef Name="id_relances" />
+          </Key>
+          <Property Name="id_relances" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="id_requete" Type="int" />
+          <Property Name="Year_Request" Type="int" />
+          <Property Name="NumWilaya_Request" Type="int" />
+          <Property Name="id_transmission" Type="nvarchar" MaxLength="128" />
+          <Property Name="date_relance" Type="date" />
+          <Property Name="Description_relance" Type="text" />
+        </EntityType>
+        <EntityType Name="requerant">
+          <Key>
+            <PropertyRef Name="num" />
+          </Key>
+          <Property Name="num" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="nom_requerant" Type="nvarchar(max)" />
+          <Property Name="prenom_requerant" Type="nvarchar(max)" />
+          <Property Name="SEXE" Type="nvarchar(max)" />
+          <Property Name="Date_Naissance" Type="date" />
+          <Property Name="Adresse" Type="nvarchar(max)" />
+          <Property Name="Tel" Type="nvarchar(max)" />
+          <Property Name="Email" Type="nvarchar(max)" />
+          <Property Name="id_wilaya" Type="int" />
+          <Property Name="Nom_CAnimateur" Type="nvarchar(max)" />
+          <Property Name="Prenom_CAnimateur" Type="nvarchar(max)" />
+          <Property Name="Num_Dossier" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Request">
+          <Key>
+            <PropertyRef Name="num" />
+            <PropertyRef Name="Year" />
+            <PropertyRef Name="num_wilaya" />
+          </Key>
+          <Property Name="num" Type="int" Nullable="false" />
+          <Property Name="Year" Type="int" Nullable="false" />
+          <Property Name="num_wilaya" Type="int" Nullable="false" />
+          <Property Name="CommuneId" Type="uniqueidentifier" />
+          <Property Name="id_state" Type="int" />
+          <Property Name="date" Type="date" />
+          <Property Name="Date_Insertion" Type="datetime" />
+          <Property Name="id_type" Type="nvarchar" MaxLength="128" />
+          <Property Name="num_requerant" Type="nvarchar" MaxLength="128" />
+          <Property Name="corp_requete" Type="text" />
+          <Property Name="id_trans" Type="nvarchar" MaxLength="128" />
+          <Property Name="result_traitement" Type="text" />
+          <Property Name="Date_Envoi" Type="datetime" />
+          <Property Name="Ref_Validation" Type="nvarchar(max)" />
+          <Property Name="id_Voie_Trans" Type="nvarchar" MaxLength="128" />
+          <Property Name="User_Inserted" Type="nvarchar(max)" />
+          <Property Name="MotifId" Type="uniqueidentifier" />
+          <Property Name="DispositionPriseId" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="State_Request">
+          <Key>
+            <PropertyRef Name="id_state" />
+          </Key>
+          <Property Name="id_state" Type="int" Nullable="false" />
+          <Property Name="nom_state" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Structure">
+          <Key>
+            <PropertyRef Name="StructureId" />
+          </Key>
+          <Property Name="StructureId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="IntituleFr" Type="nvarchar(max)" />
+          <Property Name="IntituleAr" Type="nvarchar(max)" />
+          <Property Name="LevelId" Type="uniqueidentifier" />
+          <Property Name="StructureParentId" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="StructureUser">
+          <Key>
+            <PropertyRef Name="StructureId" />
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="StructureId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="DateBegin" Type="date" />
+          <Property Name="DateEnd" Type="date" />
+        </EntityType>
+        <EntityType Name="StructureWilaya">
+          <Key>
+            <PropertyRef Name="WilayaStructureId" />
+          </Key>
+          <Property Name="WilayaStructureId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="WilayaNum" Type="int" />
+          <Property Name="StructureId" Type="uniqueidentifier" />
+          <Property Name="DateBegin" Type="date" />
+          <Property Name="DateEnd" Type="date" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="Transmission">
+          <Key>
+            <PropertyRef Name="id_trans" />
+          </Key>
+          <Property Name="id_trans" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="mode_trans" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="types">
+          <Key>
+            <PropertyRef Name="id_types" />
+          </Key>
+          <Property Name="id_types" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="type" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="UserManageStructure">
+          <Key>
+            <PropertyRef Name="userManagerStructureId" />
+          </Key>
+          <Property Name="userManagerStructureId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="StructureId" Type="uniqueidentifier" />
+          <Property Name="UserId" Type="nvarchar" MaxLength="128" />
+          <Property Name="DateBegin" Type="date" />
+          <Property Name="DateEnd" Type="date" />
+          <Property Name="PosteOccupe" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Voie_Transmission">
+          <Key>
+            <PropertyRef Name="id_voie" />
+          </Key>
+          <Property Name="id_voie" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="voie_trans" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="wilayas">
+          <Key>
+            <PropertyRef Name="num" />
+          </Key>
+          <Property Name="num" Type="int" Nullable="false" />
+          <Property Name="wilaya" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK_action_User_Request_Request">
+          <End Role="Request" Type="Self.Request" Multiplicity="0..1" />
+          <End Role="action_User_Request" Type="Self.action_User_Request" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Request">
+              <PropertyRef Name="num" />
+              <PropertyRef Name="Year" />
+              <PropertyRef Name="num_wilaya" />
+            </Principal>
+            <Dependent Role="action_User_Request">
+              <PropertyRef Name="id_request" />
+              <PropertyRef Name="Year_Request" />
+              <PropertyRef Name="NumWilaya_Request" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_action_User_Request_User">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="0..1" />
+          <End Role="action_User_Request" Type="Self.action_User_Request" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="action_User_Request">
+              <PropertyRef Name="id_user" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BAL_User_UserDestin">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="0..1" />
+          <End Role="BAL_User" Type="Self.BAL_User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="BAL_User">
+              <PropertyRef Name="Id_User_Destination" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BAL_User_UserExped">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="0..1" />
+          <End Role="BAL_User" Type="Self.BAL_User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="BAL_User">
+              <PropertyRef Name="id_user" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Commune_Wilaya">
+          <End Role="wilayas" Type="Self.wilayas" Multiplicity="0..1" />
+          <End Role="Commune" Type="Self.Commune" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="wilayas">
+              <PropertyRef Name="num" />
+            </Principal>
+            <Dependent Role="Commune">
+              <PropertyRef Name="Code_Wilaya" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserClaims" Type="Self.AspNetUserClaims" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserClaims">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserLogins" Type="Self.AspNetUserLogins" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserLogins">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId">
+          <End Role="AspNetRoles" Type="Self.AspNetRoles" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserRoles" Type="Self.AspNetUserRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetRoles">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserRoles">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserRoles" Type="Self.AspNetUserRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserRoles">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DispositionPrise_Object">
+          <End Role="Objet_Disp" Type="Self.Objet_Disp" Multiplicity="0..1" />
+          <End Role="DispositionPrise" Type="Self.DispositionPrise" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Objet_Disp">
+              <PropertyRef Name="id_objet" />
+            </Principal>
+            <Dependent Role="DispositionPrise">
+              <PropertyRef Name="ObjectId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LevelOfStrucure_LevelOfStrucure">
+          <End Role="LevelOfStrucure" Type="Self.LevelOfStrucure" Multiplicity="1" />
+          <End Role="LevelOfStrucure1" Type="Self.LevelOfStrucure" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="LevelOfStrucure">
+              <PropertyRef Name="LevelStructureId" />
+            </Principal>
+            <Dependent Role="LevelOfStrucure1">
+              <PropertyRef Name="LevelStructureId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Links_Request">
+          <End Role="Request" Type="Self.Request" Multiplicity="0..1" />
+          <End Role="Links" Type="Self.Links" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Request">
+              <PropertyRef Name="num" />
+              <PropertyRef Name="num_wilaya" />
+              <PropertyRef Name="Year" />
+            </Principal>
+            <Dependent Role="Links">
+              <PropertyRef Name="Id_Request" />
+              <PropertyRef Name="NumWilaya_Request" />
+              <PropertyRef Name="Year_Request" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Message_Request_AspNetUser">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1" />
+          <End Role="Message_Request" Type="Self.Message_Request" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Message_Request">
+              <PropertyRef Name="id_user" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Message_Request_AspNetUserDestination">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1" />
+          <End Role="Message_Request" Type="Self.Message_Request" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Message_Request">
+              <PropertyRef Name="Id_User_Destination" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Message_Request_Request">
+          <End Role="Request" Type="Self.Request" Multiplicity="1" />
+          <End Role="Message_Request" Type="Self.Message_Request" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Request">
+              <PropertyRef Name="num" />
+              <PropertyRef Name="Year" />
+              <PropertyRef Name="num_wilaya" />
+            </Principal>
+            <Dependent Role="Message_Request">
+              <PropertyRef Name="NumRequest" />
+              <PropertyRef Name="YearRequest" />
+              <PropertyRef Name="num_wilayaRequest" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Motif_Object">
+          <End Role="Objet_Disp" Type="Self.Objet_Disp" Multiplicity="0..1" />
+          <End Role="Motif" Type="Self.Motif" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Objet_Disp">
+              <PropertyRef Name="id_objet" />
+            </Principal>
+            <Dependent Role="Motif">
+              <PropertyRef Name="ObjectId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Objet_Disp_Phase">
+          <End Role="PhaseObject" Type="Self.PhaseObject" Multiplicity="0..1" />
+          <End Role="Objet_Disp" Type="Self.Objet_Disp" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PhaseObject">
+              <PropertyRef Name="PhaseId" />
+            </Principal>
+            <Dependent Role="Objet_Disp">
+              <PropertyRef Name="PhaseId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Permissions_Role">
+          <End Role="AspNetRoles" Type="Self.AspNetRoles" Multiplicity="0..1" />
+          <End Role="Permissions_Role" Type="Self.Permissions_Role" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetRoles">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Permissions_Role">
+              <PropertyRef Name="Id_Role" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PhaseObject_Mission">
+          <End Role="Missions" Type="Self.Missions" Multiplicity="0..1" />
+          <End Role="PhaseObject" Type="Self.PhaseObject" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Missions">
+              <PropertyRef Name="num" />
+            </Principal>
+            <Dependent Role="PhaseObject">
+              <PropertyRef Name="MissionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_reclamation_Commune">
+          <End Role="Commune" Type="Self.Commune" Multiplicity="0..1" />
+          <End Role="Request" Type="Self.Request" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Commune">
+              <PropertyRef Name="CommuneId" />
+            </Principal>
+            <Dependent Role="Request">
+              <PropertyRef Name="CommuneId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_reclamation_rquerant">
+          <End Role="requerant" Type="Self.requerant" Multiplicity="0..1" />
+          <End Role="Request" Type="Self.Request" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="requerant">
+              <PropertyRef Name="num" />
+            </Principal>
+            <Dependent Role="Request">
+              <PropertyRef Name="num_requerant" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_reclamation_state">
+          <End Role="State_Request" Type="Self.State_Request" Multiplicity="0..1" />
+          <End Role="Request" Type="Self.Request" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="State_Request">
+              <PropertyRef Name="id_state" />
+            </Principal>
+            <Dependent Role="Request">
+              <PropertyRef Name="id_state" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_reclamation_transmission">
+          <End Role="Transmission" Type="Self.Transmission" Multiplicity="0..1" />
+          <End Role="Request" Type="Self.Request" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Transmission">
+              <PropertyRef Name="id_trans" />
+            </Principal>
+            <Dependent Role="Request">
+              <PropertyRef Name="id_trans" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_reclamation_type">
+          <End Role="types" Type="Self.types" Multiplicity="0..1" />
+          <End Role="Request" Type="Self.Request" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="types">
+              <PropertyRef Name="id_types" />
+            </Principal>
+            <Dependent Role="Request">
+              <PropertyRef Name="id_type" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_reclamation_Voie_Trans">
+          <End Role="Voie_Transmission" Type="Self.Voie_Transmission" Multiplicity="0..1" />
+          <End Role="Request" Type="Self.Request" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Voie_Transmission">
+              <PropertyRef Name="id_voie" />
+            </Principal>
+            <Dependent Role="Request">
+              <PropertyRef Name="id_Voie_Trans" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_relances_Request">
+          <End Role="Request" Type="Self.Request" Multiplicity="0..1" />
+          <End Role="relances" Type="Self.relances" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Request">
+              <PropertyRef Name="num" />
+              <PropertyRef Name="Year" />
+              <PropertyRef Name="num_wilaya" />
+            </Principal>
+            <Dependent Role="relances">
+              <PropertyRef Name="id_requete" />
+              <PropertyRef Name="Year_Request" />
+              <PropertyRef Name="NumWilaya_Request" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_relances_transmission">
+          <End Role="Transmission" Type="Self.Transmission" Multiplicity="0..1" />
+          <End Role="relances" Type="Self.relances" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Transmission">
+              <PropertyRef Name="id_trans" />
+            </Principal>
+            <Dependent Role="relances">
+              <PropertyRef Name="id_transmission" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_requerant_wilaya">
+          <End Role="wilayas" Type="Self.wilayas" Multiplicity="0..1" />
+          <End Role="requerant" Type="Self.requerant" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="wilayas">
+              <PropertyRef Name="num" />
+            </Principal>
+            <Dependent Role="requerant">
+              <PropertyRef Name="id_wilaya" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Request_Disposition">
+          <End Role="DispositionPrise" Type="Self.DispositionPrise" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Request" Type="Self.Request" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DispositionPrise">
+              <PropertyRef Name="DispositionPriseId" />
+            </Principal>
+            <Dependent Role="Request">
+              <PropertyRef Name="DispositionPriseId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Request_Motif">
+          <End Role="Motif" Type="Self.Motif" Multiplicity="0..1" />
+          <End Role="Request" Type="Self.Request" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Motif">
+              <PropertyRef Name="MotifId" />
+            </Principal>
+            <Dependent Role="Request">
+              <PropertyRef Name="MotifId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Structure_Level">
+          <End Role="LevelOfStrucure" Type="Self.LevelOfStrucure" Multiplicity="0..1" />
+          <End Role="Structure" Type="Self.Structure" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LevelOfStrucure">
+              <PropertyRef Name="LevelStructureId" />
+            </Principal>
+            <Dependent Role="Structure">
+              <PropertyRef Name="LevelId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Structure_Structure">
+          <End Role="Structure" Type="Self.Structure" Multiplicity="1" />
+          <End Role="Structure1" Type="Self.Structure" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Structure">
+              <PropertyRef Name="StructureId" />
+            </Principal>
+            <Dependent Role="Structure1">
+              <PropertyRef Name="StructureId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StructureUser_Structure">
+          <End Role="Structure" Type="Self.Structure" Multiplicity="1" />
+          <End Role="StructureUser" Type="Self.StructureUser" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Structure">
+              <PropertyRef Name="StructureId" />
+            </Principal>
+            <Dependent Role="StructureUser">
+              <PropertyRef Name="StructureId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StructureUser_User">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1" />
+          <End Role="StructureUser" Type="Self.StructureUser" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="StructureUser">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StructureWilaya_Structure">
+          <End Role="Structure" Type="Self.Structure" Multiplicity="0..1" />
+          <End Role="StructureWilaya" Type="Self.StructureWilaya" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Structure">
+              <PropertyRef Name="StructureId" />
+            </Principal>
+            <Dependent Role="StructureWilaya">
+              <PropertyRef Name="StructureId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StructureWilaya_Wilaya">
+          <End Role="wilayas" Type="Self.wilayas" Multiplicity="0..1" />
+          <End Role="StructureWilaya" Type="Self.StructureWilaya" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="wilayas">
+              <PropertyRef Name="num" />
+            </Principal>
+            <Dependent Role="StructureWilaya">
+              <PropertyRef Name="WilayaNum" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserManageStructure_Structure">
+          <End Role="Structure" Type="Self.Structure" Multiplicity="0..1" />
+          <End Role="UserManageStructure" Type="Self.UserManageStructure" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Structure">
+              <PropertyRef Name="StructureId" />
+            </Principal>
+            <Dependent Role="UserManageStructure">
+              <PropertyRef Name="StructureId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserManageStructure_User">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="0..1" />
+          <End Role="UserManageStructure" Type="Self.UserManageStructure" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserManageStructure">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="GetUsersStoredProcedure" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="query" Type="nvarchar(max)" Mode="In" />
+        </Function>
+        <Function Name="spproc_filter_Reclamation" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="num" Type="int" Mode="In" />
+          <Parameter Name="id_state" Type="int" Mode="In" />
+          <Parameter Name="objet" Type="nvarchar" Mode="In" />
+          <Parameter Name="date" Type="date" Mode="In" />
+          <Parameter Name="num_wilaya" Type="int" Mode="In" />
+          <Parameter Name="num_requerant" Type="int" Mode="In" />
+          <Parameter Name="id_motif" Type="int" Mode="In" />
+          <Parameter Name="corp_requete" Type="text" Mode="In" />
+          <Parameter Name="id_trans" Type="int" Mode="In" />
+          <Parameter Name="result_traitement" Type="text" Mode="In" />
+        </Function>
+        <Function Name="spproc_filter_requete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="query" Type="nvarchar(max)" Mode="In" />
+        </Function>
+        <Function Name="spproc_filter_requete1" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="query" Type="nvarchar" Mode="In" />
+        </Function>
+        <EntityContainer Name="requeteModelStoreContainer">
+          <EntitySet Name="__MigrationHistory" EntityType="Self.__MigrationHistory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="action_User_Request" EntityType="Self.action_User_Request" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRoles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetUserClaims" EntityType="Self.AspNetUserClaims" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetUserLogins" EntityType="Self.AspNetUserLogins" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetUserRoles" EntityType="Self.AspNetUserRoles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUsers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BAL_User" EntityType="Self.BAL_User" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Commune" EntityType="Self.Commune" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DispositionPrise" EntityType="Self.DispositionPrise" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LevelOfStrucure" EntityType="Self.LevelOfStrucure" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Links" EntityType="Self.Links" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Message_Request" EntityType="Self.Message_Request" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Missions" EntityType="Self.Missions" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Motif" EntityType="Self.Motif" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Objet_Disp" EntityType="Self.Objet_Disp" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Permissions_Role" EntityType="Self.Permissions_Role" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PhaseObject" EntityType="Self.PhaseObject" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="relances" EntityType="Self.relances" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="requerant" EntityType="Self.requerant" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Request" EntityType="Self.Request" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="State_Request" EntityType="Self.State_Request" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Structure" EntityType="Self.Structure" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="StructureUser" EntityType="Self.StructureUser" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="StructureWilaya" EntityType="Self.StructureWilaya" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Transmission" EntityType="Self.Transmission" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="types" EntityType="Self.types" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserManageStructure" EntityType="Self.UserManageStructure" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Voie_Transmission" EntityType="Self.Voie_Transmission" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="wilayas" EntityType="Self.wilayas" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_action_User_Request_Request" Association="Self.FK_action_User_Request_Request">
+            <End Role="Request" EntitySet="Request" />
+            <End Role="action_User_Request" EntitySet="action_User_Request" />
+          </AssociationSet>
+          <AssociationSet Name="FK_action_User_Request_User" Association="Self.FK_action_User_Request_User">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="action_User_Request" EntitySet="action_User_Request" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BAL_User_UserDestin" Association="Self.FK_BAL_User_UserDestin">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="BAL_User" EntitySet="BAL_User" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BAL_User_UserExped" Association="Self.FK_BAL_User_UserExped">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="BAL_User" EntitySet="BAL_User" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Commune_Wilaya" Association="Self.FK_Commune_Wilaya">
+            <End Role="wilayas" EntitySet="wilayas" />
+            <End Role="Commune" EntitySet="Commune" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserClaims" EntitySet="AspNetUserClaims" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserLogins" EntitySet="AspNetUserLogins" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId" Association="Self.FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId">
+            <End Role="AspNetRoles" EntitySet="AspNetRoles" />
+            <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DispositionPrise_Object" Association="Self.FK_DispositionPrise_Object">
+            <End Role="Objet_Disp" EntitySet="Objet_Disp" />
+            <End Role="DispositionPrise" EntitySet="DispositionPrise" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LevelOfStrucure_LevelOfStrucure" Association="Self.FK_LevelOfStrucure_LevelOfStrucure">
+            <End Role="LevelOfStrucure" EntitySet="LevelOfStrucure" />
+            <End Role="LevelOfStrucure1" EntitySet="LevelOfStrucure" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Links_Request" Association="Self.FK_Links_Request">
+            <End Role="Request" EntitySet="Request" />
+            <End Role="Links" EntitySet="Links" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Message_Request_AspNetUser" Association="Self.FK_Message_Request_AspNetUser">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="Message_Request" EntitySet="Message_Request" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Message_Request_AspNetUserDestination" Association="Self.FK_Message_Request_AspNetUserDestination">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="Message_Request" EntitySet="Message_Request" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Message_Request_Request" Association="Self.FK_Message_Request_Request">
+            <End Role="Request" EntitySet="Request" />
+            <End Role="Message_Request" EntitySet="Message_Request" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Motif_Object" Association="Self.FK_Motif_Object">
+            <End Role="Objet_Disp" EntitySet="Objet_Disp" />
+            <End Role="Motif" EntitySet="Motif" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Objet_Disp_Phase" Association="Self.FK_Objet_Disp_Phase">
+            <End Role="PhaseObject" EntitySet="PhaseObject" />
+            <End Role="Objet_Disp" EntitySet="Objet_Disp" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Permissions_Role" Association="Self.FK_Permissions_Role">
+            <End Role="AspNetRoles" EntitySet="AspNetRoles" />
+            <End Role="Permissions_Role" EntitySet="Permissions_Role" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PhaseObject_Mission" Association="Self.FK_PhaseObject_Mission">
+            <End Role="Missions" EntitySet="Missions" />
+            <End Role="PhaseObject" EntitySet="PhaseObject" />
+          </AssociationSet>
+          <AssociationSet Name="FK_reclamation_Commune" Association="Self.FK_reclamation_Commune">
+            <End Role="Commune" EntitySet="Commune" />
+            <End Role="Request" EntitySet="Request" />
+          </AssociationSet>
+          <AssociationSet Name="FK_reclamation_rquerant" Association="Self.FK_reclamation_rquerant">
+            <End Role="requerant" EntitySet="requerant" />
+            <End Role="Request" EntitySet="Request" />
+          </AssociationSet>
+          <AssociationSet Name="FK_reclamation_state" Association="Self.FK_reclamation_state">
+            <End Role="State_Request" EntitySet="State_Request" />
+            <End Role="Request" EntitySet="Request" />
+          </AssociationSet>
+          <AssociationSet Name="FK_reclamation_transmission" Association="Self.FK_reclamation_transmission">
+            <End Role="Transmission" EntitySet="Transmission" />
+            <End Role="Request" EntitySet="Request" />
+          </AssociationSet>
+          <AssociationSet Name="FK_reclamation_type" Association="Self.FK_reclamation_type">
+            <End Role="types" EntitySet="types" />
+            <End Role="Request" EntitySet="Request" />
+          </AssociationSet>
+          <AssociationSet Name="FK_reclamation_Voie_Trans" Association="Self.FK_reclamation_Voie_Trans">
+            <End Role="Voie_Transmission" EntitySet="Voie_Transmission" />
+            <End Role="Request" EntitySet="Request" />
+          </AssociationSet>
+          <AssociationSet Name="FK_relances_Request" Association="Self.FK_relances_Request">
+            <End Role="Request" EntitySet="Request" />
+            <End Role="relances" EntitySet="relances" />
+          </AssociationSet>
+          <AssociationSet Name="FK_relances_transmission" Association="Self.FK_relances_transmission">
+            <End Role="Transmission" EntitySet="Transmission" />
+            <End Role="relances" EntitySet="relances" />
+          </AssociationSet>
+          <AssociationSet Name="FK_requerant_wilaya" Association="Self.FK_requerant_wilaya">
+            <End Role="wilayas" EntitySet="wilayas" />
+            <End Role="requerant" EntitySet="requerant" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Request_Disposition" Association="Self.FK_Request_Disposition">
+            <End Role="DispositionPrise" EntitySet="DispositionPrise" />
+            <End Role="Request" EntitySet="Request" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Request_Motif" Association="Self.FK_Request_Motif">
+            <End Role="Motif" EntitySet="Motif" />
+            <End Role="Request" EntitySet="Request" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Structure_Level" Association="Self.FK_Structure_Level">
+            <End Role="LevelOfStrucure" EntitySet="LevelOfStrucure" />
+            <End Role="Structure" EntitySet="Structure" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Structure_Structure" Association="Self.FK_Structure_Structure">
+            <End Role="Structure" EntitySet="Structure" />
+            <End Role="Structure1" EntitySet="Structure" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StructureUser_Structure" Association="Self.FK_StructureUser_Structure">
+            <End Role="Structure" EntitySet="Structure" />
+            <End Role="StructureUser" EntitySet="StructureUser" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StructureUser_User" Association="Self.FK_StructureUser_User">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="StructureUser" EntitySet="StructureUser" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StructureWilaya_Structure" Association="Self.FK_StructureWilaya_Structure">
+            <End Role="Structure" EntitySet="Structure" />
+            <End Role="StructureWilaya" EntitySet="StructureWilaya" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StructureWilaya_Wilaya" Association="Self.FK_StructureWilaya_Wilaya">
+            <End Role="wilayas" EntitySet="wilayas" />
+            <End Role="StructureWilaya" EntitySet="StructureWilaya" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserManageStructure_Structure" Association="Self.FK_UserManageStructure_Structure">
+            <End Role="Structure" EntitySet="Structure" />
+            <End Role="UserManageStructure" EntitySet="UserManageStructure" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserManageStructure_User" Association="Self.FK_UserManageStructure_User">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="UserManageStructure" EntitySet="UserManageStructure" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="requeteModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="requeteEntities" annotation:LazyLoadingEnabled="true">
+          <FunctionImport Name="GetUsersMessagesSentReceived" ReturnType="Collection(requeteModel.GetUsersMessagesSentReceived_Result)">
+            <Parameter Name="UserId" Mode="In" Type="String" />
+            <Parameter Name="RequestNum" Mode="In" Type="Int32" />
+            <Parameter Name="WilayaNum" Mode="In" Type="Int32" />
+            <Parameter Name="Year" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spproc_filter_Reclamation">
+            <Parameter Name="num" Mode="In" Type="Int32" />
+            <Parameter Name="id_state" Mode="In" Type="Int32" />
+            <Parameter Name="objet" Mode="In" Type="String" />
+            <Parameter Name="date" Mode="In" Type="DateTime" />
+            <Parameter Name="num_wilaya" Mode="In" Type="Int32" />
+            <Parameter Name="num_requerant" Mode="In" Type="Int32" />
+            <Parameter Name="id_motif" Mode="In" Type="Int32" />
+            <Parameter Name="corp_requete" Mode="In" Type="String" />
+            <Parameter Name="id_trans" Mode="In" Type="Int32" />
+            <Parameter Name="result_traitement" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spproc_filter_requete" EntitySet="Requests" ReturnType="Collection(requeteModel.Request)">
+          <Parameter Name="query" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spproc_filter_requete1">
+          <Parameter Name="query" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spproc_filter_users" EntitySet="AspNetUsers" ReturnType="Collection(requeteModel.AspNetUsers)">
+          <Parameter Name="query" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spproc_filter_requerant" EntitySet="requerant" ReturnType="Collection(requeteModel.requerant)">
+          <Parameter Name="query" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="GetUsersStoredProcedure" ReturnType="Collection(requeteModel.GetUsersStoredProcedure_Result)">
+          <Parameter Name="query" Mode="In" Type="String" />
+          </FunctionImport>
+          <EntitySet Name="C__MigrationHistory" EntityType="requeteModel.C__MigrationHistory" />
+          <EntitySet Name="action_User_Request" EntityType="requeteModel.action_User_Request" />
+          <EntitySet Name="AspNetRoles" EntityType="requeteModel.AspNetRoles" />
+          <EntitySet Name="AspNetUserClaims" EntityType="requeteModel.AspNetUserClaim" />
+          <EntitySet Name="AspNetUserLogins" EntityType="requeteModel.AspNetUserLogins" />
+          <EntitySet Name="AspNetUsers" EntityType="requeteModel.AspNetUsers" />
+          <EntitySet Name="BAL_User" EntityType="requeteModel.BAL_User" />
+          <EntitySet Name="Communes" EntityType="requeteModel.Communes" />
+          <EntitySet Name="LevelOfStrucure" EntityType="requeteModel.LevelOfStrucure" />
+          <EntitySet Name="Links" EntityType="requeteModel.Link" />
+          <EntitySet Name="Message_Request" EntityType="requeteModel.Message_Request" />
+          <EntitySet Name="Missions" EntityType="requeteModel.Mission" />
+          <EntitySet Name="Objet_Disp" EntityType="requeteModel.Objet_Disp" />
+          <EntitySet Name="Permissions_Role" EntityType="requeteModel.Permissions_Role" />
+          <EntitySet Name="PhaseObject" EntityType="requeteModel.PhaseObject" />
+          <EntitySet Name="relances" EntityType="requeteModel.relance" />
+          <EntitySet Name="requerant" EntityType="requeteModel.requerant" />
+          <EntitySet Name="State_Request" EntityType="requeteModel.State_Request" />
+          <EntitySet Name="Structures" EntityType="requeteModel.Structure" />
+          <EntitySet Name="StructureUser" EntityType="requeteModel.StructureUser" />
+          <EntitySet Name="StructureWilayas" EntityType="requeteModel.StructureWilaya" />
+          <EntitySet Name="sysdiagrams" EntityType="requeteModel.sysdiagrams" />
+          <EntitySet Name="Transmission" EntityType="requeteModel.Transmission" />
+          <EntitySet Name="types" EntityType="requeteModel.types" />
+          <EntitySet Name="UserManageStructures" EntityType="requeteModel.UserManageStructure" />
+          <EntitySet Name="Voie_Transmission" EntityType="requeteModel.Voie_Transmission" />
+          <EntitySet Name="wilaya" EntityType="requeteModel.wilayas" />
+          <AssociationSet Name="FK_action_User_Request_User" Association="requeteModel.FK_action_User_Request_User">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="action_User_Request" EntitySet="action_User_Request" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Permissions_Role" Association="requeteModel.FK_Permissions_Role">
+            <End Role="AspNetRoles" EntitySet="AspNetRoles" />
+            <End Role="Permissions_Role" EntitySet="Permissions_Role" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" Association="requeteModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserClaims" EntitySet="AspNetUserClaims" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" Association="requeteModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserLogins" EntitySet="AspNetUserLogins" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BAL_User_UserDestin" Association="requeteModel.FK_BAL_User_UserDestin">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="BAL_User" EntitySet="BAL_User" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BAL_User_UserExped" Association="requeteModel.FK_BAL_User_UserExped">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="BAL_User" EntitySet="BAL_User" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Message_Request_AspNetUser" Association="requeteModel.FK_Message_Request_AspNetUser">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="Message_Request" EntitySet="Message_Request" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Message_Request_AspNetUserDestination" Association="requeteModel.FK_Message_Request_AspNetUserDestination">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="Message_Request" EntitySet="Message_Request" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StructureUser_User" Association="requeteModel.FK_StructureUser_User">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="StructureUser" EntitySet="StructureUser" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserManageStructure_User" Association="requeteModel.FK_UserManageStructure_User">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="UserManageStructure" EntitySet="UserManageStructures" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Commune_Wilaya" Association="requeteModel.FK_Commune_Wilaya">
+            <End Role="wilayas" EntitySet="wilaya" />
+            <End Role="Commune" EntitySet="Communes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LevelOfStrucure_LevelOfStrucure" Association="requeteModel.FK_LevelOfStrucure_LevelOfStrucure">
+            <End Role="LevelOfStrucure" EntitySet="LevelOfStrucure" />
+            <End Role="LevelOfStrucure1" EntitySet="LevelOfStrucure" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Structure_Level" Association="requeteModel.FK_Structure_Level">
+            <End Role="LevelOfStrucure" EntitySet="LevelOfStrucure" />
+            <End Role="Structure" EntitySet="Structures" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PhaseObject_Mission" Association="requeteModel.FK_PhaseObject_Mission">
+            <End Role="Missions" EntitySet="Missions" />
+            <End Role="PhaseObject" EntitySet="PhaseObject" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Objet_Disp_Phase" Association="requeteModel.FK_Objet_Disp_Phase">
+            <End Role="PhaseObject" EntitySet="PhaseObject" />
+            <End Role="Objet_Disp" EntitySet="Objet_Disp" />
+          </AssociationSet>
+          <AssociationSet Name="FK_relances_transmission" Association="requeteModel.FK_relances_transmission">
+            <End Role="Transmission" EntitySet="Transmission" />
+            <End Role="relances" EntitySet="relances" />
+          </AssociationSet>
+          <AssociationSet Name="FK_requerant_wilaya" Association="requeteModel.FK_requerant_wilaya">
+            <End Role="wilayas" EntitySet="wilaya" />
+            <End Role="requerant" EntitySet="requerant" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Structure_Structure" Association="requeteModel.FK_Structure_Structure">
+            <End Role="Structure" EntitySet="Structures" />
+            <End Role="Structure1" EntitySet="Structures" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StructureUser_Structure" Association="requeteModel.FK_StructureUser_Structure">
+            <End Role="Structure" EntitySet="Structures" />
+            <End Role="StructureUser" EntitySet="StructureUser" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StructureWilaya_Structure" Association="requeteModel.FK_StructureWilaya_Structure">
+            <End Role="Structure" EntitySet="Structures" />
+            <End Role="StructureWilaya" EntitySet="StructureWilayas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserManageStructure_Structure" Association="requeteModel.FK_UserManageStructure_Structure">
+            <End Role="Structure" EntitySet="Structures" />
+            <End Role="UserManageStructure" EntitySet="UserManageStructures" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StructureWilaya_Wilaya" Association="requeteModel.FK_StructureWilaya_Wilaya">
+            <End Role="wilayas" EntitySet="wilaya" />
+            <End Role="StructureWilaya" EntitySet="StructureWilayas" />
+          </AssociationSet>
+          <AssociationSet Name="AspNetUserRoles" Association="requeteModel.AspNetUserRoles">
+            <End Role="AspNetRoles" EntitySet="AspNetRoles" />
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+          </AssociationSet>
+          <EntitySet Name="Requests" EntityType="requeteModel.Request" />
+          <AssociationSet Name="FK_action_User_Request_Request" Association="requeteModel.FK_action_User_Request_Request">
+            <End Role="Request" EntitySet="Requests" />
+            <End Role="action_User_Request" EntitySet="action_User_Request" />
+          </AssociationSet>
+          <AssociationSet Name="FK_reclamation_Commune" Association="requeteModel.FK_reclamation_Commune">
+            <End Role="Communes" EntitySet="Communes" />
+            <End Role="Request" EntitySet="Requests" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Links_Request" Association="requeteModel.FK_Links_Request">
+            <End Role="Request" EntitySet="Requests" />
+            <End Role="Link" EntitySet="Links" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Message_Request_Request" Association="requeteModel.FK_Message_Request_Request">
+            <End Role="Request" EntitySet="Requests" />
+            <End Role="Message_Request" EntitySet="Message_Request" />
+          </AssociationSet>
+          <AssociationSet Name="FK_relances_Request" Association="requeteModel.FK_relances_Request">
+            <End Role="Request" EntitySet="Requests" />
+            <End Role="relance" EntitySet="relances" />
+          </AssociationSet>
+          <AssociationSet Name="FK_reclamation_rquerant" Association="requeteModel.FK_reclamation_rquerant">
+            <End Role="requerant" EntitySet="requerant" />
+            <End Role="Request" EntitySet="Requests" />
+          </AssociationSet>
+          <AssociationSet Name="FK_reclamation_state" Association="requeteModel.FK_reclamation_state">
+            <End Role="State_Request" EntitySet="State_Request" />
+            <End Role="Request" EntitySet="Requests" />
+          </AssociationSet>
+          <AssociationSet Name="FK_reclamation_transmission" Association="requeteModel.FK_reclamation_transmission">
+            <End Role="Transmission" EntitySet="Transmission" />
+            <End Role="Request" EntitySet="Requests" />
+          </AssociationSet>
+          <AssociationSet Name="FK_reclamation_type" Association="requeteModel.FK_reclamation_type">
+            <End Role="types" EntitySet="types" />
+            <End Role="Request" EntitySet="Requests" />
+          </AssociationSet>
+          <AssociationSet Name="FK_reclamation_Voie_Trans" Association="requeteModel.FK_reclamation_Voie_Trans">
+            <End Role="Voie_Transmission" EntitySet="Voie_Transmission" />
+            <End Role="Request" EntitySet="Requests" />
+          </AssociationSet>
+          <EntitySet Name="DispositionPrise" EntityType="requeteModel.DispositionPrise" />
+          <EntitySet Name="Motif" EntityType="requeteModel.Motif" />
+          <AssociationSet Name="FK_DispositionPrise_Object" Association="requeteModel.FK_DispositionPrise_Object">
+            <End Role="Objet_Disp" EntitySet="Objet_Disp" />
+            <End Role="DispositionPrise" EntitySet="DispositionPrise" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Request_Disposition" Association="requeteModel.FK_Request_Disposition">
+            <End Role="DispositionPrise" EntitySet="DispositionPrise" />
+            <End Role="Request" EntitySet="Requests" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Motif_Object" Association="requeteModel.FK_Motif_Object">
+            <End Role="Objet_Disp" EntitySet="Objet_Disp" />
+            <End Role="Motif" EntitySet="Motif" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Request_Motif" Association="requeteModel.FK_Request_Motif">
+            <End Role="Motif" EntitySet="Motif" />
+            <End Role="Request" EntitySet="Requests" />
+          </AssociationSet>
+        </EntityContainer>
+        <ComplexType Name="GetUsersMessagesSentReceived_Result">
+          <Property Type="String" Name="Id" Nullable="true" MaxLength="128" />
+          <Property Type="String" Name="username" Nullable="true" MaxLength="256" />
+          <Property Type="String" Name="Nom" Nullable="true" />
+          <Property Type="String" Name="Prenom" Nullable="true" />
+          <Property Type="String" Name="structure" Nullable="true" />
+          <Property Type="Int32" Name="Nombre_de_message" Nullable="true" />
+          <Property Type="Int32" Name="Nombre_de_message_Dist" Nullable="true" />
+          <Property Type="String" Name="HomeTown" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="GetUsersStoredProcedure_Result" >
+          <Property Type="String" Name="Email" MaxLength="Max" Nullable="true" />
+          <Property Type="String" Name="HomeTown" MaxLength="Max" Nullable="true" />
+          <Property Type="String" Name="Nom" Nullable="true" MaxLength="Max" />
+          <Property Type="Int32" Name="NombreReceivedMessages" Nullable="true" />
+          <Property Type="Int32" Name="NombreSentMessages" Nullable="true" />
+          <Property Type="String" Name="PhoneNumber" Nullable="true" MaxLength="Max" />
+          <Property Type="String" Name="Prenom" Nullable="true" MaxLength="Max" />
+          <Property Type="String" Name="Structure" Nullable="true" />
+          <Property Type="String" Name="Id" Nullable="true" MaxLength="128" />
+          <Property Type="String" Name="username" Nullable="true" MaxLength="256" />
+        </ComplexType>
+        <EntityType Name="C__MigrationHistory">
+          <Key>
+            <PropertyRef Name="MigrationId" />
+            <PropertyRef Name="ContextKey" />
+          </Key>
+          <Property Name="MigrationId" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="ContextKey" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="Model" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+          <Property Name="ProductVersion" Type="String" Nullable="false" MaxLength="32" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="action_User_Request">
+          <Key>
+            <PropertyRef Name="id_action" />
+          </Key>
+          <Property Name="id_action" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="id_request" Type="Int32" />
+          <Property Name="Year_Request" Type="Int32" />
+          <Property Name="NumWilaya_Request" Type="Int32" />
+          <Property Name="id_user" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="date_action" Type="DateTime" Precision="3" />
+          <Property Name="action" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="AspNetUsers" Relationship="requeteModel.FK_action_User_Request_User" FromRole="action_User_Request" ToRole="AspNetUsers" />
+          <NavigationProperty Name="Request" Relationship="requeteModel.FK_action_User_Request_Request" FromRole="action_User_Request" ToRole="Request" />
+        </EntityType>
+        <EntityType Name="AspNetRoles">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Permissions_Role" Relationship="requeteModel.FK_Permissions_Role" FromRole="AspNetRoles" ToRole="Permissions_Role" />
+          <NavigationProperty Name="AspNetUsers" Relationship="requeteModel.AspNetUserRoles" FromRole="AspNetRoles" ToRole="AspNetUsers" />
+        </EntityType>
+        <EntityType Name="AspNetUserClaim">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="ClaimType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ClaimValue" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="AspNetUsers" Relationship="requeteModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" FromRole="AspNetUserClaims" ToRole="AspNetUsers" />
+        </EntityType>
+        <EntityType Name="AspNetUserLogins">
+          <Key>
+            <PropertyRef Name="LoginProvider" />
+            <PropertyRef Name="ProviderKey" />
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="LoginProvider" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="ProviderKey" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="UserId" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="AspNetUsers" Relationship="requeteModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" FromRole="AspNetUserLogins" ToRole="AspNetUsers" />
+        </EntityType>
+        <EntityType Name="AspNetUsers">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="UserName" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="CodeWilaya" Type="Int32" />
+          <Property Name="Hometown" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="EmailConfirmed" Type="Boolean" Nullable="false" />
+          <Property Name="PasswordHash" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SecurityStamp" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumberConfirmed" Type="Boolean" Nullable="false" />
+          <Property Name="TwoFactorEnabled" Type="Boolean" Nullable="false" />
+          <Property Name="LockoutEndDateUtc" Type="DateTime" Precision="3" />
+          <Property Name="LockoutEnabled" Type="Boolean" Nullable="false" />
+          <Property Name="AccessFailedCount" Type="Int32" Nullable="false" />
+          <Property Name="Matricule" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Nom" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Prenom" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Date_Recrutement" Type="DateTime" Precision="0" />
+          <Property Name="Diplome" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="action_User_Request" Relationship="requeteModel.FK_action_User_Request_User" FromRole="AspNetUsers" ToRole="action_User_Request" />
+          <NavigationProperty Name="AspNetUserClaims" Relationship="requeteModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" FromRole="AspNetUsers" ToRole="AspNetUserClaims" />
+          <NavigationProperty Name="AspNetUserLogins" Relationship="requeteModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" FromRole="AspNetUsers" ToRole="AspNetUserLogins" />
+          <NavigationProperty Name="BAL_User" Relationship="requeteModel.FK_BAL_User_UserDestin" FromRole="AspNetUsers" ToRole="BAL_User" />
+          <NavigationProperty Name="BAL_User1" Relationship="requeteModel.FK_BAL_User_UserExped" FromRole="AspNetUsers" ToRole="BAL_User" />
+          <NavigationProperty Name="Message_Request" Relationship="requeteModel.FK_Message_Request_AspNetUser" FromRole="AspNetUsers" ToRole="Message_Request" />
+          <NavigationProperty Name="Message_Request1" Relationship="requeteModel.FK_Message_Request_AspNetUserDestination" FromRole="AspNetUsers" ToRole="Message_Request" />
+          <NavigationProperty Name="StructureUser" Relationship="requeteModel.FK_StructureUser_User" FromRole="AspNetUsers" ToRole="StructureUser" />
+          <NavigationProperty Name="UserManageStructure" Relationship="requeteModel.FK_UserManageStructure_User" FromRole="AspNetUsers" ToRole="UserManageStructure" />
+          <NavigationProperty Name="AspNetRoles" Relationship="requeteModel.AspNetUserRoles" FromRole="AspNetUsers" ToRole="AspNetRoles" />
+        </EntityType>
+        <EntityType Name="BAL_User">
+          <Key>
+            <PropertyRef Name="Id_Message" />
+          </Key>
+          <Property Name="Id_Message" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="Message" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="id_user" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="State_Message" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="link" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Id_User_Destination" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="Date_Message" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="AspNetUsers" Relationship="requeteModel.FK_BAL_User_UserDestin" FromRole="BAL_User" ToRole="AspNetUsers" />
+          <NavigationProperty Name="AspNetUsers1" Relationship="requeteModel.FK_BAL_User_UserExped" FromRole="BAL_User" ToRole="AspNetUsers" />
+        </EntityType>
+        <EntityType Name="Communes">
+          <Key>
+            <PropertyRef Name="CommuneId" />
+          </Key>
+          <Property Name="CommuneId" Type="Guid" Nullable="false" />
+          <Property Name="NomCommune" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CodePostal" Type="Int32" />
+          <Property Name="Code_Wilaya" Type="Int32" />
+          <NavigationProperty Name="wilayas" Relationship="requeteModel.FK_Commune_Wilaya" FromRole="Commune" ToRole="wilayas" />
+          <NavigationProperty Name="Request" Relationship="requeteModel.FK_reclamation_Commune" FromRole="Communes" ToRole="Request" />
+        </EntityType>
+        <EntityType Name="LevelOfStrucure">
+          <Key>
+            <PropertyRef Name="LevelStructureId" />
+          </Key>
+          <Property Name="LevelStructureId" Type="Guid" Nullable="false" />
+          <Property Name="IntituleFr" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IntituleAr" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="LevelParentId" Type="Guid" />
+          <NavigationProperty Name="LevelOfStrucure1" Relationship="requeteModel.FK_LevelOfStrucure_LevelOfStrucure" FromRole="LevelOfStrucure" ToRole="LevelOfStrucure1" />
+          <NavigationProperty Name="LevelOfStrucure2" Relationship="requeteModel.FK_LevelOfStrucure_LevelOfStrucure" FromRole="LevelOfStrucure1" ToRole="LevelOfStrucure" />
+          <NavigationProperty Name="Structure" Relationship="requeteModel.FK_Structure_Level" FromRole="LevelOfStrucure" ToRole="Structure" />
+        </EntityType>
+        <EntityType Name="Link">
+          <Key>
+            <PropertyRef Name="Guid" />
+          </Key>
+          <Property Name="Guid" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="Link1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Id_Request" Type="Int32" />
+          <Property Name="NumWilaya_Request" Type="Int32" />
+          <Property Name="Year_Request" Type="Int32" />
+          <Property Name="extension" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Request" Relationship="requeteModel.FK_Links_Request" FromRole="Link" ToRole="Request" />
+        </EntityType>
+        <EntityType Name="Message_Request">
+          <Key>
+            <PropertyRef Name="MessageId" />
+          </Key>
+          <Property Name="MessageId" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="Message" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="id_user" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="State_Message" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="link" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Id_User_Destination" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="Date_Message" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="NumRequest" Type="Int32" Nullable="false" />
+          <Property Name="YearRequest" Type="Int32" Nullable="false" />
+          <Property Name="num_wilayaRequest" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="AspNetUsers" Relationship="requeteModel.FK_Message_Request_AspNetUser" FromRole="Message_Request" ToRole="AspNetUsers" />
+          <NavigationProperty Name="AspNetUsers1" Relationship="requeteModel.FK_Message_Request_AspNetUserDestination" FromRole="Message_Request" ToRole="AspNetUsers" />
+          <NavigationProperty Name="Request" Relationship="requeteModel.FK_Message_Request_Request" FromRole="Message_Request" ToRole="Request" />
+        </EntityType>
+        <EntityType Name="Mission">
+          <Key>
+            <PropertyRef Name="num" />
+          </Key>
+          <Property Name="num" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="mission1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="PhaseObject" Relationship="requeteModel.FK_PhaseObject_Mission" FromRole="Missions" ToRole="PhaseObject" />
+        </EntityType>
+        <EntityType Name="Objet_Disp">
+          <Key>
+            <PropertyRef Name="id_objet" />
+          </Key>
+          <Property Name="id_objet" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="objet" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ObjectNum" Type="Int32" />
+          <Property Name="PhaseId" Type="Guid" />
+          <NavigationProperty Name="PhaseObject" Relationship="requeteModel.FK_Objet_Disp_Phase" FromRole="Objet_Disp" ToRole="PhaseObject" />
+          <NavigationProperty Name="DispositionPrise" Relationship="requeteModel.FK_DispositionPrise_Object" FromRole="Objet_Disp" ToRole="DispositionPrise" />
+          <NavigationProperty Name="Motif" Relationship="requeteModel.FK_Motif_Object" FromRole="Objet_Disp" ToRole="Motif" />
+        </EntityType>
+        <EntityType Name="Permissions_Role">
+          <Key>
+            <PropertyRef Name="Id_Permission" />
+          </Key>
+          <Property Name="Id_Permission" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="Id_Role" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="Permission_Type" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Permission_Value" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="AspNetRoles" Relationship="requeteModel.FK_Permissions_Role" FromRole="Permissions_Role" ToRole="AspNetRoles" />
+        </EntityType>
+        <EntityType Name="PhaseObject">
+          <Key>
+            <PropertyRef Name="PhaseId" />
+          </Key>
+          <Property Name="PhaseId" Type="Guid" Nullable="false" />
+          <Property Name="PhaseName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MissionId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Missions" Relationship="requeteModel.FK_PhaseObject_Mission" FromRole="PhaseObject" ToRole="Missions" />
+          <NavigationProperty Name="Objet_Disp" Relationship="requeteModel.FK_Objet_Disp_Phase" FromRole="PhaseObject" ToRole="Objet_Disp" />
+        </EntityType>
+        <EntityType Name="relance">
+          <Key>
+            <PropertyRef Name="id_relances" />
+          </Key>
+          <Property Name="id_relances" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="id_requete" Type="Int32" />
+          <Property Name="Year_Request" Type="Int32" />
+          <Property Name="NumWilaya_Request" Type="Int32" />
+          <Property Name="id_transmission" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="date_relance" Type="DateTime" Precision="0" />
+          <Property Name="Description_relance" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Transmission" Relationship="requeteModel.FK_relances_transmission" FromRole="relances" ToRole="Transmission" />
+          <NavigationProperty Name="Request" Relationship="requeteModel.FK_relances_Request" FromRole="relance" ToRole="Request" />
+        </EntityType>
+        <EntityType Name="requerant">
+          <Key>
+            <PropertyRef Name="num" />
+          </Key>
+          <Property Name="num" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="nom_requerant" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="prenom_requerant" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SEXE" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Date_Naissance" Type="DateTime" Precision="0" />
+          <Property Name="Adresse" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Tel" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="id_wilaya" Type="Int32" />
+          <Property Name="Nom_CAnimateur" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Prenom_CAnimateur" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Num_Dossier" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="wilayas" Relationship="requeteModel.FK_requerant_wilaya" FromRole="requerant" ToRole="wilayas" />
+          <NavigationProperty Name="Request" Relationship="requeteModel.FK_reclamation_rquerant" FromRole="requerant" ToRole="Request" />
+        </EntityType>
+        <EntityType Name="State_Request">
+          <Key>
+            <PropertyRef Name="id_state" />
+          </Key>
+          <Property Name="id_state" Type="Int32" Nullable="false" />
+          <Property Name="nom_state" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Request" Relationship="requeteModel.FK_reclamation_state" FromRole="State_Request" ToRole="Request" />
+        </EntityType>
+        <EntityType Name="Structure">
+          <Key>
+            <PropertyRef Name="StructureId" />
+          </Key>
+          <Property Name="StructureId" Type="Guid" Nullable="false" />
+          <Property Name="IntituleFr" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IntituleAr" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="LevelId" Type="Guid" />
+          <Property Name="StructureParentId" Type="Guid" />
+          <NavigationProperty Name="LevelOfStrucure" Relationship="requeteModel.FK_Structure_Level" FromRole="Structure" ToRole="LevelOfStrucure" />
+          <NavigationProperty Name="Structure1" Relationship="requeteModel.FK_Structure_Structure" FromRole="Structure" ToRole="Structure1" />
+          <NavigationProperty Name="Structure2" Relationship="requeteModel.FK_Structure_Structure" FromRole="Structure1" ToRole="Structure" />
+          <NavigationProperty Name="StructureUser" Relationship="requeteModel.FK_StructureUser_Structure" FromRole="Structure" ToRole="StructureUser" />
+          <NavigationProperty Name="StructureWilaya" Relationship="requeteModel.FK_StructureWilaya_Structure" FromRole="Structure" ToRole="StructureWilaya" />
+          <NavigationProperty Name="UserManageStructure" Relationship="requeteModel.FK_UserManageStructure_Structure" FromRole="Structure" ToRole="UserManageStructure" />
+        </EntityType>
+        <EntityType Name="StructureUser">
+          <Key>
+            <PropertyRef Name="StructureId" />
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="StructureId" Type="Guid" Nullable="false" />
+          <Property Name="UserId" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="DateBegin" Type="DateTime" Precision="0" />
+          <Property Name="DateEnd" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="AspNetUsers" Relationship="requeteModel.FK_StructureUser_User" FromRole="StructureUser" ToRole="AspNetUsers" />
+          <NavigationProperty Name="Structure" Relationship="requeteModel.FK_StructureUser_Structure" FromRole="StructureUser" ToRole="Structure" />
+        </EntityType>
+        <EntityType Name="StructureWilaya">
+          <Key>
+            <PropertyRef Name="WilayaStructureId" />
+          </Key>
+          <Property Name="WilayaStructureId" Type="Guid" Nullable="false" />
+          <Property Name="WilayaNum" Type="Int32" />
+          <Property Name="StructureId" Type="Guid" />
+          <Property Name="DateBegin" Type="DateTime" Precision="0" />
+          <Property Name="DateEnd" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="Structure" Relationship="requeteModel.FK_StructureWilaya_Structure" FromRole="StructureWilaya" ToRole="Structure" />
+          <NavigationProperty Name="wilayas" Relationship="requeteModel.FK_StructureWilaya_Wilaya" FromRole="StructureWilaya" ToRole="wilayas" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Transmission">
+          <Key>
+            <PropertyRef Name="id_trans" />
+          </Key>
+          <Property Name="id_trans" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="mode_trans" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="relances" Relationship="requeteModel.FK_relances_transmission" FromRole="Transmission" ToRole="relances" />
+          <NavigationProperty Name="Request" Relationship="requeteModel.FK_reclamation_transmission" FromRole="Transmission" ToRole="Request" />
+        </EntityType>
+        <EntityType Name="types">
+          <Key>
+            <PropertyRef Name="id_types" />
+          </Key>
+          <Property Name="id_types" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="type" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Request" Relationship="requeteModel.FK_reclamation_type" FromRole="types" ToRole="Request" />
+        </EntityType>
+        <EntityType Name="UserManageStructure">
+          <Key>
+            <PropertyRef Name="userManagerStructureId" />
+          </Key>
+          <Property Name="userManagerStructureId" Type="Guid" Nullable="false" />
+          <Property Name="StructureId" Type="Guid" />
+          <Property Name="UserId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="DateBegin" Type="DateTime" Precision="0" />
+          <Property Name="DateEnd" Type="DateTime" Precision="0" />
+          <Property Name="PosteOccupe" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="AspNetUsers" Relationship="requeteModel.FK_UserManageStructure_User" FromRole="UserManageStructure" ToRole="AspNetUsers" />
+          <NavigationProperty Name="Structure" Relationship="requeteModel.FK_UserManageStructure_Structure" FromRole="UserManageStructure" ToRole="Structure" />
+        </EntityType>
+        <EntityType Name="Voie_Transmission">
+          <Key>
+            <PropertyRef Name="id_voie" />
+          </Key>
+          <Property Name="id_voie" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="voie_trans" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Request" Relationship="requeteModel.FK_reclamation_Voie_Trans" FromRole="Voie_Transmission" ToRole="Request" />
+        </EntityType>
+        <EntityType Name="wilayas">
+          <Key>
+            <PropertyRef Name="num" />
+          </Key>
+          <Property Name="num" Type="Int32" Nullable="false" />
+          <Property Name="wilaya" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Commune" Relationship="requeteModel.FK_Commune_Wilaya" FromRole="wilayas" ToRole="Commune" />
+          <NavigationProperty Name="requerant" Relationship="requeteModel.FK_requerant_wilaya" FromRole="wilayas" ToRole="requerant" />
+          <NavigationProperty Name="StructureWilaya" Relationship="requeteModel.FK_StructureWilaya_Wilaya" FromRole="wilayas" ToRole="StructureWilaya" />
+        </EntityType>
+        <Association Name="FK_action_User_Request_User">
+          <End Type="requeteModel.AspNetUsers" Role="AspNetUsers" Multiplicity="0..1" />
+          <End Type="requeteModel.action_User_Request" Role="action_User_Request" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="action_User_Request">
+              <PropertyRef Name="id_user" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Permissions_Role">
+          <End Type="requeteModel.AspNetRoles" Role="AspNetRoles" Multiplicity="0..1" />
+          <End Type="requeteModel.Permissions_Role" Role="Permissions_Role" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetRoles">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Permissions_Role">
+              <PropertyRef Name="Id_Role" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+          <End Type="requeteModel.AspNetUsers" Role="AspNetUsers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="requeteModel.AspNetUserClaim" Role="AspNetUserClaims" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserClaims">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+          <End Type="requeteModel.AspNetUsers" Role="AspNetUsers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="requeteModel.AspNetUserLogins" Role="AspNetUserLogins" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserLogins">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BAL_User_UserDestin">
+          <End Type="requeteModel.AspNetUsers" Role="AspNetUsers" Multiplicity="0..1" />
+          <End Type="requeteModel.BAL_User" Role="BAL_User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="BAL_User">
+              <PropertyRef Name="Id_User_Destination" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BAL_User_UserExped">
+          <End Type="requeteModel.AspNetUsers" Role="AspNetUsers" Multiplicity="0..1" />
+          <End Type="requeteModel.BAL_User" Role="BAL_User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="BAL_User">
+              <PropertyRef Name="id_user" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Message_Request_AspNetUser">
+          <End Type="requeteModel.AspNetUsers" Role="AspNetUsers" Multiplicity="1" />
+          <End Type="requeteModel.Message_Request" Role="Message_Request" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Message_Request">
+              <PropertyRef Name="id_user" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Message_Request_AspNetUserDestination">
+          <End Type="requeteModel.AspNetUsers" Role="AspNetUsers" Multiplicity="1" />
+          <End Type="requeteModel.Message_Request" Role="Message_Request" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Message_Request">
+              <PropertyRef Name="Id_User_Destination" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StructureUser_User">
+          <End Type="requeteModel.AspNetUsers" Role="AspNetUsers" Multiplicity="1" />
+          <End Type="requeteModel.StructureUser" Role="StructureUser" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="StructureUser">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserManageStructure_User">
+          <End Type="requeteModel.AspNetUsers" Role="AspNetUsers" Multiplicity="0..1" />
+          <End Type="requeteModel.UserManageStructure" Role="UserManageStructure" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserManageStructure">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Commune_Wilaya">
+          <End Type="requeteModel.wilayas" Role="wilayas" Multiplicity="0..1" />
+          <End Type="requeteModel.Communes" Role="Commune" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="wilayas">
+              <PropertyRef Name="num" />
+            </Principal>
+            <Dependent Role="Commune">
+              <PropertyRef Name="Code_Wilaya" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LevelOfStrucure_LevelOfStrucure">
+          <End Type="requeteModel.LevelOfStrucure" Role="LevelOfStrucure" Multiplicity="1" />
+          <End Type="requeteModel.LevelOfStrucure" Role="LevelOfStrucure1" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="LevelOfStrucure">
+              <PropertyRef Name="LevelStructureId" />
+            </Principal>
+            <Dependent Role="LevelOfStrucure1">
+              <PropertyRef Name="LevelStructureId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Structure_Level">
+          <End Type="requeteModel.LevelOfStrucure" Role="LevelOfStrucure" Multiplicity="0..1" />
+          <End Type="requeteModel.Structure" Role="Structure" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LevelOfStrucure">
+              <PropertyRef Name="LevelStructureId" />
+            </Principal>
+            <Dependent Role="Structure">
+              <PropertyRef Name="LevelId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PhaseObject_Mission">
+          <End Type="requeteModel.Mission" Role="Missions" Multiplicity="0..1" />
+          <End Type="requeteModel.PhaseObject" Role="PhaseObject" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Missions">
+              <PropertyRef Name="num" />
+            </Principal>
+            <Dependent Role="PhaseObject">
+              <PropertyRef Name="MissionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Objet_Disp_Phase">
+          <End Type="requeteModel.PhaseObject" Role="PhaseObject" Multiplicity="0..1" />
+          <End Type="requeteModel.Objet_Disp" Role="Objet_Disp" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PhaseObject">
+              <PropertyRef Name="PhaseId" />
+            </Principal>
+            <Dependent Role="Objet_Disp">
+              <PropertyRef Name="PhaseId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_relances_transmission">
+          <End Type="requeteModel.Transmission" Role="Transmission" Multiplicity="0..1" />
+          <End Type="requeteModel.relance" Role="relances" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Transmission">
+              <PropertyRef Name="id_trans" />
+            </Principal>
+            <Dependent Role="relances">
+              <PropertyRef Name="id_transmission" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_requerant_wilaya">
+          <End Type="requeteModel.wilayas" Role="wilayas" Multiplicity="0..1" />
+          <End Type="requeteModel.requerant" Role="requerant" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="wilayas">
+              <PropertyRef Name="num" />
+            </Principal>
+            <Dependent Role="requerant">
+              <PropertyRef Name="id_wilaya" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Structure_Structure">
+          <End Type="requeteModel.Structure" Role="Structure" Multiplicity="1" />
+          <End Type="requeteModel.Structure" Role="Structure1" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Structure">
+              <PropertyRef Name="StructureId" />
+            </Principal>
+            <Dependent Role="Structure1">
+              <PropertyRef Name="StructureId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StructureUser_Structure">
+          <End Type="requeteModel.Structure" Role="Structure" Multiplicity="1" />
+          <End Type="requeteModel.StructureUser" Role="StructureUser" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Structure">
+              <PropertyRef Name="StructureId" />
+            </Principal>
+            <Dependent Role="StructureUser">
+              <PropertyRef Name="StructureId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StructureWilaya_Structure">
+          <End Type="requeteModel.Structure" Role="Structure" Multiplicity="0..1" />
+          <End Type="requeteModel.StructureWilaya" Role="StructureWilaya" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Structure">
+              <PropertyRef Name="StructureId" />
+            </Principal>
+            <Dependent Role="StructureWilaya">
+              <PropertyRef Name="StructureId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserManageStructure_Structure">
+          <End Type="requeteModel.Structure" Role="Structure" Multiplicity="0..1" />
+          <End Type="requeteModel.UserManageStructure" Role="UserManageStructure" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Structure">
+              <PropertyRef Name="StructureId" />
+            </Principal>
+            <Dependent Role="UserManageStructure">
+              <PropertyRef Name="StructureId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StructureWilaya_Wilaya">
+          <End Type="requeteModel.wilayas" Role="wilayas" Multiplicity="0..1" />
+          <End Type="requeteModel.StructureWilaya" Role="StructureWilaya" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="wilayas">
+              <PropertyRef Name="num" />
+            </Principal>
+            <Dependent Role="StructureWilaya">
+              <PropertyRef Name="WilayaNum" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="AspNetUserRoles">
+          <End Type="requeteModel.AspNetRoles" Role="AspNetRoles" Multiplicity="*" />
+          <End Type="requeteModel.AspNetUsers" Role="AspNetUsers" Multiplicity="*" />
+        </Association>
+        <EntityType Name="Request">
+          <Key>
+            <PropertyRef Name="num" />
+            <PropertyRef Name="Year" />
+            <PropertyRef Name="num_wilaya" />
+          </Key>
+          <Property Name="num" Type="Int32" Nullable="false" />
+          <Property Name="Year" Type="Int32" Nullable="false" />
+          <Property Name="num_wilaya" Type="Int32" Nullable="false" />
+          <Property Name="CommuneId" Type="Guid" />
+          <Property Name="id_state" Type="Int32" />
+          <Property Name="date" Type="DateTime" Precision="0" />
+          <Property Name="Date_Insertion" Type="DateTime" Precision="3" />
+          <Property Name="id_type" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="num_requerant" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="corp_requete" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="id_trans" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="result_traitement" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Date_Envoi" Type="DateTime" Precision="3" />
+          <Property Name="Ref_Validation" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="id_Voie_Trans" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="User_Inserted" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MotifId" Type="Guid" />
+          <Property Name="DispositionPriseId" Type="Guid" />
+          <NavigationProperty Name="action_User_Request" Relationship="requeteModel.FK_action_User_Request_Request" FromRole="Request" ToRole="action_User_Request" />
+          <NavigationProperty Name="Commune" Relationship="requeteModel.FK_reclamation_Commune" FromRole="Request" ToRole="Communes" />
+          <NavigationProperty Name="Links" Relationship="requeteModel.FK_Links_Request" FromRole="Request" ToRole="Link" />
+          <NavigationProperty Name="Message_Request" Relationship="requeteModel.FK_Message_Request_Request" FromRole="Request" ToRole="Message_Request" />
+          <NavigationProperty Name="relances" Relationship="requeteModel.FK_relances_Request" FromRole="Request" ToRole="relance" />
+          <NavigationProperty Name="requerant" Relationship="requeteModel.FK_reclamation_rquerant" FromRole="Request" ToRole="requerant" />
+          <NavigationProperty Name="State_Request" Relationship="requeteModel.FK_reclamation_state" FromRole="Request" ToRole="State_Request" />
+          <NavigationProperty Name="Transmission" Relationship="requeteModel.FK_reclamation_transmission" FromRole="Request" ToRole="Transmission" />
+          <NavigationProperty Name="types" Relationship="requeteModel.FK_reclamation_type" FromRole="Request" ToRole="types" />
+          <NavigationProperty Name="Voie_Transmission" Relationship="requeteModel.FK_reclamation_Voie_Trans" FromRole="Request" ToRole="Voie_Transmission" />
+          <NavigationProperty Name="DispositionPrise" Relationship="requeteModel.FK_Request_Disposition" FromRole="Request" ToRole="DispositionPrise" />
+          <NavigationProperty Name="Motif" Relationship="requeteModel.FK_Request_Motif" FromRole="Request" ToRole="Motif" />
+        </EntityType>
+        <Association Name="FK_action_User_Request_Request">
+          <End Type="requeteModel.Request" Role="Request" Multiplicity="0..1" />
+          <End Type="requeteModel.action_User_Request" Role="action_User_Request" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Request">
+              <PropertyRef Name="num" />
+              <PropertyRef Name="Year" />
+              <PropertyRef Name="num_wilaya" />
+            </Principal>
+            <Dependent Role="action_User_Request">
+              <PropertyRef Name="id_request" />
+              <PropertyRef Name="Year_Request" />
+              <PropertyRef Name="NumWilaya_Request" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_reclamation_Commune">
+          <End Type="requeteModel.Communes" Role="Communes" Multiplicity="0..1" />
+          <End Type="requeteModel.Request" Role="Request" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Communes">
+              <PropertyRef Name="CommuneId" />
+            </Principal>
+            <Dependent Role="Request">
+              <PropertyRef Name="CommuneId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Links_Request">
+          <End Type="requeteModel.Request" Role="Request" Multiplicity="0..1" />
+          <End Type="requeteModel.Link" Role="Link" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Request">
+              <PropertyRef Name="num" />
+              <PropertyRef Name="num_wilaya" />
+              <PropertyRef Name="Year" />
+            </Principal>
+            <Dependent Role="Link">
+              <PropertyRef Name="Id_Request" />
+              <PropertyRef Name="NumWilaya_Request" />
+              <PropertyRef Name="Year_Request" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Message_Request_Request">
+          <End Type="requeteModel.Request" Role="Request" Multiplicity="1" />
+          <End Type="requeteModel.Message_Request" Role="Message_Request" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Request">
+              <PropertyRef Name="num" />
+              <PropertyRef Name="Year" />
+              <PropertyRef Name="num_wilaya" />
+            </Principal>
+            <Dependent Role="Message_Request">
+              <PropertyRef Name="NumRequest" />
+              <PropertyRef Name="YearRequest" />
+              <PropertyRef Name="num_wilayaRequest" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_relances_Request">
+          <End Type="requeteModel.Request" Role="Request" Multiplicity="0..1" />
+          <End Type="requeteModel.relance" Role="relance" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Request">
+              <PropertyRef Name="num" />
+              <PropertyRef Name="Year" />
+              <PropertyRef Name="num_wilaya" />
+            </Principal>
+            <Dependent Role="relance">
+              <PropertyRef Name="id_requete" />
+              <PropertyRef Name="Year_Request" />
+              <PropertyRef Name="NumWilaya_Request" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_reclamation_rquerant">
+          <End Type="requeteModel.requerant" Role="requerant" Multiplicity="0..1" />
+          <End Type="requeteModel.Request" Role="Request" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="requerant">
+              <PropertyRef Name="num" />
+            </Principal>
+            <Dependent Role="Request">
+              <PropertyRef Name="num_requerant" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_reclamation_state">
+          <End Type="requeteModel.State_Request" Role="State_Request" Multiplicity="0..1" />
+          <End Type="requeteModel.Request" Role="Request" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="State_Request">
+              <PropertyRef Name="id_state" />
+            </Principal>
+            <Dependent Role="Request">
+              <PropertyRef Name="id_state" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_reclamation_transmission">
+          <End Type="requeteModel.Transmission" Role="Transmission" Multiplicity="0..1" />
+          <End Type="requeteModel.Request" Role="Request" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Transmission">
+              <PropertyRef Name="id_trans" />
+            </Principal>
+            <Dependent Role="Request">
+              <PropertyRef Name="id_trans" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_reclamation_type">
+          <End Type="requeteModel.types" Role="types" Multiplicity="0..1" />
+          <End Type="requeteModel.Request" Role="Request" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="types">
+              <PropertyRef Name="id_types" />
+            </Principal>
+            <Dependent Role="Request">
+              <PropertyRef Name="id_type" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_reclamation_Voie_Trans">
+          <End Type="requeteModel.Voie_Transmission" Role="Voie_Transmission" Multiplicity="0..1" />
+          <End Type="requeteModel.Request" Role="Request" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Voie_Transmission">
+              <PropertyRef Name="id_voie" />
+            </Principal>
+            <Dependent Role="Request">
+              <PropertyRef Name="id_Voie_Trans" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="DispositionPrise">
+          <Key>
+            <PropertyRef Name="DispositionPriseId" />
+          </Key>
+          <Property Name="DispositionPriseId" Type="Guid" Nullable="false" />
+          <Property Name="DispositionName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ObjectId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Objet_Disp" Relationship="requeteModel.FK_DispositionPrise_Object" FromRole="DispositionPrise" ToRole="Objet_Disp" />
+          <NavigationProperty Name="Request" Relationship="requeteModel.FK_Request_Disposition" FromRole="DispositionPrise" ToRole="Request" />
+        </EntityType>
+        <EntityType Name="Motif">
+          <Key>
+            <PropertyRef Name="MotifId" />
+          </Key>
+          <Property Name="MotifId" Type="Guid" Nullable="false" />
+          <Property Name="MotifName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ObjectId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Objet_Disp" Relationship="requeteModel.FK_Motif_Object" FromRole="Motif" ToRole="Objet_Disp" />
+          <NavigationProperty Name="Request" Relationship="requeteModel.FK_Request_Motif" FromRole="Motif" ToRole="Request" />
+        </EntityType>
+        <Association Name="FK_DispositionPrise_Object">
+          <End Type="requeteModel.Objet_Disp" Role="Objet_Disp" Multiplicity="0..1" />
+          <End Type="requeteModel.DispositionPrise" Role="DispositionPrise" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Objet_Disp">
+              <PropertyRef Name="id_objet" />
+            </Principal>
+            <Dependent Role="DispositionPrise">
+              <PropertyRef Name="ObjectId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Request_Disposition">
+          <End Type="requeteModel.DispositionPrise" Role="DispositionPrise" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="requeteModel.Request" Role="Request" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DispositionPrise">
+              <PropertyRef Name="DispositionPriseId" />
+            </Principal>
+            <Dependent Role="Request">
+              <PropertyRef Name="DispositionPriseId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Motif_Object">
+          <End Type="requeteModel.Objet_Disp" Role="Objet_Disp" Multiplicity="0..1" />
+          <End Type="requeteModel.Motif" Role="Motif" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Objet_Disp">
+              <PropertyRef Name="id_objet" />
+            </Principal>
+            <Dependent Role="Motif">
+              <PropertyRef Name="ObjectId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Request_Motif">
+          <End Type="requeteModel.Motif" Role="Motif" Multiplicity="0..1" />
+          <End Type="requeteModel.Request" Role="Request" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Motif">
+              <PropertyRef Name="MotifId" />
+            </Principal>
+            <Dependent Role="Request">
+              <PropertyRef Name="MotifId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="requeteModelStoreContainer" CdmEntityContainer="requeteEntities">
+          <FunctionImportMapping FunctionImportName="spproc_filter_Reclamation" FunctionName="requeteModel.Store.spproc_filter_Reclamation" />
+          <FunctionImportMapping FunctionImportName="spproc_filter_requete" FunctionName="requeteModel.Store.spproc_filter_requete" />
+          <FunctionImportMapping FunctionImportName="spproc_filter_requete1" FunctionName="requeteModel.Store.spproc_filter_requete1" />
+          <FunctionImportMapping FunctionImportName="spproc_filter_users" FunctionName="requeteModel.Store.spproc_filter_requete" />
+          <FunctionImportMapping FunctionImportName="spproc_filter_requerant" FunctionName="requeteModel.Store.spproc_filter_requete" />
+          <FunctionImportMapping FunctionImportName="GetUsersStoredProcedure" FunctionName="requeteModel.Store.GetUsersStoredProcedure" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="requeteModel.GetUsersStoredProcedure_Result">
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="HomeTown" ColumnName="HomeTown" />
+                <ScalarProperty Name="Nom" ColumnName="Nom" />
+                <ScalarProperty Name="NombreReceivedMessages" ColumnName="NombreReceivedMessages" />
+                <ScalarProperty Name="NombreSentMessages" ColumnName="NombreSentMessages" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="Prenom" ColumnName="Prenom" />
+                <ScalarProperty Name="Structure" ColumnName="Structure" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="username" ColumnName="username" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <EntitySetMapping Name="C__MigrationHistory">
+            <EntityTypeMapping TypeName="requeteModel.C__MigrationHistory">
+              <MappingFragment StoreEntitySet="__MigrationHistory">
+                <ScalarProperty Name="ProductVersion" ColumnName="ProductVersion" />
+                <ScalarProperty Name="Model" ColumnName="Model" />
+                <ScalarProperty Name="ContextKey" ColumnName="ContextKey" />
+                <ScalarProperty Name="MigrationId" ColumnName="MigrationId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="action_User_Request">
+            <EntityTypeMapping TypeName="requeteModel.action_User_Request">
+              <MappingFragment StoreEntitySet="action_User_Request">
+                <ScalarProperty Name="action" ColumnName="action" />
+                <ScalarProperty Name="date_action" ColumnName="date_action" />
+                <ScalarProperty Name="id_user" ColumnName="id_user" />
+                <ScalarProperty Name="NumWilaya_Request" ColumnName="NumWilaya_Request" />
+                <ScalarProperty Name="Year_Request" ColumnName="Year_Request" />
+                <ScalarProperty Name="id_request" ColumnName="id_request" />
+                <ScalarProperty Name="id_action" ColumnName="id_action" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetRoles">
+            <EntityTypeMapping TypeName="requeteModel.AspNetRoles">
+              <MappingFragment StoreEntitySet="AspNetRoles">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetUserClaims">
+            <EntityTypeMapping TypeName="requeteModel.AspNetUserClaim">
+              <MappingFragment StoreEntitySet="AspNetUserClaims">
+                <ScalarProperty Name="ClaimValue" ColumnName="ClaimValue" />
+                <ScalarProperty Name="ClaimType" ColumnName="ClaimType" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetUserLogins">
+            <EntityTypeMapping TypeName="requeteModel.AspNetUserLogins">
+              <MappingFragment StoreEntitySet="AspNetUserLogins">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="ProviderKey" ColumnName="ProviderKey" />
+                <ScalarProperty Name="LoginProvider" ColumnName="LoginProvider" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetUsers">
+            <EntityTypeMapping TypeName="requeteModel.AspNetUsers">
+              <MappingFragment StoreEntitySet="AspNetUsers">
+                <ScalarProperty Name="Diplome" ColumnName="Diplome" />
+                <ScalarProperty Name="Date_Recrutement" ColumnName="Date_Recrutement" />
+                <ScalarProperty Name="Prenom" ColumnName="Prenom" />
+                <ScalarProperty Name="Nom" ColumnName="Nom" />
+                <ScalarProperty Name="Matricule" ColumnName="Matricule" />
+                <ScalarProperty Name="AccessFailedCount" ColumnName="AccessFailedCount" />
+                <ScalarProperty Name="LockoutEnabled" ColumnName="LockoutEnabled" />
+                <ScalarProperty Name="LockoutEndDateUtc" ColumnName="LockoutEndDateUtc" />
+                <ScalarProperty Name="TwoFactorEnabled" ColumnName="TwoFactorEnabled" />
+                <ScalarProperty Name="PhoneNumberConfirmed" ColumnName="PhoneNumberConfirmed" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="SecurityStamp" ColumnName="SecurityStamp" />
+                <ScalarProperty Name="PasswordHash" ColumnName="PasswordHash" />
+                <ScalarProperty Name="EmailConfirmed" ColumnName="EmailConfirmed" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Hometown" ColumnName="Hometown" />
+                <ScalarProperty Name="CodeWilaya" ColumnName="CodeWilaya" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BAL_User">
+            <EntityTypeMapping TypeName="requeteModel.BAL_User">
+              <MappingFragment StoreEntitySet="BAL_User">
+                <ScalarProperty Name="Date_Message" ColumnName="Date_Message" />
+                <ScalarProperty Name="Id_User_Destination" ColumnName="Id_User_Destination" />
+                <ScalarProperty Name="link" ColumnName="link" />
+                <ScalarProperty Name="State_Message" ColumnName="State_Message" />
+                <ScalarProperty Name="id_user" ColumnName="id_user" />
+                <ScalarProperty Name="Message" ColumnName="Message" />
+                <ScalarProperty Name="Id_Message" ColumnName="Id_Message" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Communes">
+            <EntityTypeMapping TypeName="requeteModel.Communes">
+              <MappingFragment StoreEntitySet="Commune">
+                <ScalarProperty Name="Code_Wilaya" ColumnName="Code_Wilaya" />
+                <ScalarProperty Name="CodePostal" ColumnName="CodePostal" />
+                <ScalarProperty Name="NomCommune" ColumnName="NomCommune" />
+                <ScalarProperty Name="CommuneId" ColumnName="CommuneId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LevelOfStrucure">
+            <EntityTypeMapping TypeName="requeteModel.LevelOfStrucure">
+              <MappingFragment StoreEntitySet="LevelOfStrucure">
+                <ScalarProperty Name="LevelParentId" ColumnName="LevelParentId" />
+                <ScalarProperty Name="IntituleAr" ColumnName="IntituleAr" />
+                <ScalarProperty Name="IntituleFr" ColumnName="IntituleFr" />
+                <ScalarProperty Name="LevelStructureId" ColumnName="LevelStructureId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Links">
+            <EntityTypeMapping TypeName="requeteModel.Link">
+              <MappingFragment StoreEntitySet="Links">
+                <ScalarProperty Name="extension" ColumnName="extension" />
+                <ScalarProperty Name="Year_Request" ColumnName="Year_Request" />
+                <ScalarProperty Name="NumWilaya_Request" ColumnName="NumWilaya_Request" />
+                <ScalarProperty Name="Id_Request" ColumnName="Id_Request" />
+                <ScalarProperty Name="Link1" ColumnName="Link" />
+                <ScalarProperty Name="Guid" ColumnName="Guid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Message_Request">
+            <EntityTypeMapping TypeName="requeteModel.Message_Request">
+              <MappingFragment StoreEntitySet="Message_Request">
+                <ScalarProperty Name="num_wilayaRequest" ColumnName="num_wilayaRequest" />
+                <ScalarProperty Name="YearRequest" ColumnName="YearRequest" />
+                <ScalarProperty Name="NumRequest" ColumnName="NumRequest" />
+                <ScalarProperty Name="Date_Message" ColumnName="Date_Message" />
+                <ScalarProperty Name="Id_User_Destination" ColumnName="Id_User_Destination" />
+                <ScalarProperty Name="link" ColumnName="link" />
+                <ScalarProperty Name="State_Message" ColumnName="State_Message" />
+                <ScalarProperty Name="id_user" ColumnName="id_user" />
+                <ScalarProperty Name="Message" ColumnName="Message" />
+                <ScalarProperty Name="MessageId" ColumnName="MessageId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Missions">
+            <EntityTypeMapping TypeName="requeteModel.Mission">
+              <MappingFragment StoreEntitySet="Missions">
+                <ScalarProperty Name="mission1" ColumnName="mission" />
+                <ScalarProperty Name="num" ColumnName="num" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Objet_Disp">
+            <EntityTypeMapping TypeName="requeteModel.Objet_Disp">
+              <MappingFragment StoreEntitySet="Objet_Disp">
+                <ScalarProperty Name="PhaseId" ColumnName="PhaseId" />
+                <ScalarProperty Name="ObjectNum" ColumnName="ObjectNum" />
+                <ScalarProperty Name="objet" ColumnName="objet" />
+                <ScalarProperty Name="id_objet" ColumnName="id_objet" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Permissions_Role">
+            <EntityTypeMapping TypeName="requeteModel.Permissions_Role">
+              <MappingFragment StoreEntitySet="Permissions_Role">
+                <ScalarProperty Name="Permission_Value" ColumnName="Permission_Value" />
+                <ScalarProperty Name="Permission_Type" ColumnName="Permission_Type" />
+                <ScalarProperty Name="Id_Role" ColumnName="Id_Role" />
+                <ScalarProperty Name="Id_Permission" ColumnName="Id_Permission" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PhaseObject">
+            <EntityTypeMapping TypeName="requeteModel.PhaseObject">
+              <MappingFragment StoreEntitySet="PhaseObject">
+                <ScalarProperty Name="MissionId" ColumnName="MissionId" />
+                <ScalarProperty Name="PhaseName" ColumnName="PhaseName" />
+                <ScalarProperty Name="PhaseId" ColumnName="PhaseId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="relances">
+            <EntityTypeMapping TypeName="requeteModel.relance">
+              <MappingFragment StoreEntitySet="relances">
+                <ScalarProperty Name="Description_relance" ColumnName="Description_relance" />
+                <ScalarProperty Name="date_relance" ColumnName="date_relance" />
+                <ScalarProperty Name="id_transmission" ColumnName="id_transmission" />
+                <ScalarProperty Name="NumWilaya_Request" ColumnName="NumWilaya_Request" />
+                <ScalarProperty Name="Year_Request" ColumnName="Year_Request" />
+                <ScalarProperty Name="id_requete" ColumnName="id_requete" />
+                <ScalarProperty Name="id_relances" ColumnName="id_relances" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="requerant">
+            <EntityTypeMapping TypeName="requeteModel.requerant">
+              <MappingFragment StoreEntitySet="requerant">
+                <ScalarProperty Name="Num_Dossier" ColumnName="Num_Dossier" />
+                <ScalarProperty Name="Prenom_CAnimateur" ColumnName="Prenom_CAnimateur" />
+                <ScalarProperty Name="Nom_CAnimateur" ColumnName="Nom_CAnimateur" />
+                <ScalarProperty Name="id_wilaya" ColumnName="id_wilaya" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Tel" ColumnName="Tel" />
+                <ScalarProperty Name="Adresse" ColumnName="Adresse" />
+                <ScalarProperty Name="Date_Naissance" ColumnName="Date_Naissance" />
+                <ScalarProperty Name="SEXE" ColumnName="SEXE" />
+                <ScalarProperty Name="prenom_requerant" ColumnName="prenom_requerant" />
+                <ScalarProperty Name="nom_requerant" ColumnName="nom_requerant" />
+                <ScalarProperty Name="num" ColumnName="num" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="State_Request">
+            <EntityTypeMapping TypeName="requeteModel.State_Request">
+              <MappingFragment StoreEntitySet="State_Request">
+                <ScalarProperty Name="nom_state" ColumnName="nom_state" />
+                <ScalarProperty Name="id_state" ColumnName="id_state" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Structures">
+            <EntityTypeMapping TypeName="requeteModel.Structure">
+              <MappingFragment StoreEntitySet="Structure">
+                <ScalarProperty Name="StructureParentId" ColumnName="StructureParentId" />
+                <ScalarProperty Name="LevelId" ColumnName="LevelId" />
+                <ScalarProperty Name="IntituleAr" ColumnName="IntituleAr" />
+                <ScalarProperty Name="IntituleFr" ColumnName="IntituleFr" />
+                <ScalarProperty Name="StructureId" ColumnName="StructureId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StructureUser">
+            <EntityTypeMapping TypeName="requeteModel.StructureUser">
+              <MappingFragment StoreEntitySet="StructureUser">
+                <ScalarProperty Name="DateEnd" ColumnName="DateEnd" />
+                <ScalarProperty Name="DateBegin" ColumnName="DateBegin" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="StructureId" ColumnName="StructureId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StructureWilayas">
+            <EntityTypeMapping TypeName="requeteModel.StructureWilaya">
+              <MappingFragment StoreEntitySet="StructureWilaya">
+                <ScalarProperty Name="DateEnd" ColumnName="DateEnd" />
+                <ScalarProperty Name="DateBegin" ColumnName="DateBegin" />
+                <ScalarProperty Name="StructureId" ColumnName="StructureId" />
+                <ScalarProperty Name="WilayaNum" ColumnName="WilayaNum" />
+                <ScalarProperty Name="WilayaStructureId" ColumnName="WilayaStructureId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="requeteModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="definition" ColumnName="definition" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Transmission">
+            <EntityTypeMapping TypeName="requeteModel.Transmission">
+              <MappingFragment StoreEntitySet="Transmission">
+                <ScalarProperty Name="mode_trans" ColumnName="mode_trans" />
+                <ScalarProperty Name="id_trans" ColumnName="id_trans" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="types">
+            <EntityTypeMapping TypeName="requeteModel.types">
+              <MappingFragment StoreEntitySet="types">
+                <ScalarProperty Name="type" ColumnName="type" />
+                <ScalarProperty Name="id_types" ColumnName="id_types" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserManageStructures">
+            <EntityTypeMapping TypeName="requeteModel.UserManageStructure">
+              <MappingFragment StoreEntitySet="UserManageStructure">
+                <ScalarProperty Name="PosteOccupe" ColumnName="PosteOccupe" />
+                <ScalarProperty Name="DateEnd" ColumnName="DateEnd" />
+                <ScalarProperty Name="DateBegin" ColumnName="DateBegin" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="StructureId" ColumnName="StructureId" />
+                <ScalarProperty Name="userManagerStructureId" ColumnName="userManagerStructureId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Voie_Transmission">
+            <EntityTypeMapping TypeName="requeteModel.Voie_Transmission">
+              <MappingFragment StoreEntitySet="Voie_Transmission">
+                <ScalarProperty Name="voie_trans" ColumnName="voie_trans" />
+                <ScalarProperty Name="id_voie" ColumnName="id_voie" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="wilaya">
+            <EntityTypeMapping TypeName="requeteModel.wilayas">
+              <MappingFragment StoreEntitySet="wilayas">
+                <ScalarProperty Name="wilaya" ColumnName="wilaya" />
+                <ScalarProperty Name="num" ColumnName="num" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="AspNetUserRoles" TypeName="requeteModel.AspNetUserRoles" StoreEntitySet="AspNetUserRoles">
+            <EndProperty Name="AspNetUsers">
+              <ScalarProperty Name="Id" ColumnName="UserId" />
+            </EndProperty>
+            <EndProperty Name="AspNetRoles">
+              <ScalarProperty Name="Id" ColumnName="RoleId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <EntitySetMapping Name="Requests">
+            <EntityTypeMapping TypeName="requeteModel.Request">
+              <MappingFragment StoreEntitySet="Request">
+                <ScalarProperty Name="DispositionPriseId" ColumnName="DispositionPriseId" />
+                <ScalarProperty Name="MotifId" ColumnName="MotifId" />
+                <ScalarProperty Name="User_Inserted" ColumnName="User_Inserted" />
+                <ScalarProperty Name="id_Voie_Trans" ColumnName="id_Voie_Trans" />
+                <ScalarProperty Name="Ref_Validation" ColumnName="Ref_Validation" />
+                <ScalarProperty Name="Date_Envoi" ColumnName="Date_Envoi" />
+                <ScalarProperty Name="result_traitement" ColumnName="result_traitement" />
+                <ScalarProperty Name="id_trans" ColumnName="id_trans" />
+                <ScalarProperty Name="corp_requete" ColumnName="corp_requete" />
+                <ScalarProperty Name="num_requerant" ColumnName="num_requerant" />
+                <ScalarProperty Name="id_type" ColumnName="id_type" />
+                <ScalarProperty Name="Date_Insertion" ColumnName="Date_Insertion" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="id_state" ColumnName="id_state" />
+                <ScalarProperty Name="CommuneId" ColumnName="CommuneId" />
+                <ScalarProperty Name="num_wilaya" ColumnName="num_wilaya" />
+                <ScalarProperty Name="Year" ColumnName="Year" />
+                <ScalarProperty Name="num" ColumnName="num" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DispositionPrise">
+            <EntityTypeMapping TypeName="requeteModel.DispositionPrise">
+              <MappingFragment StoreEntitySet="DispositionPrise">
+                <ScalarProperty Name="ObjectId" ColumnName="ObjectId" />
+                <ScalarProperty Name="DispositionName" ColumnName="DispositionName" />
+                <ScalarProperty Name="DispositionPriseId" ColumnName="DispositionPriseId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Motif">
+            <EntityTypeMapping TypeName="requeteModel.Motif">
+              <MappingFragment StoreEntitySet="Motif">
+                <ScalarProperty Name="ObjectId" ColumnName="ObjectId" />
+                <ScalarProperty Name="MotifName" ColumnName="MotifName" />
+                <ScalarProperty Name="MotifId" ColumnName="MotifId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
